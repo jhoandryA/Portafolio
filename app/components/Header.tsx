@@ -1,20 +1,19 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { navLinks } from '@/app/lib/constants'
 import { fadeIn } from '@/app/lib/animations'
 import { useState } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { smoothScrollTo } from '@/app/utils/scroll'
 
-export default function Header() {
-    const [isOpen, setIsOpen] = useState(false)
+export default function Header(): JSX.Element {
+    const [isOpen, setIsOpen] = useState<boolean>(false)
 
-    const handleNavClick = (id: string) => {
-        smoothScrollTo(id);
-        setIsOpen(false);
-    };
+    const handleNavClick = (id: string): void => {
+        smoothScrollTo(id)
+        setIsOpen(false)
+    }
 
     return (
         <motion.header
@@ -24,7 +23,8 @@ export default function Header() {
             className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800"
         >
             <nav className="max-w-7xl mx-auto flex justify-between items-center py-6 px-4 sm:px-6 lg:px-8">
-                {/* ✏️ CAMBIA AQUÍ: tu nombre en el logo del header */}
+                
+                {/* LOGO */}
                 <button
                     onClick={() => smoothScrollTo('home')}
                     className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent"
@@ -32,7 +32,7 @@ export default function Header() {
                     Jhoandry
                 </button>
 
-                {/* Desktop Navigation */}
+                {/* NAV DESKTOP */}
                 <ul className="hidden md:flex space-x-8">
                     {navLinks.map((link) => (
                         <li key={link.name}>
@@ -46,12 +46,14 @@ export default function Header() {
                     ))}
                 </ul>
 
+                {/* BOTÓN + MENÚ */}
                 <div className="flex items-center gap-4">
+                    
                     <button
                         onClick={() => smoothScrollTo('contact')}
                         className="hidden sm:inline-block px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white hover:opacity-90 transition-opacity"
                     >
-                        Hire Me
+                        Contáctame
                     </button>
 
                     <button
@@ -62,6 +64,7 @@ export default function Header() {
                     </button>
                 </div>
 
+                {/* NAV MOBILE */}
                 {isOpen && (
                     <motion.div
                         initial={{ y: -300, opacity: 0 }}
@@ -83,12 +86,13 @@ export default function Header() {
                                     </li>
                                 ))}
                             </ul>
+
                             <div className="mt-6 pt-4 border-t border-gray-800">
                                 <button
                                     onClick={() => handleNavClick('contact')}
                                     className="block w-full text-center px-4 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white hover:opacity-90 transition-opacity"
                                 >
-                                    Hire Me
+                                    Contáctame
                                 </button>
                             </div>
                         </div>
