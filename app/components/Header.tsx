@@ -29,7 +29,7 @@ export default function Header(): JSX.Element {
                     onClick={() => smoothScrollTo('home')}
                     className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent"
                 >
-                    Jhoandry
+                    Portafolio
                 </button>
 
                 {/* NAV DESKTOP */}

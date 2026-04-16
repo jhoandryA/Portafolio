@@ -55,12 +55,28 @@ export const skills = [
 // 🔹 PROYECTOS
 export const projects = [
     {
-        name: 'Sistema de Gestión',
-        image: '/images/proyecto-1.png',
-        description: 'Sistema web para gestión de datos con operaciones CRUD y base de datos.',
-        technologies: ['Java', 'SQL', 'HTML', 'CSS'],
-        githubUrl: 'https://github.com/jhoandryA',
+        name: 'PostulaPe - Sistema de Reclutamiento',
+        image: '/images/postulape.jpeg',
+        description: 'Sistema backend para la gestión de procesos de reclutamiento que permite administrar postulantes, convocatorias y etapas de selección, optimizando el flujo de contratación en recursos humanos.',
+        technologies: ['Java', 'Spring Boot', 'MySQL', 'REST API'],
+        githubUrl: 'https://github.com/jhoandryA/postulape_backend',
         liveUrl: '#'
+    },
+    {
+        name: 'Sistema Académico Universitario',
+        image: '/images/universidad.jpeg',
+        description: 'Backend para la gestión académica de una universidad, enfocado en un diseño relacional robusto con integridad referencial, auditoría y control de matrículas mediante reglas en base de datos.',
+        technologies: ['Node.js', 'MySQL', 'API REST'],
+        githubUrl: 'https://github.com/jhoandryA/universidad_backend',
+        liveUrl: '#'
+    },
+    {
+        name: 'EquilibrioS - Finanzas Personales',
+        image: '/images/equilibrios.jpeg',
+        description: 'Aplicación web para gestionar ingresos y gastos mensuales con visualización gráfica, control de presupuesto y almacenamiento local sin necesidad de backend.',
+        technologies: ['JavaScript', 'HTML', 'CSS', 'LocalStorage'],
+        githubUrl: 'https://github.com/jhoandryA/EquilibrioS',
+        liveUrl: 'https://jhoandrya.github.io/EquilibrioS/'
     }
 ]
 

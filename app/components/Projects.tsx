@@ -6,7 +6,7 @@ import { projects } from '@/app/lib/constants'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import Image from 'next/image'
 
-export default function Projects() {
+export default function Projects(): JSX.Element {
     return (
         <motion.section
             initial="hidden"
@@ -16,15 +16,16 @@ export default function Projects() {
             id="projects"
         >
             <motion.div variants={textVariant()}>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-200">My Projects</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-200">
+                    Proyectos
+                </h2>
                 <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mb-8"></div>
-                {/* ✏️ CAMBIA AQUÍ: descripción de la sección proyectos (opcional) */}
+
                 <p className="text-gray-500 max-w-3xl mb-12">
-                    Here are some of my recent projects. Each one was built to solve a specific problem or explore new technologies.
+                    Estos son algunos de los proyectos que he desarrollado, aplicando buenas prácticas de desarrollo, diseño de bases de datos y construcción de aplicaciones web.
                 </p>
             </motion.div>
 
-            {/* Los proyectos se cargan desde app/lib/constants.ts → export const projects */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project, index) => (
                     <motion.div
@@ -32,7 +33,8 @@ export default function Projects() {
                         variants={fadeIn('up', 'spring', index * 0.2, 0.75)}
                         className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors shadow-sm"
                     >
-                        <div className="h-48 bg-gray-700 flex items-center justify-center overflow-hidden">
+                        {/* IMAGEN */}
+                        <div className="h-48 bg-gray-700 overflow-hidden">
                             <Image
                                 src={project.image}
                                 alt={project.name}
@@ -41,31 +43,43 @@ export default function Projects() {
                                 className="w-full h-full object-cover"
                             />
                         </div>
+
+                        {/* CONTENIDO */}
                         <div className="p-6">
                             <div className="flex justify-between items-start mb-4">
-                                <h3 className="text-xl font-semibold text-gray-200">{project.name}</h3>
+                                <h3 className="text-xl font-semibold text-gray-200">
+                                    {project.name}
+                                </h3>
+
                                 <div className="flex gap-3">
+                                    {/* GitHub */}
                                     <a
                                         href={project.githubUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-gray-500 hover:text-purple-500 transition-colors"
-                                        aria-label="GitHub"
                                     >
                                         <FiGithub className="w-5 h-5" />
                                     </a>
-                                    <a
-                                        href={project.liveUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-500 hover:text-blue-500 transition-colors"
-                                        aria-label="Live Demo"
-                                    >
-                                        <FiExternalLink className="w-5 h-5" />
-                                    </a>
+
+                                    {/* Demo solo si existe */}
+                                    {project.liveUrl !== '#' && (
+                                        <a
+                                            href={project.liveUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-gray-500 hover:text-blue-500 transition-colors"
+                                        >
+                                            <FiExternalLink className="w-5 h-5" />
+                                        </a>
+                                    )}
                                 </div>
                             </div>
-                            <p className="text-gray-500 mb-4">{project.description}</p>
+
+                            <p className="text-gray-500 mb-4">
+                                {project.description}
+                            </p>
+
                             <div className="flex flex-wrap gap-2">
                                 {project.technologies.map((tech) => (
                                     <span
