@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { slideIn, staggerContainer } from '@/app/lib/animations'
-import { socialLinks } from '@/app/lib/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -31,11 +30,11 @@ export default function Hero(): JSX.Element {
                     </h1>
 
                     <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-gray-400">
-                        Desarrollador de Software y Sistemas
+                        Desarrollo de software y sistemas
                     </h2>
 
                     <p className="text-lg text-gray-500 mb-8">
-                        Desarrollo aplicaciones web modernas, escalables y funcionales con tecnologías actuales.
+                        Desarrollo aplicaciones web modernas, escalables y funcionales.
                     </p>
 
                     {/* BOTONES */}
@@ -49,7 +48,7 @@ export default function Hero(): JSX.Element {
                             Ver proyectos
                         </Link>
 
-                        {/* CV DESCARGA */}
+                        {/* CV */}
                         <a
                             href="/CV_JHOANDRY.pdf"
                             download
