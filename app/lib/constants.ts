@@ -3,7 +3,7 @@ import {
     FiLinkedin,
     FiMail,
     FiLayers,
-    FiSmartphone
+    FiDatabase
 } from 'react-icons/fi'
 
 import {
@@ -18,9 +18,7 @@ import {
     SiTypescript,
     SiSpringboot,
     SiMysql,
-    SiPostgresql,
-    SiOracle,
-    SiMicrosoftsqlserver
+    SiPostgresql
 } from 'react-icons/si'
 
 // 🔹 NAV
@@ -39,7 +37,7 @@ export const socialLinks = [
     { name: 'Email', url: 'mailto:TU_CORREO@gmail.com', icon: FiMail },
 ]
 
-// 🔹 SKILLS (LIMPIO Y CON ICONOS)
+// 🔹 SKILLS (CORREGIDO)
 export const skills = [
     // Lenguajes
     { name: 'Java', icon: FaJava },
@@ -55,8 +53,8 @@ export const skills = [
     // Base de datos
     { name: 'MySQL', icon: SiMysql },
     { name: 'PostgreSQL', icon: SiPostgresql },
-    { name: 'Oracle', icon: SiOracle },
-    { name: 'SQL Server', icon: SiMicrosoftsqlserver }
+    { name: 'Oracle', icon: FiDatabase },
+    { name: 'SQL Server', icon: FiDatabase }
 ]
 
 // 🔹 PROYECTOS
@@ -91,6 +89,6 @@ export const services = [
     {
         title: 'Bases de Datos',
         description: 'Diseño y gestión de bases de datos relacionales.',
-        icon: SiMysql
+        icon: FiDatabase
     }
 ]
