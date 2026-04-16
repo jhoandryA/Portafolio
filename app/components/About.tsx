@@ -44,7 +44,7 @@ export default function About() {
                     className="md:w-1/2"
                 >
                     <h3 className="text-xl font-semibold mb-6 text-gray-300">
-                        Mis habilidades
+                        Skills 
                     </h3>
                     <div className="flex flex-wrap gap-4">
                         {skills.map((skill) => (

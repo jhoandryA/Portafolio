@@ -2,14 +2,26 @@ import {
     FiGithub,
     FiLinkedin,
     FiMail,
-    FiCode,
     FiLayers,
-    FiSmartphone,
-    FiDatabase,
-    FiCpu
+    FiSmartphone
 } from 'react-icons/fi'
-import { FaReact, FaNodeJs } from 'react-icons/fa'
-import { SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si'
+
+import {
+    FaJava,
+    FaNodeJs,
+    FaPython,
+    FaPhp
+} from 'react-icons/fa'
+
+import {
+    SiNextdotjs,
+    SiTypescript,
+    SiSpringboot,
+    SiMysql,
+    SiPostgresql,
+    SiOracle,
+    SiMicrosoftsqlserver
+} from 'react-icons/si'
 
 // 🔹 NAV
 export const navLinks = [
@@ -20,40 +32,34 @@ export const navLinks = [
     { name: 'Contacto', href: 'contact' },
 ];
 
-// 🔹 REDES (CAMBIA TU LINKEDIN Y CORREO)
+// 🔹 REDES
 export const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/jhoandryA', icon: FiGithub },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/TU_LINKEDIN', icon: FiLinkedin },
     { name: 'Email', url: 'mailto:TU_CORREO@gmail.com', icon: FiMail },
 ]
 
-// 🔹 SKILLS
+// 🔹 SKILLS (LIMPIO Y CON ICONOS)
 export const skills = [
     // Lenguajes
-    { name: 'Java', icon: FiCode },
-    { name: 'C#', icon: FiCode },
-    { name: 'PHP', icon: FiCode },
-    { name: 'Python', icon: FiCode },
-    { name: 'JavaScript', icon: SiTypescript },
+    { name: 'Java', icon: FaJava },
+    { name: 'PHP', icon: FaPhp },
+    { name: 'Python', icon: FaPython },
     { name: 'TypeScript', icon: SiTypescript },
-
-    // Frontend
-    { name: 'React', icon: FaReact },
-    { name: 'Next.js', icon: SiNextdotjs },
-    { name: 'Tailwind CSS', icon: SiTailwindcss },
 
     // Backend
     { name: 'Node.js', icon: FaNodeJs },
-    { name: 'Spring Boot', icon: FiCpu },
+    { name: 'Spring Boot', icon: SiSpringboot },
+    { name: 'Next.js', icon: SiNextdotjs },
 
     // Base de datos
-    { name: 'MySQL', icon: FiDatabase },
-    { name: 'PostgreSQL', icon: FiDatabase },
-    { name: 'Oracle', icon: FiDatabase },
-    { name: 'SQL Server', icon: FiDatabase }
+    { name: 'MySQL', icon: SiMysql },
+    { name: 'PostgreSQL', icon: SiPostgresql },
+    { name: 'Oracle', icon: SiOracle },
+    { name: 'SQL Server', icon: SiMicrosoftsqlserver }
 ]
 
-// 🔹 PROYECTOS (puedes agregar más luego)
+// 🔹 PROYECTOS
 export const projects = [
     {
         name: 'Sistema de Gestión',
@@ -70,7 +76,7 @@ export const services = [
     {
         title: 'Desarrollo Web',
         description: 'Creación de aplicaciones web modernas y funcionales.',
-        icon: FiCode
+        icon: FaNodeJs
     },
     {
         title: 'Diseño UI/UX',
@@ -80,11 +86,11 @@ export const services = [
     {
         title: 'Desarrollo Backend',
         description: 'Lógica de negocio, APIs y conexión con bases de datos.',
-        icon: FiDatabase
+        icon: SiSpringboot
     },
     {
         title: 'Bases de Datos',
         description: 'Diseño y gestión de bases de datos relacionales.',
-        icon: FiCpu
+        icon: SiMysql
     }
 ]
