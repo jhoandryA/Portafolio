@@ -5,10 +5,11 @@ import { fadeIn } from '@/app/lib/animations'
 import Link from 'next/link'
 import { smoothScrollTo } from '@/app/utils/scroll'
 
-export default function CTA() {
-    const handleScroll = (id: string) => {
-        smoothScrollTo(id);
-    };
+export default function CTA(): JSX.Element {
+
+    const handleScroll = (id: string): void => {
+        smoothScrollTo(id)
+    }
 
     return (
         <motion.section
@@ -23,26 +24,38 @@ export default function CTA() {
                 className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-2xl p-8 md:p-12 border border-purple-800/40"
             >
                 <div className="max-w-4xl mx-auto text-center">
-                    {/* ✏️ CAMBIA AQUÍ: título y descripción de la sección de contacto */}
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-200">Let's Work Together!</h2>
+
+                    {/* TÍTULO */}
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-200">
+                        Trabajemos juntos
+                    </h2>
+
+                    {/* DESCRIPCIÓN */}
                     <p className="text-gray-400 mb-8 text-lg">
-                        Have a project in mind or want to discuss potential opportunities?
-                        I'm currently available for freelance work and full-time positions.
+                        Estoy disponible para proyectos freelance, prácticas profesionales o colaboración en desarrollo de software.
+                        Si tienes una idea o proyecto, no dudes en contactarme.
                     </p>
+
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        {/* ✏️ CAMBIA AQUÍ: tu email en el href */}
+
+                        {/* EMAIL */}
                         <Link
-                            href="mailto:tuemail@gmail.com"
+                            href="mailto:jhoandryoficial@gmail.com"
                             className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white hover:opacity-90 transition-opacity font-medium"
                         >
-                            Get In Touch
+                            Contáctame
                         </Link>
+
+                        {/* PROYECTOS */}
                         <Link
-                            href="/projects"
-                            onClick={(e) => { e.preventDefault(); handleScroll('projects'); }}
+                            href="#projects"
+                            onClick={(e) => {
+                                e.preventDefault()
+                                handleScroll('projects')
+                            }}
                             className="px-8 py-4 rounded-full border border-gray-700 text-gray-300 hover:bg-gray-800 transition-colors font-medium"
                         >
-                            View My Work
+                            Ver proyectos
                         </Link>
                     </div>
                 </div>
