@@ -16,9 +16,7 @@ import {
 import {
     SiNextdotjs,
     SiTypescript,
-    SiSpringboot,
-    SiMysql,
-    SiPostgresql
+    SiSpringboot
 } from 'react-icons/si'
 
 // 🔹 NAV
@@ -37,7 +35,7 @@ export const socialLinks = [
     { name: 'Email', url: 'mailto:TU_CORREO@gmail.com', icon: FiMail },
 ]
 
-// 🔹 SKILLS (CORREGIDO)
+// 🔹 SKILLS (SIMPLIFICADO)
 export const skills = [
     // Lenguajes
     { name: 'Java', icon: FaJava },
@@ -51,10 +49,7 @@ export const skills = [
     { name: 'Next.js', icon: SiNextdotjs },
 
     // Base de datos
-    { name: 'MySQL', icon: SiMysql },
-    { name: 'PostgreSQL', icon: SiPostgresql },
-    { name: 'Oracle', icon: FiDatabase },
-    { name: 'SQL Server', icon: FiDatabase }
+    { name: 'SQL', icon: FiDatabase }
 ]
 
 // 🔹 PROYECTOS
