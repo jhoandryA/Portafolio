@@ -14,7 +14,9 @@ export default function About() {
             id="about"
         >
             <motion.div variants={textVariant()}>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-200">About Me</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-200">
+                    Sobre mí
+                </h2>
                 <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mb-8"></div>
             </motion.div>
 
@@ -23,17 +25,17 @@ export default function About() {
                     variants={fadeIn('right', 'spring', 0.1, 1)}
                     className="md:w-1/2"
                 >
-                    {/* ✏️ CAMBIA AQUÍ: los 3 párrafos con tu historia/bio */}
                     <p className="text-gray-500 mb-6">
-                        I'm a passionate web developer with 5+ years of experience creating modern web applications.
-                        I specialize in JavaScript frameworks like React and Next.js, and I love building intuitive user interfaces.
+                        Soy estudiante de Desarrollo de Software y Sistemas, con interés en la creación
+                        de aplicaciones web modernas y soluciones tecnológicas eficientes.
                     </p>
                     <p className="text-gray-500 mb-6">
-                        My journey in web development started when I was in college, and I've been hooked ever since.
-                        I enjoy solving complex problems and turning ideas into reality through code.
+                        Actualmente desarrollo proyectos utilizando tecnologías como JavaScript, React,
+                        Next.js y bases de datos, fortaleciendo mis habilidades tanto en frontend como backend.
                     </p>
                     <p className="text-gray-500">
-                        When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new technologies.
+                        Me apasiona aprender constantemente, resolver problemas y construir sistemas funcionales
+                        aplicando buenas prácticas de desarrollo.
                     </p>
                 </motion.div>
 
@@ -41,7 +43,9 @@ export default function About() {
                     variants={fadeIn('left', 'spring', 0.1, 1)}
                     className="md:w-1/2"
                 >
-                    <h3 className="text-xl font-semibold mb-6 text-gray-300">My Skills</h3>
+                    <h3 className="text-xl font-semibold mb-6 text-gray-300">
+                        Mis habilidades
+                    </h3>
                     <div className="flex flex-wrap gap-4">
                         {skills.map((skill) => (
                             <div
