@@ -76,7 +76,7 @@ export default function Hero(): JSX.Element {
                     className="flex justify-end"
                 >
                     <Image
-                        src="/jhoandry.png"
+                        src="/Jhoandry.png"
                         alt="perfil"
                         width={350}
                         height={350}
