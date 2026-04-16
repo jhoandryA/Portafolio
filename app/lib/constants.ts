@@ -3,7 +3,9 @@ import {
     FiLinkedin,
     FiMail,
     FiLayers,
-    FiDatabase
+    FiDatabase,
+    FiCpu, 
+    FiCode
 } from 'react-icons/fi'
 
 import {
@@ -80,26 +82,37 @@ export const projects = [
     }
 ]
 
-// 🔹 SERVICIOS
 export const services = [
     {
         title: 'Desarrollo Web',
-        description: 'Creación de aplicaciones web modernas y funcionales.',
+        description: 'Creación de aplicaciones web modernas, funcionales y responsivas utilizando tecnologías actuales.',
         icon: FaNodeJs
     },
     {
         title: 'Diseño UI/UX',
-        description: 'Interfaces intuitivas y atractivas para mejorar la experiencia del usuario.',
+        description: 'Interfaces intuitivas y atractivas enfocadas en mejorar la experiencia del usuario.',
         icon: FiLayers
     },
     {
         title: 'Desarrollo Backend',
-        description: 'Lógica de negocio, APIs y conexión con bases de datos.',
+        description: 'Construcción de APIs, lógica de negocio y sistemas escalables con Spring Boot y Node.js.',
         icon: SiSpringboot
     },
     {
         title: 'Bases de Datos',
-        description: 'Diseño y gestión de bases de datos relacionales.',
+        description: 'Diseño, modelado y gestión de bases de datos relacionales con SQL Server, MySQL y PostgreSQL.',
         icon: FiDatabase
+    },
+
+    // 🔥 NUEVOS (los que te agrego)
+    {
+        title: 'Desarrollo de Sistemas',
+        description: 'Creación de sistemas completos de gestión (ventas, reclutamiento, académico) con arquitectura cliente-servidor.',
+        icon: FiCpu
+    },
+    {
+        title: 'Programación Multilenguaje',
+        description: 'Desarrollo en múltiples lenguajes como Java, C#, PHP, Python, JavaScript y TypeScript.',
+        icon: FiCode
     }
 ]
