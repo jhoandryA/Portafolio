@@ -14,9 +14,12 @@ export default function StarBackground() {
         let animationId: number
 
         const resize = () => {
-            canvas.width = window.innerWidth
-            canvas.height = window.innerHeight
+            const parent = canvas.parentElement
+            if (!parent) return
+            canvas.width = parent.clientWidth
+            canvas.height = parent.clientHeight
         }
+
         resize()
         window.addEventListener('resize', resize)
 
@@ -53,19 +56,11 @@ export default function StarBackground() {
 
             ctx.clearRect(0, 0, W, H)
 
-            // Fondo degradado tipo espacio profundo
             const bg = ctx.createRadialGradient(W * 0.5, H * 0.35, 0, W * 0.5, H * 0.5, W * 0.9)
             bg.addColorStop(0, '#17213a')
             bg.addColorStop(0.45, '#0e1525')
             bg.addColorStop(1, '#070c18')
             ctx.fillStyle = bg
-            ctx.fillRect(0, 0, W, H)
-
-            // Resplandor azul sutil al centro
-            const glow = ctx.createRadialGradient(W * 0.5, H * 0.45, 0, W * 0.5, H * 0.5, W * 0.5)
-            glow.addColorStop(0, 'rgba(59,138,238,0.06)')
-            glow.addColorStop(1, 'transparent')
-            ctx.fillStyle = glow
             ctx.fillRect(0, 0, W, H)
 
             frame++
@@ -74,7 +69,6 @@ export default function StarBackground() {
                 star.x += star.driftX
                 star.y += star.driftY
 
-                // wrap
                 if (star.x < 0) star.x = W
                 if (star.x > W) star.x = 0
                 if (star.y < 0) star.y = H
@@ -87,18 +81,6 @@ export default function StarBackground() {
                 ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2)
                 ctx.fillStyle = `rgba(210, 225, 255, ${finalOpacity})`
                 ctx.fill()
-
-                // Cruz de luz para estrellas grandes
-                if (star.size > 1.3) {
-                    ctx.strokeStyle = `rgba(180, 210, 255, ${finalOpacity * 0.4})`
-                    ctx.lineWidth = 0.5
-                    ctx.beginPath()
-                    ctx.moveTo(star.x - star.size * 2.5, star.y)
-                    ctx.lineTo(star.x + star.size * 2.5, star.y)
-                    ctx.moveTo(star.x, star.y - star.size * 2.5)
-                    ctx.lineTo(star.x, star.y + star.size * 2.5)
-                    ctx.stroke()
-                }
             })
 
             animationId = requestAnimationFrame(animate)
@@ -115,16 +97,7 @@ export default function StarBackground() {
     return (
         <canvas
             ref={canvasRef}
-            style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                zIndex: 0,
-                pointerEvents: 'none',
-                display: 'block',
-            }}
+            className="absolute inset-0 -z-10 w-full h-full pointer-events-none"
         />
     )
 }

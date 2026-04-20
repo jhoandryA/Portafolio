@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import StarBackground from "@/app/components/StarBackground";
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -16,21 +15,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
     children,
-}: Readonly<{
+}: {
     children: React.ReactNode;
-}>) {
+}) {
     return (
         <html lang="es" className="scroll-smooth">
-            <body className={`${poppins.className} text-gray-300`}
-                style={{ background: '#070c18', position: 'relative' }}
+            <body
+                className={`${poppins.className} text-gray-300`}
+                style={{ background: '#070c18' }}
             >
-                {/* Fondo de estrellas fijo detrás de todo */}
-                <StarBackground />
-
-                {/* Todo el contenido encima del canvas */}
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                    {children}
-                </div>
+                {children}
             </body>
         </html>
     );
