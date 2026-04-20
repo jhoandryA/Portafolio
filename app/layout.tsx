@@ -1,6 +1,7 @@
-import type {Metadata} from "next";
-import {Poppins} from "next/font/google";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import StarBackground from "@/app/components/StarBackground";
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -8,10 +9,9 @@ const poppins = Poppins({
     variable: '--font-poppins',
 });
 
-// ✏️ CAMBIA AQUÍ: tu nombre y descripción para SEO/pestaña del navegador
 export const metadata: Metadata = {
-    title: 'Tu Nombre | Full Stack Developer',
-    description: 'Portafolio personal de desarrollo web',
+    title: 'Jhoandry Apaza | Desarrollador de Software',
+    description: 'Portafolio personal de desarrollo web y sistemas',
 }
 
 export default function RootLayout({
@@ -21,9 +21,17 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="es" className="scroll-smooth">
-        <body className={`${poppins.className} bg-gray-900 text-gray-300`}>
-        {children}
-        </body>
+            <body className={`${poppins.className} text-gray-300`}
+                style={{ background: '#070c18', position: 'relative' }}
+            >
+                {/* Fondo de estrellas fijo detrás de todo */}
+                <StarBackground />
+
+                {/* Todo el contenido encima del canvas */}
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                    {children}
+                </div>
+            </body>
         </html>
     );
 }

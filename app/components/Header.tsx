@@ -20,14 +20,19 @@ export default function Header(): JSX.Element {
             initial="hidden"
             animate="visible"
             variants={fadeIn as any}
-            className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800"
+            className="sticky top-0 z-50 border-b border-white/5"
+            style={{
+                background: 'rgba(7, 12, 24, 0.55)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+            }}
         >
-            <nav className="max-w-7xl mx-auto flex justify-between items-center py-6 px-4 sm:px-6 lg:px-8">
-                
+            <nav className="max-w-7xl mx-auto flex justify-between items-center py-5 px-4 sm:px-6 lg:px-8">
+
                 {/* LOGO */}
                 <button
                     onClick={() => smoothScrollTo('home')}
-                    className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent"
+                    className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors tracking-tight"
                 >
                     Portafolio
                 </button>
@@ -38,7 +43,7 @@ export default function Header(): JSX.Element {
                         <li key={link.name}>
                             <button
                                 onClick={() => handleNavClick(link.href)}
-                                className="text-gray-400 hover:text-gray-200 transition-colors font-medium"
+                                className="text-slate-400 hover:text-white transition-colors font-medium text-sm tracking-wide"
                             >
                                 {link.name}
                             </button>
@@ -48,57 +53,66 @@ export default function Header(): JSX.Element {
 
                 {/* BOTÓN + MENÚ */}
                 <div className="flex items-center gap-4">
-                    
                     <button
                         onClick={() => smoothScrollTo('contact')}
-                        className="hidden sm:inline-block px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white hover:opacity-90 transition-opacity"
+                        className="hidden sm:inline-block px-5 py-2 rounded-full text-sm font-medium text-white transition-all duration-200 hover:scale-105"
+                        style={{
+                            background: '#3b8aee',
+                            boxShadow: '0 0 16px rgba(59,138,238,0.35)',
+                        }}
                     >
                         Contáctame
                     </button>
 
                     <button
-                        className="md:hidden text-gray-400 hover:text-gray-200 focus:outline-none"
+                        className="md:hidden text-slate-400 hover:text-white focus:outline-none"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
                     </button>
                 </div>
-
-                {/* NAV MOBILE */}
-                {isOpen && (
-                    <motion.div
-                        initial={{ y: -300, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -300, opacity: 0 }}
-                        transition={{ type: 'spring', damping: 25 }}
-                        className="fixed top-16 left-0 right-0 bg-gray-900 z-50 shadow-lg md:hidden border-b border-gray-800"
-                    >
-                        <div className="flex flex-col p-6">
-                            <ul className="flex flex-col space-y-6">
-                                {navLinks.map((link) => (
-                                    <li key={link.name}>
-                                        <button
-                                            onClick={() => handleNavClick(link.href)}
-                                            className="text-gray-400 hover:text-gray-200 text-lg transition-colors"
-                                        >
-                                            {link.name}
-                                        </button>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="mt-6 pt-4 border-t border-gray-800">
-                                <button
-                                    onClick={() => handleNavClick('contact')}
-                                    className="block w-full text-center px-4 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white hover:opacity-90 transition-opacity"
-                                >
-                                    Contáctame
-                                </button>
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
             </nav>
+
+            {/* NAV MOBILE */}
+            {isOpen && (
+                <motion.div
+                    initial={{ y: -20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{ type: 'spring', damping: 25 }}
+                    className="md:hidden border-t border-white/5"
+                    style={{
+                        background: 'rgba(7, 12, 24, 0.92)',
+                        backdropFilter: 'blur(20px)',
+                        WebkitBackdropFilter: 'blur(20px)',
+                    }}
+                >
+                    <div className="flex flex-col p-6">
+                        <ul className="flex flex-col space-y-5">
+                            {navLinks.map((link) => (
+                                <li key={link.name}>
+                                    <button
+                                        onClick={() => handleNavClick(link.href)}
+                                        className="text-slate-400 hover:text-white text-lg transition-colors"
+                                    >
+                                        {link.name}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="mt-6 pt-4 border-t border-white/5">
+                            <button
+                                onClick={() => handleNavClick('contact')}
+                                className="block w-full text-center px-4 py-3 rounded-full text-white font-medium"
+                                style={{ background: '#3b8aee' }}
+                            >
+                                Contáctame
+                            </button>
+                        </div>
+                    </div>
+                </motion.div>
+            )}
         </motion.header>
     )
 }
