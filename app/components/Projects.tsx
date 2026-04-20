@@ -34,13 +34,13 @@ export default function Projects(): JSX.Element {
                         className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors shadow-sm"
                     >
                         {/* IMAGEN */}
-                        <div className="h-48 bg-gray-700 overflow-hidden">
+                        <div className="h-56 bg-gray-900 flex items-center justify-center overflow-hidden">
                             <Image
                                 src={project.image}
                                 alt={project.name}
                                 width={500}
                                 height={500}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-contain"
                             />
                         </div>
 
