@@ -22,9 +22,6 @@ export default function Hero(): JSX.Element {
                     variants={slideIn('left', 'tween', 0.2, 1)}
                     className="md:w-1/2"
                 >
-                    <p className="text-xs font-mono tracking-widest text-blue-400 mb-4 uppercase">
-                        Bienvenido a mi portafolio
-                    </p>
 
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
                         Hola, soy{' '}
