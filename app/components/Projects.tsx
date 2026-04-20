@@ -5,8 +5,12 @@ import { fadeIn, textVariant } from '@/app/lib/animations'
 import { projects } from '@/app/lib/constants'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Projects(): JSX.Element {
+
+    const [selectedImage, setSelectedImage] = useState<string | null>(null)
+
     return (
         <motion.section
             initial="hidden"
@@ -34,13 +38,16 @@ export default function Projects(): JSX.Element {
                         className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors shadow-sm"
                     >
                         {/* IMAGEN */}
-                        <div className="h-56 bg-gray-900 flex items-center justify-center overflow-hidden">
+                        <div
+                            className="h-48 bg-gray-700 overflow-hidden cursor-pointer"
+                            onClick={() => setSelectedImage(project.image)}
+                        >
                             <Image
                                 src={project.image}
                                 alt={project.name}
                                 width={500}
                                 height={500}
-                                className="w-full h-full object-contain"
+                                className="w-full h-full object-cover"
                             />
                         </div>
 
@@ -62,7 +69,7 @@ export default function Projects(): JSX.Element {
                                         <FiGithub className="w-5 h-5" />
                                     </a>
 
-                                    {/* Demo solo si existe */}
+                                    {/* Demo */}
                                     {project.liveUrl !== '#' && (
                                         <a
                                             href={project.liveUrl}
@@ -94,6 +101,22 @@ export default function Projects(): JSX.Element {
                     </motion.div>
                 ))}
             </div>
+
+            {/* 🔥 MODAL IMAGEN */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <Image
+                        src={selectedImage}
+                        alt="preview"
+                        width={800}
+                        height={800}
+                        className="max-w-[90%] max-h-[90%] object-contain rounded-lg scale-95 hover:scale-100 transition-transform duration-300"
+                    />
+                </div>
+            )}
         </motion.section>
     )
 }
