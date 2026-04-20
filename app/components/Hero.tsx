@@ -34,7 +34,7 @@ export default function Hero(): JSX.Element {
                     </h2>
 
                     <p className="text-lg text-gray-500 mb-8">
-                        Desarrollo aplicaciones web modernas, escalables y funcionales.
+                        Desarrollo aplicaciones web modernas, escalables y funcionales, enfocadas en brindar una excelente experiencia de usuario y un alto rendimiento. Trabajo en la creación de soluciones digitales eficientes, seguras y adaptables, utilizando buenas prácticas de desarrollo para garantizar calidad, mantenimiento y crecimiento continuo de cada proyecto.
                     </p>
 
                     {/* BOTONES */}
