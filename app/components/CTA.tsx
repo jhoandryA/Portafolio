@@ -32,8 +32,7 @@ export default function CTA(): JSX.Element {
 
                     {/* DESCRIPCIÓN */}
                     <p className="text-gray-400 mb-8 text-lg">
-                        Estoy disponible para proyectos freelance, prácticas profesionales o colaboración en desarrollo de software.
-                        Si tienes una idea o proyecto, no dudes en contactarme.
+                        Estoy disponible para proyectos freelance, prácticas profesionales o colaboración en desarrollo de software, brindando soluciones eficientes y adaptadas a cada necesidad. Me motiva trabajar en proyectos que impliquen nuevos desafíos y crecimiento profesional. Si tienes una idea o proyecto en mente, no dudes en contactarme para poder ayudarte a desarrollarlo y llevarlo a un resultado sólido y de calidad.
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4">

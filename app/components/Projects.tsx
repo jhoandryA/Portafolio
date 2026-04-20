@@ -22,7 +22,7 @@ export default function Projects(): JSX.Element {
                 <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mb-8"></div>
 
                 <p className="text-gray-500 max-w-3xl mb-12">
-                    Estos son algunos de los proyectos que he desarrollado, aplicando buenas prácticas de desarrollo, diseño de bases de datos y construcción de aplicaciones web.
+                    Estos son algunos de los proyectos que he desarrollado a lo largo de mi formación, en los cuales he aplicado buenas prácticas de desarrollo, diseño de bases de datos y construcción de aplicaciones web modernas. En cada proyecto busco optimizar el rendimiento, mantener un código limpio y estructurado, y ofrecer soluciones funcionales, escalables y orientadas a resolver necesidades reales.
                 </p>
             </motion.div>
 
