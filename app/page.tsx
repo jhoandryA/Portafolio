@@ -10,17 +10,14 @@ import StarBackground from '@/app/components/StarBackground'
 export default function Home() {
   return (
     <main>
-      {/* ⭐ SOLO ESTA PARTE TENDRÁ ESTRELLAS */}
+      {/* Sección hero con estrellas — sin contenedor, Hero se gestiona solo */}
       <div className="relative overflow-hidden">
         <StarBackground />
         <Header />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Hero />
-        </div>
+        <Hero />
       </div>
 
-      {/* 🔽 RESTO NORMAL */}
+      {/* Resto de secciones */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <About />
         <Projects />
