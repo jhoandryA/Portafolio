@@ -16,39 +16,37 @@ export default function Hero(): JSX.Element {
             className="relative flex flex-col justify-center min-h-[90vh] w-full overflow-hidden"
             id="home"
         >
-            {/* Fondo con gradiente sutil */}
+            {/* Fondos decorativos invisibles */}
             <div className="absolute inset-0 -z-10 pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
                 <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-cyan-500/8 rounded-full blur-3xl" />
             </div>
 
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row items-center gap-10 justify-between py-20">
+            <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 flex flex-col md:flex-row items-center gap-10 justify-between py-20">
 
                 {/* TEXTO */}
                 <motion.div
                     variants={slideIn('left', 'tween', 0.2, 1)}
                     className="flex-1 min-w-0 flex flex-col gap-6"
                 >
-                    {/* Badge de disponibilidad */}
+                    {/* Badge disponibilidad */}
                     <div className="inline-flex items-center gap-2 w-fit px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10">
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                         <span className="text-emerald-400 text-sm font-medium">Disponible para proyectos</span>
                     </div>
 
-                    {/* Título principal */}
-                    <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+                    {/* Título — nowrap para que no se corte el nombre */}
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         Hola, soy{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 whitespace-nowrap">
                             Jhoandry Apaza
                         </span>
                     </h1>
 
-                    {/* Subtítulo */}
                     <h2 className="text-xl md:text-2xl font-medium text-slate-300">
                         Desarrollador de Software & Sistemas
                     </h2>
 
-                    {/* Descripción */}
                     <p className="text-base text-slate-400 leading-relaxed max-w-lg">
                         Desarrollo aplicaciones web modernas, escalables y funcionales,
                         enfocadas en brindar una excelente experiencia de usuario y alto
@@ -64,7 +62,6 @@ export default function Hero(): JSX.Element {
                         >
                             Ver proyectos
                         </Link>
-
                         <a
                             href="/CV_JHOANDRY.pdf"
                             download
@@ -72,7 +69,6 @@ export default function Hero(): JSX.Element {
                         >
                             Descargar CV
                         </a>
-
                         <a
                             href="https://wa.me/51928806831"
                             target="_blank"
@@ -108,14 +104,9 @@ export default function Hero(): JSX.Element {
                     className="flex-shrink-0 flex justify-center md:justify-end"
                 >
                     <div className="relative">
-                        {/* Anillos decorativos */}
                         <div className="absolute inset-0 rounded-full border border-blue-400/20 scale-110" />
                         <div className="absolute inset-0 rounded-full border border-blue-400/10 scale-125" />
-
-                        {/* Glow */}
                         <div className="absolute inset-0 rounded-full bg-blue-500/15 blur-2xl scale-125" />
-
-                        {/* Imagen */}
                         <Image
                             src="/Jhoandry.png"
                             alt="Foto de perfil de Jhoandry Apaza"
@@ -124,8 +115,6 @@ export default function Hero(): JSX.Element {
                             className="relative rounded-full object-cover ring-2 ring-blue-500/40"
                             priority
                         />
-
-                        {/* Badge flotante */}
                         <div className="absolute -bottom-2 -left-4 flex items-center gap-2 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 shadow-xl">
                             <FiLayers className="text-blue-400" size={16} />
                             <div>

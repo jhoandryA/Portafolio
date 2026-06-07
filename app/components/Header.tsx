@@ -21,7 +21,6 @@ export default function Header(): JSX.Element {
     useEffect(() => {
         const sections = navLinks.map(l => l.href)
         const observers: IntersectionObserver[] = []
-
         sections.forEach((id) => {
             const el = document.getElementById(id)
             if (!el) return
@@ -32,7 +31,6 @@ export default function Header(): JSX.Element {
             obs.observe(el)
             observers.push(obs)
         })
-
         return () => observers.forEach(o => o.disconnect())
     }, [])
 
@@ -60,15 +58,12 @@ export default function Header(): JSX.Element {
         >
             <nav className="max-w-7xl mx-auto flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8">
 
-                {/* LOGO */}
+                {/* LOGO — solo nombre, sin cuadro JA */}
                 <button
                     onClick={() => smoothScrollTo('home')}
-                    className="flex items-center gap-2.5 group"
+                    className="group"
                 >
-                    <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-sm group-hover:bg-blue-500 transition-colors">
-                        JA
-                    </div>
-                    <span className="text-white font-semibold text-sm tracking-tight hidden sm:block">
+                    <span className="text-white font-semibold text-sm tracking-tight">
                         Jhoandry<span className="text-blue-400"> Apaza</span>
                     </span>
                 </button>
@@ -82,9 +77,7 @@ export default function Header(): JSX.Element {
                                 <button
                                     onClick={() => handleNavClick(link.href)}
                                     className="relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
-                                    style={{
-                                        color: isActive ? '#fff' : '#94a3b8',
-                                    }}
+                                    style={{ color: isActive ? '#fff' : '#94a3b8' }}
                                 >
                                     {isActive && (
                                         <motion.span
@@ -102,7 +95,7 @@ export default function Header(): JSX.Element {
                     })}
                 </ul>
 
-                {/* BOTÓN CTA + MENÚ MOBILE */}
+                {/* CTA + MOBILE */}
                 <div className="flex items-center gap-3">
                     <button
                         onClick={() => smoothScrollTo('contact')}
@@ -156,7 +149,6 @@ export default function Header(): JSX.Element {
                                     </button>
                                 )
                             })}
-
                             <div className="mt-3 pt-3 border-t border-white/5">
                                 <button
                                     onClick={() => handleNavClick('contact')}
