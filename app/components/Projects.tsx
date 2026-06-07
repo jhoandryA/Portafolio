@@ -1,14 +1,13 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { fadeIn, textVariant } from '@/app/lib/animations'
 import { projects } from '@/app/lib/constants'
-import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import { FiGithub, FiExternalLink, FiX } from 'react-icons/fi'
 import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Projects(): JSX.Element {
-
     const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
     return (
@@ -19,79 +18,99 @@ export default function Projects(): JSX.Element {
             className="py-20"
             id="projects"
         >
-            <motion.div variants={textVariant()}>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-200">
+            {/* Encabezado */}
+            <motion.div variants={textVariant()} className="mb-12">
+                <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-2">
+                    Mi trabajo
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                     Proyectos
                 </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mb-8"></div>
-
-                <p className="text-gray-500 max-w-3xl mb-12">
-                    Estos son algunos de los proyectos que he desarrollado a lo largo de mi formación, en los cuales he aplicado buenas prácticas de desarrollo, diseño de bases de datos y construcción de aplicaciones web modernas. En cada proyecto busco optimizar el rendimiento, mantener un código limpio y estructurado, y ofrecer soluciones funcionales, escalables y orientadas a resolver necesidades reales.
+                <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 mb-6" />
+                <p className="text-slate-400 max-w-2xl leading-relaxed">
+                    Proyectos desarrollados durante mi formación, aplicando buenas prácticas,
+                    diseño de bases de datos y construcción de aplicaciones web modernas.
                 </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Grid de tarjetas */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.map((project, index) => (
                     <motion.div
                         key={project.name}
-                        variants={fadeIn('up', 'spring', index * 0.2, 0.75)}
-                        className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-purple-500 transition-colors shadow-sm"
+                        variants={fadeIn('up', 'spring', index * 0.15, 0.75)}
+                        className="group flex flex-col rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/60 hover:border-blue-500/40 hover:bg-slate-900 transition-all duration-300"
                     >
-                        {/* IMAGEN */}
+                        {/* Imagen */}
                         <div
-                            className="h-48 bg-gray-700 overflow-hidden cursor-pointer"
+                            className="relative h-44 overflow-hidden cursor-pointer bg-slate-800"
                             onClick={() => setSelectedImage(project.image)}
                         >
                             <Image
                                 src={project.image}
                                 alt={project.name}
                                 width={500}
-                                height={500}
-                                className="w-full h-full object-cover"
+                                height={300}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
+                            {/* Overlay al hover */}
+                            <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/20 transition-colors duration-300 flex items-center justify-center">
+                                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-medium text-white bg-black/50 px-3 py-1.5 rounded-full">
+                                    Ver imagen
+                                </span>
+                            </div>
+
+                            {/* Badge demo en vivo */}
+                            {project.liveUrl !== '#' && (
+                                <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-emerald-500/90 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                                    Demo
+                                </div>
+                            )}
                         </div>
 
-                        {/* CONTENIDO */}
-                        <div className="p-6">
-                            <div className="flex justify-between items-start mb-4">
-                                <h3 className="text-xl font-semibold text-gray-200">
+                        {/* Contenido */}
+                        <div className="flex flex-col flex-1 p-5 gap-3">
+                            {/* Título + iconos */}
+                            <div className="flex justify-between items-start gap-2">
+                                <h3 className="text-base font-semibold text-white leading-snug">
                                     {project.name}
                                 </h3>
-
-                                <div className="flex gap-3">
-                                    {/* GitHub */}
+                                <div className="flex gap-2 flex-shrink-0">
                                     <a
                                         href={project.githubUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-gray-500 hover:text-purple-500 transition-colors"
+                                        className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-all"
+                                        title="Ver código"
                                     >
-                                        <FiGithub className="w-5 h-5" />
+                                        <FiGithub size={15} />
                                     </a>
-
-                                    {/* Demo */}
                                     {project.liveUrl !== '#' && (
                                         <a
                                             href={project.liveUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-gray-500 hover:text-blue-500 transition-colors"
+                                            className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-blue-400 hover:border-blue-500/50 transition-all"
+                                            title="Ver demo"
                                         >
-                                            <FiExternalLink className="w-5 h-5" />
+                                            <FiExternalLink size={15} />
                                         </a>
                                     )}
                                 </div>
                             </div>
 
-                            <p className="text-gray-500 mb-4">
+                            {/* Descripción */}
+                            <p className="text-sm text-slate-400 leading-relaxed flex-1">
                                 {project.description}
                             </p>
 
-                            <div className="flex flex-wrap gap-2">
+                            {/* Tags de tecnologías */}
+                            <div className="flex flex-wrap gap-1.5 pt-1">
                                 {project.technologies.map((tech) => (
                                     <span
                                         key={tech}
-                                        className="px-3 py-1 text-xs bg-gray-700 rounded-full text-gray-400 border border-gray-600"
+                                        className="px-2.5 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-full"
                                     >
                                         {tech}
                                     </span>
@@ -102,21 +121,40 @@ export default function Projects(): JSX.Element {
                 ))}
             </div>
 
-            {/* 🔥 MODAL IMAGEN */}
-            {selectedImage && (
-                <div
-                    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-                    onClick={() => setSelectedImage(null)}
-                >
-                    <Image
-                        src={selectedImage}
-                        alt="preview"
-                        width={800}
-                        height={800}
-                        className="max-w-[90%] max-h-[90%] object-contain rounded-lg scale-95 hover:scale-100 transition-transform duration-300"
-                    />
-                </div>
-            )}
+            {/* Modal imagen */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <button
+                            className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-slate-300 hover:text-white transition-colors"
+                            onClick={() => setSelectedImage(null)}
+                        >
+                            <FiX size={18} />
+                        </button>
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: 'spring', damping: 25 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <Image
+                                src={selectedImage}
+                                alt="preview"
+                                width={900}
+                                height={600}
+                                className="max-w-[90vw] max-h-[85vh] object-contain rounded-xl"
+                            />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.section>
     )
 }
