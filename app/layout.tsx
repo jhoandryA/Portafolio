@@ -21,8 +21,7 @@ export default function RootLayout({
     return (
         <html lang="es" className="scroll-smooth">
             <body
-                className={`${poppins.className} text-gray-300`}
-                style={{ background: '#070c18' }}
+                className={`${poppins.className} bg-black text-gray-300 antialiased`}
             >
                 {children}
             </body>
