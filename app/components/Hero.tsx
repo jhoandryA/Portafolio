@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { slideIn, staggerContainer } from '@/app/lib/animations'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FiLayers } from 'react-icons/fi'
 
 export default function Hero(): JSX.Element {
     return (
@@ -12,21 +13,21 @@ export default function Hero(): JSX.Element {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="relative flex flex-col justify-center min-h-[90vh] px-4 sm:px-6 lg:px-8 overflow-hidden"
+            className="relative flex flex-col justify-center min-h-[90vh] w-full overflow-hidden"
             id="home"
         >
             {/* Fondo con gradiente sutil */}
-            <div className="absolute inset-0 -z-10">
+            <div className="absolute inset-0 -z-10 pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
                 <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-cyan-500/8 rounded-full blur-3xl" />
             </div>
 
-            <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-12 justify-between py-20">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row items-center gap-10 justify-between py-20">
 
                 {/* TEXTO */}
                 <motion.div
                     variants={slideIn('left', 'tween', 0.2, 1)}
-                    className="md:w-1/2 flex flex-col gap-6"
+                    className="flex-1 min-w-0 flex flex-col gap-6"
                 >
                     {/* Badge de disponibilidad */}
                     <div className="inline-flex items-center gap-2 w-fit px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10">
@@ -55,17 +56,15 @@ export default function Hero(): JSX.Element {
                         de desarrollo.
                     </p>
 
-                    {/* BOTONES con jerarquía clara */}
+                    {/* BOTONES */}
                     <div className="flex flex-wrap gap-3 pt-2">
-                        {/* Primario */}
                         <Link
                             href="#projects"
-                            className="px-6 py-3 rounded-full font-semibold text-white bg-blue-600 hover:bg-blue-500 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-blue-600/30"
+                            className="px-6 py-3 rounded-full font-semibold text-white bg-blue-600 hover:bg-blue-500 transition-all duration-200 hover:scale-105"
                         >
                             Ver proyectos
                         </Link>
 
-                        {/* Secundario */}
                         <a
                             href="/CV_JHOANDRY.pdf"
                             download
@@ -74,7 +73,6 @@ export default function Hero(): JSX.Element {
                             Descargar CV
                         </a>
 
-                        {/* Terciario */}
                         <a
                             href="https://wa.me/51928806831"
                             target="_blank"
@@ -85,7 +83,7 @@ export default function Hero(): JSX.Element {
                         </a>
                     </div>
 
-                    {/* Stats rápidos */}
+                    {/* Stats */}
                     <div className="flex gap-8 pt-4 border-t border-slate-800">
                         <div>
                             <p className="text-2xl font-bold text-white">3+</p>
@@ -107,29 +105,29 @@ export default function Hero(): JSX.Element {
                 {/* IMAGEN */}
                 <motion.div
                     variants={slideIn('right', 'tween', 0.2, 1)}
-                    className="flex justify-center md:justify-end"
+                    className="flex-shrink-0 flex justify-center md:justify-end"
                 >
                     <div className="relative">
-                        {/* Anillo exterior decorativo */}
+                        {/* Anillos decorativos */}
                         <div className="absolute inset-0 rounded-full border border-blue-400/20 scale-110" />
                         <div className="absolute inset-0 rounded-full border border-blue-400/10 scale-125" />
 
-                        {/* Glow de fondo */}
+                        {/* Glow */}
                         <div className="absolute inset-0 rounded-full bg-blue-500/15 blur-2xl scale-125" />
 
                         {/* Imagen */}
                         <Image
                             src="/Jhoandry.png"
                             alt="Foto de perfil de Jhoandry Apaza"
-                            width={340}
-                            height={340}
+                            width={320}
+                            height={320}
                             className="relative rounded-full object-cover ring-2 ring-blue-500/40"
                             priority
                         />
 
-                        {/* Badge flotante — stack principal */}
+                        {/* Badge flotante */}
                         <div className="absolute -bottom-2 -left-4 flex items-center gap-2 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 shadow-xl">
-                            <span className="text-lg">⚡</span>
+                            <FiLayers className="text-blue-400" size={16} />
                             <div>
                                 <p className="text-xs font-semibold text-white leading-none">Full Stack</p>
                                 <p className="text-xs text-slate-400 leading-none mt-0.5">Java · Node · React</p>
@@ -137,6 +135,7 @@ export default function Hero(): JSX.Element {
                         </div>
                     </div>
                 </motion.div>
+
             </div>
         </motion.section>
     )
