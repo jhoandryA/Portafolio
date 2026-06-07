@@ -48,7 +48,7 @@ export default function About() {
                     <div className="mt-4 grid grid-cols-2 gap-4">
                         <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/50">
                             <p className="text-xs text-slate-500 mb-1">Ubicación</p>
-                            <p className="text-sm font-medium text-white">Perú</p>
+                            <p className="text-sm font-medium text-white">Lima - Perú</p>
                         </div>
                         <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/50">
                             <p className="text-xs text-slate-500 mb-1">Disponibilidad</p>
