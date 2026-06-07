@@ -9,17 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gray: {
-          950: '#f0f2fa',
-          900: '#f8f9ff',
-          800: '#e8ebf5',
-          700: '#d0d5e8',
-          600: '#9199bb',
-          500: '#6b74a0',
-          400: '#4a5380',
-          300: '#2d3660',
-          200: '#1a2040',
-          100: '#0f1228',
+        // Paleta oscura principal del portafolio
+        brand: {
+          bg:      '#0a0e1a',   // fondo principal
+          surface: '#0f1628',   // fondo de secciones alternadas
+          card:    '#111827',   // fondo de tarjetas
+          border:  '#1e2d4a',   // bordes sutiles
+          blue:    '#3b8aee',   // acento azul primario
+          cyan:    '#22d3ee',   // acento secundario
+          emerald: '#34d399',   // disponibilidad / WhatsApp
         },
       },
       backgroundImage: {
@@ -27,8 +25,12 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      animation: {
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
