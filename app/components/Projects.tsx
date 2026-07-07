@@ -28,7 +28,7 @@ export default function Projects(): JSX.Element {
                 </h2>
                 <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 mb-6" />
                 <p className="text-slate-400 max-w-2xl leading-relaxed">
-                    Proyectos desarrollados durante mi formación, aplicando buenas prácticas,
+                    Sitios y sistemas que he desarrollado, aplicando buenas prácticas,
                     diseño de bases de datos y construcción de aplicaciones web modernas.
                 </p>
             </motion.div>
@@ -41,32 +41,51 @@ export default function Projects(): JSX.Element {
                         variants={fadeIn('up', 'spring', index * 0.15, 0.75)}
                         className="group flex flex-col rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/60 hover:border-blue-500/40 hover:bg-slate-900 transition-all duration-300"
                     >
-                        {/* Imagen */}
-                        <div
-                            className="relative h-44 overflow-hidden cursor-pointer bg-slate-800"
-                            onClick={() => setSelectedImage(project.image)}
-                        >
-                            <Image
-                                src={project.image}
-                                alt={project.name}
-                                width={500}
-                                height={300}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                            {/* Overlay al hover */}
-                            <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/20 transition-colors duration-300 flex items-center justify-center">
-                                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-medium text-white bg-black/50 px-3 py-1.5 rounded-full">
-                                    Ver imagen
-                                </span>
+                        {/* Mockup de navegador + imagen */}
+                        <div className="relative overflow-hidden">
+                            {/* Barra superior estilo navegador */}
+                            <div className="flex items-center gap-2 px-3 py-2 bg-slate-800/80 border-b border-slate-700/60">
+                                <div className="flex gap-1.5">
+                                    <span className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
+                                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/70" />
+                                    <span className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
+                                </div>
+                                <div className="flex-1 min-w-0 mx-2">
+                                    <div className="bg-slate-900/70 rounded-md px-2.5 py-1 text-center">
+                                        <span className="text-[11px] text-slate-400 truncate block">
+                                            {project.url || 'proyecto local'}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
 
-                            {/* Badge demo en vivo */}
-                            {project.liveUrl !== '#' && (
-                                <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-emerald-500/90 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                                    Demo
+                            {/* Imagen */}
+                            <div
+                                className="relative h-44 overflow-hidden cursor-pointer bg-slate-800"
+                                onClick={() => setSelectedImage(project.image)}
+                            >
+                                <Image
+                                    src={project.image}
+                                    alt={project.name}
+                                    width={500}
+                                    height={300}
+                                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                />
+                                {/* Overlay al hover */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <p className="text-xs text-slate-200 leading-relaxed">
+                                        {project.description}
+                                    </p>
                                 </div>
-                            )}
+
+                                {/* Badge demo en vivo */}
+                                {project.liveUrl !== '#' && (
+                                    <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-emerald-500/90 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                                        En vivo
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
                         {/* Contenido */}
@@ -77,22 +96,24 @@ export default function Projects(): JSX.Element {
                                     {project.name}
                                 </h3>
                                 <div className="flex gap-2 flex-shrink-0">
-                                    <a
-                                        href={project.githubUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-all"
-                                        title="Ver código"
-                                    >
-                                        <FiGithub size={15} />
-                                    </a>
+                                    {project.githubUrl && (
+                                        <a
+                                            href={project.githubUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-all"
+                                            title="Ver código"
+                                        >
+                                            <FiGithub size={15} />
+                                        </a>
+                                    )}
                                     {project.liveUrl !== '#' && (
                                         <a
                                             href={project.liveUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="w-8 h-8 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:text-blue-400 hover:border-blue-500/50 transition-all"
-                                            title="Ver demo"
+                                            title="Ver sitio en vivo"
                                         >
                                             <FiExternalLink size={15} />
                                         </a>

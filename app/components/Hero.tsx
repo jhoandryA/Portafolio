@@ -44,7 +44,7 @@ export default function Hero(): JSX.Element {
                     </h1>
 
                     <h2 className="text-xl md:text-2xl font-medium text-slate-300">
-                        Desarrollador de Software & Sistemas
+                        Desarrollador de Software
                     </h2>
 
                     <p className="text-base text-slate-400 leading-relaxed max-w-lg">
@@ -82,18 +82,18 @@ export default function Hero(): JSX.Element {
                     {/* Stats */}
                     <div className="flex gap-8 pt-4 border-t border-slate-800">
                         <div>
-                            <p className="text-2xl font-bold text-white">3+</p>
+                            <p className="text-2xl font-bold text-white">6+</p>
                             <p className="text-xs text-slate-500 mt-0.5">Proyectos</p>
                         </div>
                         <div className="w-px bg-slate-800" />
                         <div>
-                            <p className="text-2xl font-bold text-white">8+</p>
+                            <p className="text-2xl font-bold text-white">10+</p>
                             <p className="text-xs text-slate-500 mt-0.5">Tecnologías</p>
                         </div>
                         <div className="w-px bg-slate-800" />
                         <div>
                             <p className="text-2xl font-bold text-white">100%</p>
-                            <p className="text-xs text-slate-500 mt-0.5">Compromiso</p>
+                            <p className="text-xs text-slate-500 mt-0.5">Responsive</p>
                         </div>
                     </div>
                 </motion.div>
@@ -119,7 +119,7 @@ export default function Hero(): JSX.Element {
                             <FiLayers className="text-blue-400" size={16} />
                             <div>
                                 <p className="text-xs font-semibold text-white leading-none">Full Stack</p>
-                                <p className="text-xs text-slate-400 leading-none mt-0.5">Java · Node · React</p>
+                                <p className="text-xs text-slate-400 leading-none mt-0.5">Java · Node · WordPress</p>
                             </div>
                         </div>
                     </div>

@@ -32,12 +32,13 @@ export default function About() {
                     className="md:w-1/2 flex flex-col gap-4"
                 >
                     <p className="text-slate-300 leading-relaxed">
-                        Soy estudiante de Desarrollo de Software y Sistemas, con interés en la creación
-                        de aplicaciones web modernas y soluciones tecnológicas eficientes.
+                        Desarrollador de software enfocado en construir productos funcionales,
+                        rápidos y responsivos, trabajando de forma independiente y en equipo.
                     </p>
                     <p className="text-slate-300 leading-relaxed">
-                        Actualmente desarrollo proyectos utilizando tecnologías como JavaScript, React,
-                        Next.js y bases de datos, fortaleciendo mis habilidades tanto en frontend como backend.
+                        Trabajo con tecnologías como JavaScript, React, Next.js, Java y bases de
+                        datos, cubriendo tanto frontend como backend, además de desarrollo de
+                        sitios web con WordPress.
                     </p>
                     <p className="text-slate-300 leading-relaxed">
                         Me apasiona resolver problemas y construir sistemas funcionales
@@ -52,7 +53,7 @@ export default function About() {
                         </div>
                         <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/50">
                             <p className="text-xs text-slate-500 mb-1">Disponibilidad</p>
-                            <p className="text-sm font-medium text-emerald-400">Freelance / Prácticas</p>
+                            <p className="text-sm font-medium text-emerald-400">Freelance</p>
                         </div>
                         <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/50">
                             <p className="text-xs text-slate-500 mb-1">Enfoque</p>
@@ -60,7 +61,7 @@ export default function About() {
                         </div>
                         <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/50">
                             <p className="text-xs text-slate-500 mb-1">Estado</p>
-                            <p className="text-sm font-medium text-blue-400">Estudiante activo</p>
+                            <p className="text-sm font-medium text-blue-400">Activo</p>
                         </div>
                     </div>
                 </motion.div>

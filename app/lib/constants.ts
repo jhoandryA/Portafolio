@@ -4,7 +4,7 @@ import {
     FiMail,
     FiLayers,
     FiDatabase,
-    FiCpu, 
+    FiCpu,
     FiCode
 } from 'react-icons/fi'
 
@@ -12,7 +12,10 @@ import {
     FaJava,
     FaNodeJs,
     FaPython,
-    FaPhp
+    FaPhp,
+    FaWordpress,
+    FaJs,
+    FaCss3Alt
 } from 'react-icons/fa'
 
 import {
@@ -37,13 +40,14 @@ export const socialLinks = [
     { name: 'Email', url: 'mailto:jhoandryoficial@gmail.com', icon: FiMail },
 ]
 
-// 🔹 SKILLS (SIMPLIFICADO)
+// 🔹 SKILLS
 export const skills = [
     // Lenguajes
     { name: 'Java', icon: FaJava },
     { name: 'PHP', icon: FaPhp },
     { name: 'Python', icon: FaPython },
     { name: 'TypeScript', icon: SiTypescript },
+    { name: 'JavaScript', icon: FaJs },
 
     // Backend
     { name: 'Node.js', icon: FaNodeJs },
@@ -51,14 +55,46 @@ export const skills = [
     { name: 'Next.js', icon: SiNextdotjs },
 
     // Base de datos
-    { name: 'SQL', icon: FiDatabase }
+    { name: 'SQL', icon: FiDatabase },
+
+    // Web / CMS
+    { name: 'WordPress', icon: FaWordpress },
+    { name: 'CSS', icon: FaCss3Alt },
 ]
 
 // 🔹 PROYECTOS
 export const projects = [
     {
+        name: 'FortexMan360',
+        image: '/images/fortexman360.jpg',
+        url: 'fortexman360.com.pe',
+        description: 'Desarrollé el sitio web para empresa de seguridad privada, construyendo secciones clave del sitio y asegurando una experiencia completamente responsive en todos los dispositivos.',
+        technologies: ['WordPress', 'JS', 'CSS'],
+        githubUrl: null,
+        liveUrl: 'https://fortexman360.com.pe/'
+    },
+    {
+        name: 'Shiyan Ryans',
+        image: '/images/shiyan.jpg',
+        url: 'shiyan.pe',
+        description: 'Lideré el desarrollo completo de este e-commerce de repuestos importados, desde el catálogo filtrable por marca y categoría hasta el flujo de cotización vía WhatsApp.',
+        technologies: ['WordPress', 'JS', 'CSS'],
+        githubUrl: null,
+        liveUrl: 'https://shiyan.pe/'
+    },
+    {
+        name: 'Cody Motors',
+        image: '/images/codymotors.jpg',
+        url: 'codymotors.pe',
+        description: 'Desarrollé la página principal de esta tienda de repuestos automotrices, incluyendo hero, categorías destacadas y secciones de confianza para el usuario.',
+        technologies: ['WordPress', 'JS', 'CSS'],
+        githubUrl: null,
+        liveUrl: 'https://codymotors.pe/'
+    },
+    {
         name: 'PostulaPe - Sistema de Reclutamiento',
         image: '/images/postulape.jpeg',
+        url: null,
         description: 'Sistema backend para la gestión de procesos de reclutamiento que permite administrar postulantes, convocatorias y etapas de selección, optimizando el flujo de contratación en recursos humanos.',
         technologies: ['Java', 'Spring Boot', 'MySQL', 'REST API'],
         githubUrl: 'https://github.com/jhoandryA/postulape_backend',
@@ -67,6 +103,7 @@ export const projects = [
     {
         name: 'Sistema Académico Universitario',
         image: '/images/universidad.jpeg',
+        url: null,
         description: 'Backend para la gestión académica de una universidad, enfocado en un diseño relacional robusto con integridad referencial, auditoría y control de matrículas mediante reglas en base de datos.',
         technologies: ['Node.js', 'MySQL', 'API REST'],
         githubUrl: 'https://github.com/jhoandryA/universidad_backend',
@@ -75,6 +112,7 @@ export const projects = [
     {
         name: 'EquilibrioS - Finanzas Personales',
         image: '/images/equilibrios.jpeg',
+        url: 'jhoandrya.github.io/EquilibrioS',
         description: 'Aplicación web para gestionar ingresos y gastos mensuales con visualización gráfica, control de presupuesto y almacenamiento local sin necesidad de backend.',
         technologies: ['JavaScript', 'HTML', 'CSS', 'LocalStorage'],
         githubUrl: 'https://github.com/jhoandryA/EquilibrioS',
@@ -103,8 +141,6 @@ export const services = [
         description: 'Diseño, modelado y gestión de bases de datos relacionales con SQL Server, MySQL y PostgreSQL.',
         icon: FiDatabase
     },
-
-    // 🔥 NUEVOS (los que te agrego)
     {
         title: 'Desarrollo de Sistemas',
         description: 'Creación de sistemas completos de gestión (ventas, reclutamiento, académico) con arquitectura cliente-servidor.',
