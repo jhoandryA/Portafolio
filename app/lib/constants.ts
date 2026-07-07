@@ -78,7 +78,7 @@ export const projects = [
         image: '/images/shiyan.jpg',
         url: 'shiyan.pe',
         description: 'Lideré el desarrollo completo de este e-commerce de repuestos importados, desde el catálogo filtrable por marca y categoría hasta el flujo de cotización vía WhatsApp.',
-        technologies: ['WordPress', 'JS', 'CSS'],
+        technologies: ['WordPress', 'WooCommerce', 'JS', 'CSS'],
         githubUrl: null,
         liveUrl: 'https://shiyan.pe/'
     },
@@ -87,7 +87,7 @@ export const projects = [
         image: '/images/codymotors.jpg',
         url: 'codymotors.pe',
         description: 'Desarrollé la página principal de esta tienda de repuestos automotrices, incluyendo hero, categorías destacadas y secciones de confianza para el usuario.',
-        technologies: ['WordPress', 'JS', 'CSS'],
+        technologies: ['WordPress', 'WooCommerce', 'JS', 'CSS'],
         githubUrl: null,
         liveUrl: 'https://codymotors.pe/'
     },
