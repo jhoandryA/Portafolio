@@ -66,7 +66,7 @@ export const skills = [
 export const projects = [
     {
         name: 'FortexMan360',
-        image: '/images/fortexman360.jpg',
+        image: '/images/fortexman360.png',
         url: 'fortexman360.com.pe',
         description: 'Desarrollé el sitio web para empresa de seguridad privada, construyendo secciones clave del sitio y asegurando una experiencia completamente responsive en todos los dispositivos.',
         technologies: ['WordPress', 'JS', 'CSS'],
@@ -75,7 +75,7 @@ export const projects = [
     },
     {
         name: 'Shiyan Ryans',
-        image: '/images/shiyan.jpg',
+        image: '/images/shiyan.png',
         url: 'shiyan.pe',
         description: 'Lideré el desarrollo completo de este e-commerce de repuestos importados, desde el catálogo filtrable por marca y categoría hasta el flujo de cotización vía WhatsApp.',
         technologies: ['WordPress', 'WooCommerce', 'JS', 'CSS'],
@@ -84,7 +84,7 @@ export const projects = [
     },
     {
         name: 'Cody Motors',
-        image: '/images/codymotors.jpg',
+        image: '/images/codymotors.png',
         url: 'codymotors.pe',
         description: 'Desarrollé la página principal de esta tienda de repuestos automotrices, incluyendo hero, categorías destacadas y secciones de confianza para el usuario.',
         technologies: ['WordPress', 'WooCommerce', 'JS', 'CSS'],
