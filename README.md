@@ -1,58 +1,26 @@
-# 👨🏻‍💻 Web Developer Portfolio
+# 👨🏻‍💻 Portafolio Web - Jhoandry Apaza
 
-A clean, high-performance portfolio template built with Next.js, Tailwind CSS, and Framer Motion. Designed for developers to showcase projects with smooth animations, responsive layouts, and zero setup headaches.
+Bienvenido a mi portafolio personal. Aquí encontrarás algunos de los proyectos que he desarrollado utilizando tecnologías modernas para el desarrollo web, así como información sobre mi experiencia, habilidades y formas de contacto.
 
-![Web Dev Portfolio Screenshot](./public/images/screenshot.png)
+## 🌐 Demo
 
-Live Demo: [web-dev-portfolio-template.vercel.app](https://web-dev-portfolio-template.vercel.app/)
+[🔗 https://TU-USUARIO.github.io/TU-REPOSITORIO/](https://jhoandryportafolio.vercel.app/)
+<!-- O tu enlace de Vercel si lo desplegaste allí -->
 
----
+## ✨ Características
 
-## ✨ Features
+- 🎨 Diseño moderno y responsivo.
+- ⚡ Desarrollado con Next.js y TypeScript.
+- 💻 Interfaz construida con Tailwind CSS.
+- ✨ Animaciones fluidas con Framer Motion.
+- 📱 Compatible con dispositivos móviles, tablets y escritorio.
+- 🚀 Optimizado para un alto rendimiento.
 
-- 📌 One-click customization – Swap in your details (projects, skills, bio) in minutes
-- 🎨 Tailwind-powered – Easily tweak colors, fonts, and layouts
-- ✨ Silky animations – Page transitions and hover effects with Framer Motion
-- 📱  Fully responsive – Works flawlessly on mobile, tablet, and desktop
-- ⚡ Blazing fast – Next.js static generation for optimal performance
+## 🛠️ Tecnologías
 
----
-
-## 🚀 Tech Stack
-
-- **Framework:** [Next.js](https://nextjs.org/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/)
-- **Deployment:** [Vercel](https://vercel.com/)
-
----
-
-## 📦 Installation
-
-```bash
-git clone https://github.com/Alirazahaider/web-dev-portfolio
-```
-
-```bash
-cd web-dev-portfolio
-```
-
-```bash
-npm install
-```
-
-```bash
-npm run dev
-```
-
-## 💌 Get In Touch
-
-Thank you for checking out this project! If you have any questions, suggestions, would like to collaborate, or need my development services:
-
-[![Email](https://img.shields.io/badge/-Email-0e5255?style=for-the-badge&logo=gmail&logoColor=white)](mailto:alicodespace@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0e5255?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alirazaweb)
-[![Portfolio](https://img.shields.io/badge/-Portfolio-0e5255?style=for-the-badge&logo=google-chrome&logoColor=white)](https://alicodez.vercel.app/)
-
-⭐ Support the project by starring the repository!
-[![GitHub stars](https://img.shields.io/github/stars/Alirazahaider/web-dev-portfolio?style=social)](https://github.com/Alirazahaider/web-dev-portfolio)
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Git & GitHub
+- Vercel
