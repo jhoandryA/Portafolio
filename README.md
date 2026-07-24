@@ -3,9 +3,7 @@
 Bienvenido a mi portafolio personal. Aquí encontrarás algunos de los proyectos que he desarrollado utilizando tecnologías modernas para el desarrollo web, así como información sobre mi experiencia, habilidades y formas de contacto.
 
 ## 🌐 Demo
-
-[🔗 https://TU-USUARIO.github.io/TU-REPOSITORIO/](https://jhoandryportafolio.vercel.app/)
-<!-- O tu enlace de Vercel si lo desplegaste allí -->
+ https://jhoandryportafolio.vercel.app/
 
 ## ✨ Características
 
