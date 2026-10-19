@@ -136,7 +136,7 @@ export const certificates = [
         name: 'WordPress para Desarrollo Web',
         issuer: 'Consigue Ventas',
         date: 'Junio 2026',
-        pdfUrl: '/certificates/certificado-wordpress.pdf',
+        pdfUrl: '/certificates/CertificadoWordpress.pdf',
         icon: FiAward
     },
     {
