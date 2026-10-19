@@ -37,7 +37,7 @@ export const navLinks = [
 // 🔹 REDES
 export const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/jhoandryA', icon: FiGithub },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jhoandry-apaza-61b852357/', icon: FiLinkedin },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jhoandry-apaza-sandagorda-61b852357/', icon: FiLinkedin },
     { name: 'Email', url: 'mailto:jhoandryoficial@gmail.com', icon: FiMail },
 ]
 
