@@ -1,39 +1,37 @@
-import Header from '@/app/components/Header'
-import Hero from '@/app/components/Hero'
-import About from '@/app/components/About'
-import Projects from '@/app/components/Projects'
-import Services from '@/app/components/Services'
-import CTA from '@/app/components/CTA'
-import Footer from '@/app/components/Footer'
-import StarBackground from '@/app/components/StarBackground'
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Services from "./components/Services";
+import Projects from "./components/Projects";
+import TechStack from "./components/TechStack";
+import Certificates from "./components/Certificates";
+import CTA from "./components/CTA";
+import Footer from "./components/Footer";
+import DeveloperScene from "./components/DeveloperScene";
+import SideRail from "./components/SideRail";
+import CustomCursor from "./components/CustomCursor";
+import Intro from "./components/Intro";
 
 export default function Home() {
   return (
-    <main>
-      {/* Sección con estrellas — fade out al fondo */}
-      <div className="relative overflow-hidden">
-        <StarBackground />
-        <Header />
-        <Hero />
-
-        {/* Gradiente de transición invisible hacia el fondo del body */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-          style={{
-            background: 'linear-gradient(to bottom, transparent, #0a0e1a)'
-          }}
-        />
-      </div>
-
-      {/* Resto de secciones — mismo color de fondo */}
-      <div style={{ background: '#0a0e1a' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+      <Intro />
+      <Header />
+      <SideRail />
+      <CustomCursor />
+      <main id="main-content">
+        <div className="story-section" id="story">
+          <DeveloperScene />
+          <Hero />
           <About />
-          <Projects />
           <Services />
-          <CTA />
-          <Footer />
         </div>
-      </div>
-    </main>
-  )
+        <Projects />
+        <Certificates />
+        <TechStack />
+        <CTA />
+      </main>
+      <Footer />
+    </>
+  );
 }
