@@ -1,5 +1,37 @@
 import { test, expect } from "@playwright/test";
 
+test("el personaje contiene un rostro con volumen real y sus partes animables", async ({
+  request,
+}) => {
+  const response = await request.get("/models/jhoandry-developer.glb");
+  expect(response.status()).toBe(200);
+  const binary = await response.body();
+  expect(binary.toString("ascii", 0, 4)).toBe("glTF");
+  expect(binary.readUInt32LE(4)).toBe(2);
+  const jsonSize = binary.readUInt32LE(12);
+  const model = JSON.parse(binary.toString("utf8", 20, 20 + jsonSize));
+  for (const name of [
+    "HeadPivot",
+    "EyeLeft",
+    "EyeRight",
+    "HandLeft",
+    "HandRight",
+    "Workstation",
+  ]) {
+    expect(
+      model.nodes.some((node: { name: string }) => node.name === name),
+    ).toBe(true);
+  }
+  const face = model.nodes.find(
+    (node: { name: string }) => node.name === "Sculpted oval face",
+  );
+  expect(face).toBeTruthy();
+  const positions =
+    model.accessors[model.meshes[face.mesh].primitives[0].attributes.POSITION];
+  // Protect against replacing the character with another textured image plane.
+  expect(positions.max[2] - positions.min[2]).toBeGreaterThan(0.8);
+});
+
 test("la portada tiene escena propia, navegación y documentos reales", async ({
   page,
   request,

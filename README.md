@@ -1,6 +1,6 @@
 # Jhoandry Apaza · Desarrollo con propósito
 
-Portafolio personal en español, desde Lima, Perú. Desarrollado con Next.js 16, React y TypeScript, con un retrato estilizado basado en su fotografía, presentado en un relieve con paralaje mediante Three.js.
+Portafolio personal en español, desde Lima, Perú. Desarrollado con Next.js 16, React y TypeScript, con un personaje tridimensional original modelado en Blender a partir de su fotografía y animado con Three.js.
 
 ## Desarrollo
 
@@ -51,4 +51,6 @@ Los textos, proyectos, enlaces y datos de contacto están centralizados en `app/
 
 La guía del laboratorio responde a preguntas frecuentes a partir del contenido del portafolio; no usa una API generativa ni requiere nuevas credenciales. El ajedrez utiliza `chess.js` para las reglas y un motor de práctica propio en un Web Worker. No se le atribuye una puntuación ELO.
 
-El retrato se generó a partir de la foto de Jhoandry y se presenta en un relieve de poca profundidad con iluminación precalculada: no es una reconstrucción facial ni un modelo humano completo. La escena evita geometría facial genérica y conserva un paralaje moderado. En móvil y tablet, cuando se solicita movimiento reducido o si WebGL no está disponible, se conserva una presentación con retrato. El contenido aparece directamente, sin pantalla de carga. Lenis suaviza la rueda y las anclas en escritorio; las pantallas táctiles y el movimiento reducido conservan el desplazamiento nativo. Los proyectos pasan de una galería horizontal a una distribución vertical según el espacio disponible y la preferencia de movimiento.
+El personaje usa geometría volumétrica GLB: rostro, ojos, cabello, cuerpo, manos, ropa y escritorio. La cabeza sigue al puntero, los ojos parpadean y las manos se animan al revelar la pose de trabajo con el desplazamiento. No utiliza una fotografía como superficie del rostro. El código de modelado reproducible está en `scripts/build-character.py`; se ejecuta con Blender 4.3 o posterior. El mismo modelo genera el retrato de reserva para móvil, tablet, movimiento reducido o ausencia de WebGL.
+
+El contenido aparece directamente, sin pantalla de carga. Lenis suaviza la rueda y las anclas en escritorio; las pantallas táctiles y el movimiento reducido conservan el desplazamiento nativo. Los proyectos pasan de una galería horizontal a una distribución vertical según el espacio disponible y la preferencia de movimiento.

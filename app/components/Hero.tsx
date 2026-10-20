@@ -27,10 +27,10 @@ export default function Hero() {
         <div className="hero-portrait">
           <div className="portrait-halo" />
           <Image
-            src="/images/jhoandry-avatar.webp"
-            alt="Retrato de Jhoandry Apaza inspirado en su fotografía"
-            width={1150}
-            height={1367}
+            src="/images/jhoandry-character.webp"
+            alt="Personaje 3D de Jhoandry Apaza, basado en su fotografía"
+            width={760}
+            height={920}
             sizes="(max-width: 600px) 90vw, (max-width: 1100px) 400px, 460px"
             priority
           />
