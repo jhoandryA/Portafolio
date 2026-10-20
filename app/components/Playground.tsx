@@ -81,7 +81,7 @@ function answer(question: string): Message {
   if (/experien|estudi|sise|formacion|atento|trayector|cv|curriculum/.test(q))
     return {
       role: "guide",
-      text: "Se forma en Desarrollo de Sistemas de Información y Software en el Instituto SISE. Su recorrido incluye administración de datos y soporte técnico en ATENTO, además de proyectos web y sistemas. Tiene certificaciones en fundamentos web y WordPress.",
+      text: "Estudia Desarrollo de Sistemas de Información y Software en el Instituto SISE. Complementa su formación con dos certificaciones: fundamentos del desarrollo web moderno y desarrollo con WordPress.",
       link: { href: profile.cv, label: "Ver su currículum" },
     };
   if (/peru|lima|donde|ubic|pais/.test(q))
@@ -303,9 +303,6 @@ export default function Playground() {
       </Link>
       <div className="playground-intro">
         <div>
-          <span className="section-index">
-            UN PEQUEÑO ESPACIO PARA LA CURIOSIDAD
-          </span>
           <h1>
             Un movimiento
             <br />

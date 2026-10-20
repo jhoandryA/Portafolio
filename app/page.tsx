@@ -2,7 +2,6 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
-import Career from "./components/Career";
 import Projects from "./components/Projects";
 import TechStack from "./components/TechStack";
 import Certificates from "./components/Certificates";
@@ -11,12 +10,10 @@ import Footer from "./components/Footer";
 import DeveloperScene from "./components/DeveloperScene";
 import SideRail from "./components/SideRail";
 import CustomCursor from "./components/CustomCursor";
-import Intro from "./components/Intro";
 
 export default function Home() {
   return (
     <>
-      <Intro />
       <Header />
       <SideRail />
       <CustomCursor />
@@ -27,10 +24,9 @@ export default function Home() {
           <About />
           <Services />
         </div>
-        <Career />
         <Projects />
-        <TechStack />
         <Certificates />
+        <TechStack />
         <CTA />
       </main>
       <Footer />

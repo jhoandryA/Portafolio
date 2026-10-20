@@ -47,13 +47,6 @@ export default function CTA() {
       aria-labelledby="contact-title"
     >
       <Reveal className="contact-intro">
-        <span className="section-index">
-          07 / EL SIGUIENTE PROYECTO PUEDE SER EL TUYO
-        </span>
-        <span className="availability contact-availability">
-          <span className="status-dot" /> Disponible para proyectos y
-          oportunidades
-        </span>
         <h2 id="contact-title">
           HAGAMOS
           <br />
@@ -64,6 +57,9 @@ export default function CTA() {
           <br />
           Todo empieza con una conversación.
         </p>
+        <span className="availability contact-availability">
+          <span className="status-dot" /> Disponible para nuevos proyectos
+        </span>
         <a href={`mailto:${profile.email}`} className="contact-email">
           {profile.email} <FiArrowUpRight />
         </a>
@@ -82,7 +78,6 @@ export default function CTA() {
             <span className="success-icon">
               <FiCheck />
             </span>
-            <span className="eyebrow">MENSAJE RECIBIDO</span>
             <h3>
               Gracias por
               <br />
@@ -98,19 +93,21 @@ export default function CTA() {
             ref={formRef}
             onSubmit={submit}
             className="contact-form"
+            aria-labelledby="form-title"
             aria-busy={state === "sending"}
           >
-            <span className="form-heading">
-              <FiMail /> CUÉNTAME EN QUÉ ESTÁS PENSANDO
-            </span>
+            <h3 className="form-heading" id="form-title">
+              <FiMail /> Escríbeme
+            </h3>
+            <p className="form-description">
+              Cuéntame qué necesitas y te responderé por correo.
+            </p>
             <div className="form-field">
-              <label htmlFor="contact-name">
-                <span>01</span> Tu nombre
-              </label>
+              <label htmlFor="contact-name">Tu nombre</label>
               <input
                 id="contact-name"
                 name="name"
-                placeholder="¿Cómo te llamas?"
+                placeholder="Nombre y apellido"
                 value={form.name}
                 onChange={change}
                 autoComplete="name"
@@ -120,9 +117,7 @@ export default function CTA() {
               />
             </div>
             <div className="form-field">
-              <label htmlFor="contact-email">
-                <span>02</span> Tu correo
-              </label>
+              <label htmlFor="contact-email">Tu correo</label>
               <input
                 id="contact-email"
                 name="email"
@@ -137,13 +132,11 @@ export default function CTA() {
               />
             </div>
             <div className="form-field">
-              <label htmlFor="contact-message">
-                <span>03</span> Tu idea
-              </label>
+              <label htmlFor="contact-message">Mensaje</label>
               <textarea
                 id="contact-message"
                 name="message"
-                placeholder="Me gustaría crear..."
+                placeholder="Cuéntame sobre tu proyecto..."
                 value={form.message}
                 onChange={change}
                 required
@@ -154,18 +147,13 @@ export default function CTA() {
               />
             </div>
             <div className="form-submit-row">
-              <span>
-                Las buenas ideas
-                <br />
-                merecen una oportunidad.
-              </span>
               <button
                 className="send-button"
                 type="submit"
                 disabled={state === "sending"}
               >
                 <span>
-                  {state === "sending" ? "ENVIANDO" : "ENVIAR MENSAJE"}
+                  {state === "sending" ? "Enviando…" : "Enviar mensaje"}
                 </span>
                 <FiArrowUpRight />
               </button>

@@ -8,9 +8,6 @@ export default function Hero() {
     <section id="home" className="hero-section" aria-labelledby="hero-title">
       <div className="hero-grid page-width">
         <div className="hero-intro">
-          <span className="eyebrow">
-            <span className="tiny-line" /> HOLA, SOY
-          </span>
           <h1 id="hero-title">
             JHOANDRY
             <br />
@@ -30,18 +27,15 @@ export default function Hero() {
         <div className="hero-portrait">
           <div className="portrait-halo" />
           <Image
-            src="/images/jhoandry-cutout.png"
-            alt="Jhoandry Apaza, desarrollador de software en Lima"
-            width={460}
-            height={550}
+            src="/images/jhoandry-avatar.webp"
+            alt="Retrato de Jhoandry Apaza inspirado en su fotografía"
+            width={1150}
+            height={1367}
+            sizes="(max-width: 600px) 90vw, (max-width: 1100px) 400px, 460px"
             priority
           />
-          <span className="portrait-caption">
-            <span className="status-dot" /> HECHO EN PERÚ
-          </span>
         </div>
         <div className="hero-role">
-          <span className="eyebrow">CONSTRUYO EXPERIENCIAS DIGITALES</span>
           <h2>
             DESARROLLADOR
             <br />
@@ -68,7 +62,6 @@ export default function Hero() {
           </span>
           <span>UN POCO MÁS SOBRE MÍ</span>
         </a>
-        <span className="hero-coordinate">12.0464° S &nbsp; 77.0428° O</span>
         <span className="hero-project-count">
           <strong>{String(projects.length).padStart(2, "0")}</strong> PROYECTOS
           CON PROPÓSITO

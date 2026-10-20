@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import Providers from "./components/Providers";
 
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist",
-  display: "swap",
-});
-const mono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
   display: "swap",
 });
 
@@ -44,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es-PE" className={`${geist.variable} ${mono.variable}`}>
+    <html lang="es-PE" className={geist.variable}>
       <body>
         <a className="skip-link" href="#main-content">
           Saltar al contenido
@@ -52,9 +47,7 @@ export default function RootLayout({
         <Providers>{children}</Providers>
         <noscript>
           <style>
-            {
-              ".intro-screen{display:none!important}.reveal{opacity:1!important;transform:none!important}"
-            }
+            {".reveal{opacity:1!important;transform:none!important}"}
           </style>
         </noscript>
       </body>

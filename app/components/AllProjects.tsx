@@ -29,9 +29,6 @@ export default function AllProjects() {
           <FiArrowLeft /> Volver al inicio
         </Link>
         <Reveal className="all-projects-heading">
-          <span className="section-index">
-            EL CÓDIGO TAMBIÉN CUENTA HISTORIAS
-          </span>
           <h1>
             Cada idea,
             <br />

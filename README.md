@@ -1,6 +1,6 @@
 # Jhoandry Apaza · Desarrollo con propósito
 
-Portafolio personal en español, desde Lima, Perú. Desarrollado con Next.js 16, React y TypeScript, con una escena 3D original creada mediante geometría procedural en Three.js.
+Portafolio personal en español, desde Lima, Perú. Desarrollado con Next.js 16, React y TypeScript, con un retrato estilizado basado en su fotografía, presentado en un relieve con paralaje mediante Three.js.
 
 ## Desarrollo
 
@@ -43,12 +43,12 @@ Las pruebas cubren navegación, acceso a documentos, servicios con teclado, gale
 
 ## Contenidos y estructura
 
-- `/`: presentación, sobre mí, servicios, trayectoria, proyectos seleccionados, tecnologías, certificados y contacto.
+- `/`: presentación, sobre mí, servicios, proyectos seleccionados, dos certificaciones con vista previa, tecnologías y contacto.
 - `/proyectos`: catálogo de los siete proyectos, filtros y vistas ampliadas.
 - `/laboratorio`: ajedrez de práctica y guía interactiva sobre el portafolio.
 
-Los textos, proyectos, enlaces y datos de contacto están centralizados en `app/lib/constants.ts`. La trayectoria utiliza los datos del CV disponible en `public/CV_JHOANDRY.pdf`. Los certificados y capturas de los proyectos se conservan en `public`.
+Los textos, proyectos, enlaces y datos de contacto están centralizados en `app/lib/constants.ts`. Los certificados y capturas de los proyectos se conservan en `public`.
 
 La guía del laboratorio responde a preguntas frecuentes a partir del contenido del portafolio; no usa una API generativa ni requiere nuevas credenciales. El ajedrez utiliza `chess.js` para las reglas y un motor de práctica propio en un Web Worker. No se le atribuye una puntuación ELO.
 
-La escena 3D es original y no utiliza el personaje de la web de referencia. En móvil y tablet, cuando se solicita movimiento reducido o si WebGL no está disponible, se conserva una presentación con retrato. La introducción es breve e independiente de la carga del personaje. Los proyectos pasan de una galería horizontal a una distribución vertical según el espacio disponible y la preferencia de movimiento.
+El retrato se generó a partir de la foto de Jhoandry y se presenta en un relieve de poca profundidad con iluminación precalculada: no es una reconstrucción facial ni un modelo humano completo. La escena evita geometría facial genérica y conserva un paralaje moderado. En móvil y tablet, cuando se solicita movimiento reducido o si WebGL no está disponible, se conserva una presentación con retrato. El contenido aparece directamente, sin pantalla de carga. Lenis suaviza la rueda y las anclas en escritorio; las pantallas táctiles y el movimiento reducido conservan el desplazamiento nativo. Los proyectos pasan de una galería horizontal a una distribución vertical según el espacio disponible y la preferencia de movimiento.

@@ -8,6 +8,24 @@ test("la portada tiene escena propia, navegación y documentos reales", async ({
   await expect(page.locator(".intro-screen")).toHaveCount(0);
   await expect(page.locator("#story")).toHaveClass(/has-scene/);
   await expect(page.locator(".scene-sticky canvas")).toHaveCount(1);
+  await expect(page.locator("#experience")).toHaveCount(0);
+  await expect(page.locator(".section-index, .eyebrow")).toHaveCount(0);
+  await expect(page.locator("#certifications .certificate-card")).toHaveCount(
+    2,
+  );
+  for (const certificate of await page
+    .locator(".certificate-preview img")
+    .all()) {
+    await certificate.scrollIntoViewIfNeeded();
+    await expect(certificate).toBeVisible();
+    await expect
+      .poll(() =>
+        certificate.evaluate(
+          (image: HTMLImageElement) => image.complete && image.naturalWidth > 0,
+        ),
+      )
+      .toBe(true);
+  }
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "JHOANDRY",
   );
@@ -178,9 +196,9 @@ test("el formulario muestra éxito sin enviar correos reales", async ({
     .getByLabel("Tu correo", { exact: false })
     .fill("prueba@example.com");
   await page
-    .getByLabel("Tu idea", { exact: false })
+    .getByLabel("Mensaje", { exact: false })
     .fill("Esta prueba se intercepta y no envía ningún correo.");
-  await page.getByRole("button", { name: "ENVIAR MENSAJE" }).click();
+  await page.getByRole("button", { name: "Enviar mensaje" }).click();
   await expect(
     page.getByRole("heading", { name: /Gracias por/ }),
   ).toBeVisible();
@@ -209,16 +227,16 @@ test("el formulario conserva el mensaje cuando falla y permite reintentar", asyn
     .getByLabel("Tu correo", { exact: false })
     .fill("prueba@example.com");
   await page
-    .getByLabel("Tu idea", { exact: false })
+    .getByLabel("Mensaje", { exact: false })
     .fill("Este mensaje debe conservarse después del fallo.");
-  await page.getByRole("button", { name: "ENVIAR MENSAJE" }).click();
+  await page.getByRole("button", { name: "Enviar mensaje" }).click();
   await expect(
     page.getByText("No se pudo enviar el mensaje.", { exact: false }),
   ).toBeVisible();
-  await expect(page.getByLabel("Tu idea", { exact: false })).toHaveValue(
+  await expect(page.getByLabel("Mensaje", { exact: false })).toHaveValue(
     "Este mensaje debe conservarse después del fallo.",
   );
-  await page.getByRole("button", { name: "ENVIAR MENSAJE" }).click();
+  await page.getByRole("button", { name: "Enviar mensaje" }).click();
   await expect(
     page.getByRole("heading", { name: /Gracias por/ }),
   ).toBeVisible();

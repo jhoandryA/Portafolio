@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -28,7 +28,13 @@ export default function Projects() {
     target: ref,
     offset: ["start start", "end end"],
   });
-  const x = useTransform(scrollYProgress, [0, 1], [0, -travel]);
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 240,
+    damping: 38,
+    mass: 0.6,
+    restDelta: 0.0001,
+  });
+  const x = useTransform(smoothProgress, [0, 1], [0, -travel]);
   useEffect(() => {
     const el = row.current;
     if (!el) return;
@@ -65,9 +71,6 @@ export default function Projects() {
         <div className="projects-sticky">
           <div className="projects-heading page-width">
             <div>
-              <span className="section-index">
-                04 / PROYECTOS SELECCIONADOS
-              </span>
               <h2 id="projects-title">
                 Menos promesas.
                 <br />
@@ -75,7 +78,6 @@ export default function Projects() {
               </h2>
             </div>
             <div className="project-navigation">
-              <span>EXPLORA MI TRABAJO</span>
               <button
                 onClick={() => move(-1)}
                 aria-label="Ver proyectos anteriores"
@@ -147,7 +149,6 @@ export default function Projects() {
                   <div className="project-card-info">
                     <p>{project.description}</p>
                     <div className="project-tools">
-                      <span>CONSTRUIDO CON</span>
                       <p>{project.technologies.join(" · ")}</p>
                     </div>
                     <a

@@ -180,6 +180,7 @@ export const certificates = [
     issuer: "Consigue Ventas",
     date: "Junio 2026",
     pdfUrl: "/certificates/CertificadoWordpress.pdf",
+    image: "/images/certificates/wordpress.webp",
   },
   {
     name: "Fundamentos del Desarrollo Web Moderno",
@@ -187,6 +188,7 @@ export const certificates = [
     issuer: "Consigue Ventas",
     date: "Marzo 2026",
     pdfUrl: "/certificates/certificado-fundamentos-web.pdf",
+    image: "/images/certificates/fundamentos-web.webp",
   },
 ];
 
@@ -226,48 +228,5 @@ export const services = [
     description:
       "Java, C#, PHP, Python, JavaScript y TypeScript al servicio del problema que necesitamos resolver.",
     icon: FiCode,
-  },
-];
-
-export const experience = [
-  {
-    year: "AHORA",
-    period: "Desarrollo independiente",
-    title: "De la idea al producto",
-    organization: "Proyectos web y sistemas",
-    description:
-      "Construyo sitios, aplicaciones y soluciones de gestión. Combino desarrollo frontend, backend y bases de datos para resolver necesidades reales.",
-  },
-  {
-    year: "2026",
-    period: "Marzo — junio",
-    title: "Aprender para construir mejor",
-    organization: "Consigue Ventas",
-    description:
-      "Formación certificada en fundamentos del desarrollo web moderno y desarrollo con WordPress.",
-  },
-  {
-    year: "2024",
-    period: "Enero 2024 — junio 2025",
-    title: "Back Office · Área técnica",
-    organization: "ATENTO",
-    description:
-      "Resolución de incidencias de conectividad, seguimiento de tickets y coordinación con equipos técnicos para dar continuidad al servicio.",
-  },
-  {
-    year: "2023",
-    period: "2023 — actualidad",
-    title: "Desarrollo de Sistemas",
-    organization: "Instituto SISE",
-    description:
-      "Formación en Desarrollo de Sistemas de Información y Software: programación, aplicaciones y diseño de bases de datos.",
-  },
-  {
-    year: "2023",
-    period: "Enero 2023 — febrero 2024",
-    title: "Administración de datos",
-    organization: "Auxiliar administrativo",
-    description:
-      "Elaboración de reportes en Excel, organización de bases de datos y control de información en sistemas internos.",
   },
 ];

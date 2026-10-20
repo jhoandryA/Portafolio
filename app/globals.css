@@ -134,32 +134,16 @@ textarea:focus-visible {
   -webkit-background-clip: text;
   color: transparent;
 }
-.eyebrow,
-.section-index {
-  font-family: var(--font-mono), monospace;
-  display: block;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  font-weight: 400;
-  line-height: 1.7;
-}
-.eyebrow {
-  color: var(--accent);
-}
-.section-index {
-  color: var(--muted);
-  margin-bottom: 26px;
-}
 .text-link {
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
   transition: color 0.25s;
 }
 .text-link svg {
-  font-size: 18px;
+  font-size: 21px;
   transition: transform 0.25s;
 }
 .text-link:hover {
@@ -176,7 +160,7 @@ textarea:focus-visible {
   gap: 28px;
   padding: 18px 27px;
   border-radius: 100px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   transition:
     background 0.25s,
@@ -202,7 +186,7 @@ textarea:focus-visible {
 }
 .pill-button svg,
 .outline-button svg {
-  font-size: 19px;
+  font-size: 22px;
 }
 .status-dot {
   display: inline-block;
@@ -226,30 +210,22 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 10px;
+  font-size: 13px;
   color: #bed6dd;
   letter-spacing: 0.1px;
 }
 .availability svg {
-  font-size: 14px;
+  font-size: 17px;
   margin-left: 3px;
 }
-.tiny-line {
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: var(--accent);
-  margin-right: 12px;
-  vertical-align: middle;
-}
 .section-heading h2 {
-  font-size: clamp(44px, 4.9vw, 72px);
+  font-size: clamp(47px, calc(4.9vw + 3px), 75px);
   line-height: 1.07;
   font-weight: 400;
   letter-spacing: -3px;
 }
 .section-heading p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.8;
   color: var(--muted);
   margin-top: 24px;
@@ -258,7 +234,7 @@ textarea:focus-visible {
   text-align: center;
 }
 .section-arrow {
-  font-size: 45px;
+  font-size: 48px;
   color: var(--accent);
   stroke-width: 1;
   margin-top: 28px;
@@ -300,7 +276,7 @@ textarea:focus-visible {
   padding-bottom: 20px;
 }
 .wordmark {
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 650;
   letter-spacing: -1.4px;
   display: flex;
@@ -310,7 +286,7 @@ textarea:focus-visible {
   color: var(--accent);
 }
 .wordmark-mark {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 300;
   margin-left: 13px;
   color: #6a7b83;
@@ -322,7 +298,7 @@ textarea:focus-visible {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.1px;
   color: #a7b3bb;
 }
@@ -330,7 +306,7 @@ textarea:focus-visible {
   color: var(--accent);
 }
 .header-email svg {
-  font-size: 14px;
+  font-size: 17px;
 }
 .site-header nav ul {
   display: flex;
@@ -340,7 +316,7 @@ textarea:focus-visible {
   margin: 0;
 }
 .nav-link {
-  font-size: 10px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1px;
   display: block;
@@ -396,7 +372,7 @@ textarea:focus-visible {
   justify-content: center;
   width: 26px;
   height: 26px;
-  font-size: 17px;
+  font-size: 20px;
   color: #a8b8c1;
   transition:
     color 0.25s,
@@ -420,15 +396,15 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 14px;
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
+  font-family: var(--font-body), monospace;
+  font-size: 13px;
   letter-spacing: 2px;
   color: #aab9c1;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
 .resume-rail svg {
-  font-size: 17px;
+  font-size: 20px;
   transform: rotate(90deg);
 }
 .resume-rail:hover {
@@ -440,7 +416,7 @@ textarea:focus-visible {
   left: 48px;
   writing-mode: vertical-rl;
   font:
-    8px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 2px;
   color: #71818b;
@@ -450,7 +426,7 @@ textarea:focus-visible {
   z-index: 8;
 }
 .edition-mark svg {
-  font-size: 14px;
+  font-size: 17px;
 }
 .cursor-aura {
   pointer-events: none;
@@ -485,96 +461,6 @@ textarea:focus-visible {
   height: 54px;
   border-color: #88e6ed80;
   background: #88e6ed09;
-}
-/* A short, independent introduction: the content never waits for WebGL. */
-.intro-screen {
-  position: fixed;
-  inset: 0;
-  background: #dcebef;
-  color: #0a141a;
-  z-index: 1100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.65s cubic-bezier(0.76, 0, 0.24, 1);
-  overflow: hidden;
-}
-.intro-screen.is-leaving {
-  transform: translateY(-102%);
-}
-.intro-top {
-  position: absolute;
-  top: 35px;
-  left: 48px;
-  right: 48px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 22px;
-  font-weight: 650;
-  letter-spacing: -1px;
-}
-.intro-top > span + span {
-  font:
-    10px var(--font-mono),
-    monospace;
-  letter-spacing: 1px;
-  align-self: center;
-}
-.intro-top .accent {
-  color: #087b94;
-}
-.intro-marquee {
-  display: flex;
-  position: absolute;
-  width: max-content;
-  white-space: nowrap;
-  gap: 0;
-  animation: intro-marquee 30s linear infinite;
-  font-size: clamp(70px, 10vw, 150px);
-  font-weight: 550;
-  letter-spacing: -5px;
-}
-.intro-pill {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  border-radius: 100px;
-  padding: 26px 38px;
-  background: #071016;
-  color: #e8f4f6;
-  box-shadow:
-    0 0 0 5px #83d6e858,
-    0 20px 40px #0c2a3930;
-  font:
-    12px var(--font-mono),
-    monospace;
-  min-width: 330px;
-  justify-content: space-between;
-}
-.intro-percent {
-  color: var(--accent);
-  font-size: 22px;
-}
-.intro-percent small {
-  font-size: 12px;
-  margin-left: 3px;
-}
-.intro-skip {
-  position: absolute;
-  bottom: 40px;
-  right: 48px;
-  background: transparent;
-  color: #304852;
-  font-size: 11px;
-}
-.intro-skip:hover {
-  color: #000;
-}
-@keyframes intro-marquee {
-  to {
-    transform: translateX(-50%);
-  }
 }
 /* The first three sections share one original 3D scene. */
 .story-section {
@@ -630,11 +516,8 @@ textarea:focus-visible {
   align-self: center;
   padding-bottom: 30px;
 }
-.hero-intro .eyebrow {
-  margin-bottom: 22px;
-}
 .hero-intro h1 {
-  font-size: clamp(42px, 4vw, 64px);
+  font-size: clamp(45px, calc(4vw + 3px), 67px);
   line-height: 0.98;
   letter-spacing: -2.5px;
   font-weight: 500;
@@ -646,14 +529,14 @@ textarea:focus-visible {
   color: var(--accent);
 }
 .hero-intro > p {
-  font-size: 13px;
+  font-size: 16px;
   color: #acbac2;
   margin-top: 26px;
   line-height: 1.8;
 }
 .hero-project-link {
   margin-top: 32px;
-  font-size: 11px;
+  font-size: 14px;
   color: #e1e8ec;
 }
 .hero-portrait {
@@ -696,32 +579,12 @@ textarea:focus-visible {
 .portrait-halo::after {
   inset: -40%;
 }
-.portrait-caption {
-  position: absolute;
-  bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 3;
-  font:
-    8px var(--font-mono),
-    monospace;
-  letter-spacing: 1.8px;
-  color: var(--muted);
-}
 .hero-role {
   padding-left: 16px;
   padding-top: 100px;
 }
-.hero-role > .eyebrow {
-  font-size: 8px;
-  letter-spacing: 1.35px;
-  color: #8b9da8;
-  white-space: nowrap;
-  margin-bottom: 18px;
-}
 .hero-role h2 {
-  font-size: clamp(20px, 1.9vw, 31px);
+  font-size: clamp(23px, calc(1.9vw + 3px), 34px);
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: -0.8px;
@@ -731,7 +594,7 @@ textarea:focus-visible {
   position: relative;
   height: 1.25em;
   overflow: hidden;
-  font-size: clamp(27px, 2.6vw, 43px);
+  font-size: clamp(30px, calc(2.6vw + 3px), 46px);
   white-space: nowrap;
   color: var(--accent);
 }
@@ -744,7 +607,7 @@ textarea:focus-visible {
 }
 .hero-role > p {
   margin: 20px 0 26px;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.85;
   color: var(--muted);
 }
@@ -757,13 +620,13 @@ textarea:focus-visible {
   align-items: center;
   justify-content: space-between;
   z-index: 4;
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-body), monospace;
 }
 .scroll-cue {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-size: 8px;
+  font-size: 13px;
   letter-spacing: 1px;
   color: #bdc9cf;
 }
@@ -774,28 +637,23 @@ textarea:focus-visible {
   width: 29px;
   display: grid;
   place-items: center;
-  font-size: 14px;
+  font-size: 17px;
 }
 .scroll-icon svg {
   animation: scroll-bob 2.5s ease-in-out infinite;
-}
-.hero-coordinate {
-  font-size: 8px;
-  letter-spacing: 1px;
-  color: #6e828f;
 }
 .hero-project-count {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 8px;
+  font-size: 13px;
   letter-spacing: 1px;
   color: #8296a2;
 }
 .hero-project-count strong {
   color: var(--accent);
   font-weight: 400;
-  font-size: 26px;
+  font-size: 29px;
   letter-spacing: -1px;
 }
 .hero-watermark {
@@ -803,7 +661,7 @@ textarea:focus-visible {
   bottom: -0.16em;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(70px, 13.1vw, 210px);
+  font-size: clamp(73px, calc(13.1vw + 3px), 213px);
   line-height: 1;
   font-weight: 600;
   letter-spacing: -0.06em;
@@ -851,7 +709,7 @@ textarea:focus-visible {
 }
 .about-visual-note {
   font:
-    9px/1.8 var(--font-mono),
+    13px/1.8 var(--font-body),
     monospace;
   color: #7b929e;
   display: flex;
@@ -862,18 +720,15 @@ textarea:focus-visible {
   padding-right: 10px;
   max-width: 640px;
 }
-.about-copy > .eyebrow {
-  margin-bottom: 28px;
-}
 .about-copy h2 {
-  font-size: clamp(35px, 3.8vw, 58px);
+  font-size: clamp(38px, calc(3.8vw + 3px), 61px);
   font-weight: 400;
   letter-spacing: -2.2px;
   line-height: 1.1;
   margin-bottom: 32px;
 }
 .about-copy p {
-  font-size: clamp(16px, 1.35vw, 21px);
+  font-size: clamp(19px, calc(1.35vw + 3px), 24px);
   line-height: 1.65;
   color: #c2ced5;
   margin-bottom: 21px;
@@ -884,7 +739,7 @@ textarea:focus-visible {
   color: #f1f5f7;
 }
 .about-copy .about-secondary {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.9;
   color: var(--muted);
   margin-top: 28px;
@@ -897,7 +752,7 @@ textarea:focus-visible {
   margin-top: 32px;
   padding-top: 22px;
   border-top: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 13px;
   color: #b8c8d0;
 }
 .about-meta > span,
@@ -910,7 +765,7 @@ textarea:focus-visible {
   color: var(--accent);
 }
 .about-meta svg {
-  font-size: 15px;
+  font-size: 18px;
 }
 .services-section {
   position: relative;
@@ -926,18 +781,15 @@ textarea:focus-visible {
 .services-heading {
   align-self: center;
 }
-.services-heading .section-index {
-  margin-bottom: 65px;
-}
 .services-heading h2 {
-  font-size: clamp(52px, 4.9vw, 78px);
+  font-size: clamp(55px, calc(4.9vw + 3px), 81px);
   font-weight: 450;
   line-height: 1.01;
   letter-spacing: -3.5px;
 }
 .services-heading p {
   margin-top: 28px;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.8;
   color: #93a8b4;
 }
@@ -1005,14 +857,14 @@ textarea:focus-visible {
 }
 .service-number {
   font:
-    9px var(--font-mono),
+    13px var(--font-body),
     monospace;
   color: #7d99a7;
   align-self: flex-start;
   margin-top: 7px;
 }
 .service-trigger h3 {
-  font-size: 22px;
+  font-size: 25px;
   letter-spacing: -0.8px;
   font-weight: 550;
   white-space: nowrap;
@@ -1020,7 +872,7 @@ textarea:focus-visible {
 .service-subtitle {
   display: block;
   color: #9baeb9;
-  font-size: 11px;
+  font-size: 14px;
   margin-top: 9px;
 }
 .service-trigger > svg {
@@ -1050,19 +902,10 @@ textarea:focus-visible {
   grid-template-rows: 1fr;
 }
 .service-body p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.9;
   color: #afbdc5;
   margin: 0 0 24px;
-}
-.tools-label {
-  display: block;
-  font:
-    8px var(--font-mono),
-    monospace;
-  letter-spacing: 1.3px;
-  color: #7493a4;
-  margin-bottom: 12px;
 }
 .tool-tags {
   display: flex;
@@ -1070,7 +913,7 @@ textarea:focus-visible {
   gap: 6px;
 }
 .tool-tags > span {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.4;
   padding: 5px 9px;
   border: 1px solid #abcdd526;
@@ -1084,114 +927,9 @@ textarea:focus-visible {
 .services-contact {
   display: flex;
   margin-top: 25px;
-  font-size: 10px;
+  font-size: 13px;
   justify-content: flex-end;
   color: #a4b9c4;
-}
-/* A real timeline, based on the existing CV. */
-.career-section {
-  padding: 150px 0 160px;
-  position: relative;
-}
-.career-section .section-heading {
-  margin-bottom: 100px;
-}
-.career-timeline {
-  position: relative;
-}
-.timeline-track {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  left: 52%;
-  background: #b1e3f012;
-}
-.timeline-track > div {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(transparent, var(--accent));
-  transform-origin: top;
-}
-.timeline-track > div > span {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  transform: translate(-50%, 50%);
-  background: var(--accent);
-  box-shadow:
-    0 0 12px 3px #88e6ed70,
-    0 0 45px 12px #88e6ed12;
-}
-.career-entry {
-  display: grid;
-  grid-template-columns: 35% 17% 48%;
-  padding: 0 0 56px;
-  align-items: start;
-  position: relative;
-}
-.career-entry:last-child {
-  padding-bottom: 0;
-}
-.career-role {
-  padding-right: 25px;
-}
-.career-period {
-  font:
-    8px var(--font-mono),
-    monospace;
-  letter-spacing: 0.5px;
-  color: #788e9b;
-  display: block;
-  margin-bottom: 13px;
-}
-.career-role h3 {
-  font-size: 23px;
-  font-weight: 450;
-  line-height: 1.15;
-  letter-spacing: -0.7px;
-  max-width: 240px;
-}
-.career-organization {
-  display: block;
-  font-size: 11px;
-  color: var(--accent);
-  margin-top: 14px;
-}
-.career-year {
-  font-size: 37px;
-  letter-spacing: -1.5px;
-  line-height: 1;
-  font-weight: 400;
-  align-self: center;
-  color: #c7d4dc;
-}
-.career-entry:first-of-type .career-year {
-  font-size: 30px;
-}
-.career-description {
-  padding: 14px 0 0 54px;
-  position: relative;
-}
-.career-description p {
-  font-size: 12px;
-  line-height: 1.85;
-  color: #a0b3bf;
-  max-width: 430px;
-}
-.timeline-node {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border: 1px solid #4c6f80;
-  background: var(--bg);
-  border-radius: 50%;
-  left: -2px;
-  top: 21px;
 }
 /* Scroll-controlled horizontal work, with a vertical accessible fallback. */
 .projects-section {
@@ -1218,11 +956,8 @@ textarea:focus-visible {
   margin-bottom: 32px;
   flex-shrink: 0;
 }
-.projects-heading .section-index {
-  margin-bottom: 19px;
-}
 .projects-heading h2 {
-  font-size: clamp(42px, 4vw, 64px);
+  font-size: clamp(45px, calc(4vw + 3px), 67px);
   font-weight: 400;
   line-height: 1;
   letter-spacing: -2.5px;
@@ -1235,7 +970,7 @@ textarea:focus-visible {
 }
 .project-navigation > span {
   font:
-    8px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 1px;
   color: #829ba8;
@@ -1286,7 +1021,7 @@ textarea:focus-visible {
   min-height: 40px;
 }
 .project-index {
-  font-size: 32px;
+  font-size: 35px;
   font-weight: 400;
   letter-spacing: -1.3px;
   line-height: 1;
@@ -1296,19 +1031,19 @@ textarea:focus-visible {
   text-align: right;
 }
 .project-card-heading h3 {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 450;
   letter-spacing: -0.5px;
   line-height: 1.25;
 }
 .project-card-heading > div > span {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   color: #819ba9;
   margin-top: 5px;
 }
 .project-go {
-  font-size: 19px;
+  font-size: 22px;
   color: #91b6c5;
   padding-left: 6px;
 }
@@ -1365,7 +1100,7 @@ textarea:focus-visible {
 .browser-address {
   margin-left: auto;
   font:
-    6px var(--font-mono),
+    13px var(--font-body),
     monospace;
   color: #a5bac8;
   max-width: 75%;
@@ -1384,7 +1119,7 @@ textarea:focus-visible {
   opacity: 0;
   transition: opacity 0.3s;
   font:
-    8px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 1px;
   color: #e0ffff;
@@ -1394,7 +1129,7 @@ textarea:focus-visible {
   opacity: 1;
 }
 .project-cover-overlay > svg {
-  font-size: 16px;
+  font-size: 19px;
 }
 .project-card-info {
   display: flex;
@@ -1402,26 +1137,26 @@ textarea:focus-visible {
   gap: 15px;
 }
 .project-card-info > p {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.8;
   color: #a7bac5;
   min-height: 58px;
 }
 .project-tools > span {
   font:
-    7px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 1.3px;
   color: #657f8e;
 }
 .project-tools > p {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.7;
   color: #b1c8d4;
   margin-top: 7px;
 }
 .project-card-info > .text-link {
-  font-size: 10px;
+  font-size: 13px;
   margin-top: 3px;
   color: #c2d7df;
 }
@@ -1440,19 +1175,19 @@ textarea:focus-visible {
 }
 .project-more > .project-index {
   font:
-    12px var(--font-mono),
+    15px var(--font-body),
     monospace;
   color: var(--accent);
   margin-bottom: 36px;
 }
 .project-more h3 {
-  font-size: 36px;
+  font-size: 39px;
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -1.5px;
 }
 .project-more p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.8;
   color: #8da6b4;
   margin-top: 23px;
@@ -1461,12 +1196,12 @@ textarea:focus-visible {
 .project-more .pill-button {
   margin-top: 32px;
   padding: 15px 22px;
-  font-size: 11px;
+  font-size: 14px;
   gap: 24px;
 }
 .more-caption {
   font:
-    7px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 1px;
   color: #7b929e;
@@ -1518,7 +1253,7 @@ textarea:focus-visible {
   padding: 15px 20px;
   border-bottom: 1px solid var(--line);
   z-index: 2;
-  font-size: 12px;
+  font-size: 15px;
 }
 .image-dialog-header button {
   display: grid;
@@ -1549,14 +1284,14 @@ textarea:focus-visible {
   text-align: center;
 }
 .tech-content h2 {
-  font-size: clamp(46px, 5vw, 74px);
+  font-size: clamp(49px, calc(5vw + 3px), 77px);
   line-height: 1.04;
   font-weight: 400;
   letter-spacing: -3px;
 }
 .tech-content > p {
   color: #8ba4b3;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.9;
   margin-top: 24px;
 }
@@ -1593,12 +1328,12 @@ textarea:focus-visible {
   cursor: default;
 }
 .tech-tile > svg {
-  font-size: 28px;
+  font-size: 31px;
   color: #b4d2dd;
   transition: color 0.3s;
 }
 .tech-tile > span {
-  font-size: 9px;
+  font-size: 13px;
   color: #bed1dc;
 }
 .tech-tile:hover,
@@ -1707,20 +1442,16 @@ textarea:focus-visible {
   border-top: 1px solid var(--line);
 }
 .certificate-heading h2 {
-  font-size: clamp(34px, 3.3vw, 48px);
+  font-size: clamp(37px, calc(3.3vw + 3px), 51px);
   line-height: 1.12;
   letter-spacing: -1.8px;
   font-weight: 400;
 }
 .certificate-heading > p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.9;
   color: #8ba2b0;
   margin-top: 25px;
-}
-.certificate-heading .section-index {
-  font-size: 8px;
-  letter-spacing: 1px;
 }
 .certificate-row {
   display: flex;
@@ -1744,13 +1475,13 @@ textarea:focus-visible {
   gap: 7px;
 }
 .certificate-seal > svg {
-  font-size: 28px;
+  font-size: 31px;
   color: #86b4c5;
   stroke-width: 1;
 }
 .certificate-seal > span {
   font:
-    7px var(--font-mono),
+    13px var(--font-body),
     monospace;
   color: #718d9d;
 }
@@ -1758,14 +1489,14 @@ textarea:focus-visible {
   flex: 1;
 }
 .certificate-details > span {
-  font-size: 9px;
+  font-size: 13px;
   color: var(--accent);
 }
 .certificate-date {
   color: #7b94a2;
 }
 .certificate-details h3 {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 450;
   line-height: 1.4;
   margin-top: 10px;
@@ -1773,13 +1504,13 @@ textarea:focus-visible {
   letter-spacing: -0.2px;
 }
 .certificate-details > p {
-  font-size: 10px;
+  font-size: 13px;
   color: #809ba9;
   margin-top: 5px;
 }
 .certificate-action {
   font:
-    7px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 0.6px;
   display: flex;
@@ -1788,7 +1519,7 @@ textarea:focus-visible {
   color: #c0d3dc;
 }
 .certificate-action > svg {
-  font-size: 20px;
+  font-size: 23px;
   transition: transform 0.25s;
 }
 .certificate-row:hover .certificate-action > svg {
@@ -1814,22 +1545,17 @@ textarea:focus-visible {
   background: radial-gradient(ellipse, #22677e10, transparent 65%);
   pointer-events: none;
 }
-.contact-intro > .section-index {
-  font-size: 8px;
-  letter-spacing: 0.8px;
-  margin-bottom: 45px;
-}
 .contact-availability {
   margin-bottom: 26px;
 }
 .contact-intro h2 {
-  font-size: clamp(48px, 5.4vw, 82px);
+  font-size: clamp(51px, calc(5.4vw + 3px), 85px);
   font-weight: 400;
   letter-spacing: -3.5px;
   line-height: 1.02;
 }
 .contact-intro > p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.9;
   color: #9aafbc;
   margin-top: 26px;
@@ -1838,12 +1564,12 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 18px;
-  font-size: clamp(12px, 1.2vw, 17px);
+  font-size: clamp(15px, calc(1.2vw + 3px), 20px);
   letter-spacing: -0.5px;
   margin-top: 42px;
 }
 .contact-email svg {
-  font-size: 23px;
+  font-size: 26px;
   color: var(--accent);
 }
 .contact-email:hover {
@@ -1852,7 +1578,7 @@ textarea:focus-visible {
 .whatsapp-link {
   display: flex;
   color: #8fa7b5;
-  font-size: 10px;
+  font-size: 13px;
   margin-top: 20px;
   gap: 10px;
 }
@@ -1867,14 +1593,14 @@ textarea:focus-visible {
   gap: 13px;
   align-items: center;
   font:
-    8px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 0.9px;
   color: #8daab9;
   margin-bottom: 40px;
 }
 .form-heading > svg {
-  font-size: 16px;
+  font-size: 19px;
   color: var(--accent);
 }
 .form-field {
@@ -1884,13 +1610,13 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: 11px;
+  font-size: 14px;
   color: #c0d0d9;
   margin-bottom: 10px;
 }
 .form-field label > span {
   font:
-    8px var(--font-mono),
+    13px var(--font-body),
     monospace;
   color: #627f90;
 }
@@ -1903,7 +1629,7 @@ textarea:focus-visible {
   background: transparent;
   color: #e9f3f8;
   padding: 10px 0 15px;
-  font-size: 13px;
+  font-size: 16px;
   resize: vertical;
   transition: border-color 0.25s;
   line-height: 1.6;
@@ -1912,7 +1638,7 @@ textarea:focus-visible {
 .form-field input::placeholder,
 .form-field textarea::placeholder {
   color: #6d8594;
-  font-size: 12px;
+  font-size: 15px;
 }
 .form-field input:focus,
 .form-field textarea:focus {
@@ -1930,7 +1656,7 @@ textarea:focus-visible {
   margin-top: 36px;
 }
 .form-submit-row > span {
-  font-size: 9px;
+  font-size: 13px;
   line-height: 1.8;
   color: #708c9c;
 }
@@ -1940,7 +1666,7 @@ textarea:focus-visible {
   gap: 16px;
   background: transparent;
   font:
-    9px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 0.7px;
   padding: 0;
@@ -1962,7 +1688,7 @@ textarea:focus-visible {
 }
 .form-feedback {
   min-height: 40px;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.8;
   color: #e1ae96;
   margin-top: 20px;
@@ -1982,22 +1708,18 @@ textarea:focus-visible {
   display: grid;
   place-items: center;
   color: var(--accent);
-  font-size: 25px;
+  font-size: 28px;
   margin-bottom: 30px;
 }
-.form-success > .eyebrow {
-  font-size: 9px;
-  margin-bottom: 20px;
-}
 .form-success h3 {
-  font-size: 38px;
+  font-size: 41px;
   line-height: 1.1;
   font-weight: 400;
   letter-spacing: -1.3px;
 }
 .form-success p {
   color: #9db2bf;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.9;
   margin-top: 20px;
   max-width: 300px;
@@ -2021,7 +1743,7 @@ textarea:focus-visible {
   margin-bottom: 45px;
 }
 .footer-name {
-  font-size: clamp(28px, 4vw, 60px);
+  font-size: clamp(31px, calc(4vw + 3px), 63px);
   font-weight: 450;
   letter-spacing: -2px;
 }
@@ -2049,7 +1771,7 @@ textarea:focus-visible {
 }
 .footer-label {
   font:
-    7px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 0.7px;
   color: #6f8b9c;
@@ -2058,7 +1780,7 @@ textarea:focus-visible {
   display: flex;
   gap: 14px;
   align-items: center;
-  font-size: 13px;
+  font-size: 16px;
   margin-top: 15px;
   color: #c7d6df;
 }
@@ -2077,7 +1799,7 @@ textarea:focus-visible {
 .footer-clock {
   display: block;
   font:
-    9px var(--font-mono),
+    13px var(--font-body),
     monospace;
   color: #728e9f;
   margin-top: 9px;
@@ -2090,7 +1812,7 @@ textarea:focus-visible {
   justify-self: center;
 }
 .footer-socials a {
-  font-size: 14px;
+  font-size: 17px;
   border-bottom: 1px solid #9ebcc550;
   padding-bottom: 5px;
   min-width: 110px;
@@ -2108,7 +1830,7 @@ textarea:focus-visible {
   justify-self: end;
 }
 .footer-credit > span {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.6;
   color: #92aaba;
 }
@@ -2116,7 +1838,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 10px;
+  font-size: 13px;
   color: var(--accent);
   margin-top: 16px;
 }
@@ -2126,7 +1848,7 @@ textarea:focus-visible {
   align-items: center;
   gap: 20px;
   font:
-    7px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 0.2px;
   color: #6d8798;
@@ -2137,7 +1859,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 9px;
+  font-size: 13px;
 }
 .footer-bottom > a:hover {
   color: var(--accent);
@@ -2150,7 +1872,7 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-size: 11px;
+  font-size: 14px;
   color: #a1becb;
   transition: color 0.25s;
 }
@@ -2162,13 +1884,13 @@ textarea:focus-visible {
   max-width: 800px;
 }
 .all-projects-heading h1 {
-  font-size: clamp(55px, 7.5vw, 105px);
+  font-size: clamp(58px, calc(7.5vw + 3px), 108px);
   line-height: 0.99;
   font-weight: 400;
   letter-spacing: -5px;
 }
 .all-projects-heading > p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.9;
   color: #8ca8b8;
   margin-top: 28px;
@@ -2188,7 +1910,7 @@ textarea:focus-visible {
   background: transparent;
   border: 1px solid var(--line);
   border-radius: 100px;
-  font-size: 11px;
+  font-size: 14px;
   color: #99b1bf;
   transition:
     color 0.25s,
@@ -2201,7 +1923,7 @@ textarea:focus-visible {
 }
 .project-filters > button > span {
   font:
-    8px var(--font-mono),
+    13px var(--font-body),
     monospace;
   padding: 2px 5px;
   border: 1px solid currentColor;
@@ -2209,7 +1931,7 @@ textarea:focus-visible {
 }
 .filter-status {
   font:
-    8px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -2267,7 +1989,7 @@ textarea:focus-visible {
   background: #081b22d9;
   color: #b6eff6;
   font:
-    10px var(--font-mono),
+    13px var(--font-body),
     monospace;
   backdrop-filter: blur(5px);
 }
@@ -2297,19 +2019,19 @@ textarea:focus-visible {
 }
 .project-category {
   font:
-    8px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 0.5px;
   color: var(--accent);
 }
 .all-project-body h2 {
-  font-size: 23px;
+  font-size: 26px;
   letter-spacing: -0.8px;
   font-weight: 450;
   margin-top: 13px;
 }
 .all-project-body > p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.8;
   color: #91adbd;
   margin: 17px 0 25px;
@@ -2328,7 +2050,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 10px;
+  font-size: 13px;
   color: #d1e1e8;
 }
 .all-project-links > a:hover {
@@ -2342,7 +2064,7 @@ textarea:focus-visible {
   padding: 90px 0 110px;
 }
 .projects-bottom-cta p {
-  font-size: 36px;
+  font-size: 39px;
   letter-spacing: -1.4px;
   font-weight: 400;
 }
@@ -2368,13 +2090,13 @@ textarea:focus-visible {
     padding: 40px 32px;
   }
   .service-trigger h3 {
-    font-size: 26px;
+    font-size: 29px;
   }
   .service-body > div {
     padding-left: 63px;
   }
   .contact-intro h2 {
-    font-size: 92px;
+    font-size: 95px;
   }
 }
 @media (max-width: 1250px) {
@@ -2395,23 +2117,19 @@ textarea:focus-visible {
     grid-template-columns: 1fr 0.92fr 1fr;
   }
   .hero-intro h1 {
-    font-size: 44px;
+    font-size: 47px;
   }
   .hero-role {
     padding-left: 6px;
   }
   .hero-role h2 {
-    font-size: 22px;
+    font-size: 25px;
   }
   .role-rotator {
-    font-size: 31px;
-  }
-  .hero-role > .eyebrow {
-    font-size: 7px;
-    letter-spacing: 0.8px;
+    font-size: 34px;
   }
   .hero-role > p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .social-rail {
     left: 27px;
@@ -2433,20 +2151,14 @@ textarea:focus-visible {
     gap: 12px;
   }
   .service-trigger h3 {
-    font-size: 19px;
+    font-size: 22px;
   }
   .service-body > div {
     padding-left: 44px;
     padding-right: 25px;
   }
   .services-heading h2 {
-    font-size: 62px;
-  }
-  .career-role h3 {
-    font-size: 21px;
-  }
-  .career-year {
-    font-size: 33px;
+    font-size: 65px;
   }
   .certificates-section {
     gap: 50px;
@@ -2459,10 +2171,10 @@ textarea:focus-visible {
     gap: 55px;
   }
   .contact-intro h2 {
-    font-size: 62px;
+    font-size: 65px;
   }
   .contact-email {
-    font-size: 13px;
+    font-size: 16px;
   }
   .featured-project,
   .project-more {
@@ -2497,14 +2209,11 @@ textarea:focus-visible {
     padding-left: 0;
     margin-top: -15px;
   }
-  .hero-role > .eyebrow {
-    display: none;
-  }
   .hero-role > p {
     display: none;
   }
   .hero-intro h1 {
-    font-size: 54px;
+    font-size: 57px;
   }
   .hero-intro {
     padding-bottom: 0;
@@ -2516,10 +2225,10 @@ textarea:focus-visible {
     margin-top: 20px;
   }
   .hero-role h2 {
-    font-size: 20px;
+    font-size: 23px;
   }
   .role-rotator {
-    font-size: 30px;
+    font-size: 33px;
   }
   .hero-role .availability {
     margin-top: 16px;
@@ -2527,9 +2236,6 @@ textarea:focus-visible {
   .hero-grid {
     padding-top: 80px;
     row-gap: 45px;
-  }
-  .hero-coordinate {
-    display: none;
   }
   .about-section {
     height: auto;
@@ -2544,7 +2250,7 @@ textarea:focus-visible {
   }
   .about-visual::after {
     content: "JA";
-    font-size: 180px;
+    font-size: 183px;
     color: transparent;
     -webkit-text-stroke: 1px #88e6ed30;
     font-weight: 500;
@@ -2556,10 +2262,10 @@ textarea:focus-visible {
     order: 2;
   }
   .about-copy h2 {
-    font-size: 38px;
+    font-size: 41px;
   }
   .about-copy p {
-    font-size: 16px;
+    font-size: 19px;
   }
   .about-meta {
     align-items: flex-start;
@@ -2574,49 +2280,28 @@ textarea:focus-visible {
     gap: 45px;
   }
   .services-heading h2 {
-    font-size: 57px;
+    font-size: 60px;
     letter-spacing: -3px;
-  }
-  .services-heading .section-index {
-    margin-bottom: 40px;
   }
   .service-panels {
     margin-top: 0;
   }
   .service-trigger h3 {
-    font-size: 18px;
+    font-size: 21px;
   }
   .service-trigger {
     gap: 10px;
     padding: 25px 16px;
   }
   .service-number {
-    font-size: 8px;
+    font-size: 13px;
   }
   .service-subtitle {
-    font-size: 10px;
+    font-size: 13px;
   }
   .service-body > div {
     padding-left: 37px;
     padding-right: 20px;
-  }
-  .career-section {
-    padding: 120px 0;
-  }
-  .career-role h3 {
-    font-size: 20px;
-  }
-  .career-role {
-    padding-right: 15px;
-  }
-  .career-year {
-    font-size: 29px;
-  }
-  .career-description {
-    padding-left: 35px;
-  }
-  .career-entry {
-    grid-template-columns: 34% 18% 48%;
   }
   .certificates-section {
     grid-template-columns: 1fr;
@@ -2624,7 +2309,7 @@ textarea:focus-visible {
     padding-block: 80px 100px;
   }
   .certificate-heading h2 {
-    font-size: 45px;
+    font-size: 48px;
   }
   .certificate-heading > p {
     margin-top: 20px;
@@ -2633,7 +2318,7 @@ textarea:focus-visible {
     max-width: 700px;
   }
   .certificate-action {
-    font-size: 8px;
+    font-size: 13px;
     gap: 12px;
   }
   .contact-section {
@@ -2642,24 +2327,21 @@ textarea:focus-visible {
     padding-block: 80px;
   }
   .contact-intro h2 {
-    font-size: 49px;
+    font-size: 52px;
     letter-spacing: -2.5px;
   }
-  .contact-intro > .section-index {
-    font-size: 7px;
-  }
   .contact-email {
-    font-size: 11px;
+    font-size: 14px;
     gap: 8px;
   }
   .contact-email > svg {
-    font-size: 18px;
+    font-size: 21px;
   }
   .contact-intro > p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .form-heading {
-    font-size: 7px;
+    font-size: 13px;
   }
   .form-submit-row > span {
     display: none;
@@ -2675,7 +2357,7 @@ textarea:focus-visible {
     gap: 30px;
   }
   .footer-credit > span {
-    font-size: 11px;
+    font-size: 14px;
   }
 }
 @media (max-width: 900px) {
@@ -2690,7 +2372,7 @@ textarea:focus-visible {
     gap: 25px;
   }
   .wordmark {
-    font-size: 24px;
+    font-size: 27px;
   }
   .social-rail,
   .resume-rail,
@@ -2702,7 +2384,7 @@ textarea:focus-visible {
     align-items: center;
     gap: 5px;
     font:
-      9px var(--font-mono),
+      13px var(--font-body),
       monospace;
     color: var(--accent);
   }
@@ -2710,7 +2392,7 @@ textarea:focus-visible {
     margin-left: auto;
   }
   .hero-intro h1 {
-    font-size: 47px;
+    font-size: 50px;
   }
   .hero-portrait {
     height: 400px;
@@ -2719,14 +2401,14 @@ textarea:focus-visible {
     bottom: 45px;
   }
   .hero-project-count {
-    font-size: 7px;
+    font-size: 13px;
     gap: 10px;
   }
   .hero-project-count > strong {
-    font-size: 22px;
+    font-size: 25px;
   }
   .scroll-cue {
-    font-size: 7px;
+    font-size: 13px;
     gap: 10px;
   }
   .hero-section {
@@ -2740,23 +2422,23 @@ textarea:focus-visible {
     gap: 35px;
   }
   .about-visual::after {
-    font-size: 155px;
+    font-size: 158px;
   }
   .about-copy h2 {
-    font-size: 34px;
+    font-size: 37px;
   }
   .about-copy p {
-    font-size: 15px;
+    font-size: 18px;
   }
   .services-section {
     gap: 25px;
   }
   .services-heading h2 {
-    font-size: 48px;
+    font-size: 51px;
     letter-spacing: -2.5px;
   }
   .service-trigger h3 {
-    font-size: 17px;
+    font-size: 20px;
     letter-spacing: -0.6px;
   }
   .service-number {
@@ -2767,29 +2449,8 @@ textarea:focus-visible {
     padding-right: 17px;
   }
   .services-contact {
-    font-size: 9px;
+    font-size: 13px;
     gap: 10px;
-  }
-  .career-section .section-heading {
-    margin-bottom: 65px;
-  }
-  .career-year {
-    font-size: 24px;
-  }
-  .career-role h3 {
-    font-size: 18px;
-  }
-  .career-organization {
-    font-size: 10px;
-  }
-  .career-description p {
-    font-size: 11px;
-  }
-  .career-description {
-    padding-left: 25px;
-  }
-  .career-entry {
-    padding-bottom: 45px;
   }
   .projects-sticky {
     padding: 70px 0;
@@ -2799,7 +2460,7 @@ textarea:focus-visible {
     margin-bottom: 35px;
   }
   .projects-heading h2 {
-    font-size: 46px;
+    font-size: 49px;
   }
   .project-navigation {
     display: none;
@@ -2826,13 +2487,13 @@ textarea:focus-visible {
     gap: 10px;
   }
   .project-card-heading h3 {
-    font-size: 17px;
+    font-size: 20px;
   }
   .project-index {
-    font-size: 29px;
+    font-size: 32px;
   }
   .project-go {
-    font-size: 17px;
+    font-size: 20px;
     padding-left: 0;
   }
   .project-cover > img {
@@ -2849,10 +2510,10 @@ textarea:focus-visible {
     border-radius: 4px;
   }
   .project-more h3 {
-    font-size: 29px;
+    font-size: 32px;
   }
   .project-more .pill-button {
-    font-size: 10px;
+    font-size: 13px;
     gap: 12px;
     padding-inline: 18px;
   }
@@ -2860,10 +2521,10 @@ textarea:focus-visible {
     margin-bottom: 27px;
   }
   .project-more p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .more-caption {
-    font-size: 6px;
+    font-size: 13px;
     letter-spacing: 0.5px;
   }
   .tech-section {
@@ -2871,7 +2532,7 @@ textarea:focus-visible {
     padding-bottom: 80px;
   }
   .tech-content h2 {
-    font-size: 60px;
+    font-size: 63px;
   }
   .tech-tile {
     width: 77px;
@@ -2892,24 +2553,21 @@ textarea:focus-visible {
     max-width: 640px;
   }
   .contact-intro h2 {
-    font-size: 80px;
+    font-size: 83px;
     letter-spacing: -4px;
   }
   .contact-intro > p {
-    font-size: 13px;
+    font-size: 16px;
   }
   .contact-email {
-    font-size: 17px;
+    font-size: 20px;
     gap: 18px;
   }
   .contact-form-wrap {
     padding-top: 0;
   }
-  .contact-intro > .section-index {
-    font-size: 8px;
-  }
   .form-heading {
-    font-size: 8px;
+    font-size: 13px;
   }
   .form-submit-row > span {
     display: block;
@@ -2936,13 +2594,13 @@ textarea:focus-visible {
     margin-top: 0;
   }
   .footer-credit > span {
-    font-size: 11px;
+    font-size: 14px;
   }
   .footer-bottom > span:nth-child(2) {
     display: none;
   }
   .all-projects-heading h1 {
-    font-size: 85px;
+    font-size: 88px;
     letter-spacing: -4px;
   }
   .all-project-cover img {
@@ -2965,7 +2623,7 @@ textarea:focus-visible {
     padding: 18px 20px;
   }
   .wordmark {
-    font-size: 22px;
+    font-size: 25px;
     letter-spacing: -1.4px;
   }
   .wordmark-mark {
@@ -2975,14 +2633,14 @@ textarea:focus-visible {
     gap: 15px;
   }
   .nav-link {
-    font-size: 9px;
+    font-size: 13px;
     letter-spacing: 0.3px;
   }
   .nav-label {
     height: 14px;
   }
   .mobile-cv {
-    font-size: 8px;
+    font-size: 13px;
   }
   .site-header nav {
     margin-left: auto;
@@ -3003,13 +2661,8 @@ textarea:focus-visible {
     text-align: center;
     z-index: 2;
   }
-  .hero-intro .eyebrow {
-    font-size: 8px;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-  }
   .hero-intro h1 {
-    font-size: clamp(48px, 14vw, 72px);
+    font-size: clamp(51px, calc(14vw + 3px), 75px);
     line-height: 0.98;
     letter-spacing: -2.3px;
   }
@@ -3017,7 +2670,7 @@ textarea:focus-visible {
     color: #bfced6;
   }
   .hero-intro > p {
-    font-size: 12px;
+    font-size: 15px;
     margin-top: 20px;
     line-height: 1.7;
   }
@@ -3046,10 +2699,6 @@ textarea:focus-visible {
   .portrait-halo::after {
     inset: -24%;
   }
-  .portrait-caption {
-    bottom: 5px;
-    font-size: 7px;
-  }
   .hero-role {
     margin-top: 28px;
     text-align: center;
@@ -3057,23 +2706,23 @@ textarea:focus-visible {
     max-width: 100%;
   }
   .hero-role h2 {
-    font-size: 19px;
+    font-size: 22px;
     letter-spacing: 0.5px;
     line-height: 1.5;
   }
   .role-rotator {
-    font-size: 29px;
+    font-size: 32px;
     line-height: 1.2;
     height: 1.2em;
   }
   .hero-role > p {
     display: block;
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.8;
     margin: 18px 0;
   }
   .hero-role .availability {
-    font-size: 9px;
+    font-size: 13px;
     margin-top: 5px;
     gap: 8px;
   }
@@ -3082,22 +2731,22 @@ textarea:focus-visible {
   }
   .scroll-cue {
     gap: 10px;
-    font-size: 6px;
+    font-size: 13px;
     letter-spacing: 0.3px;
   }
   .scroll-icon {
     height: 38px;
     width: 24px;
-    font-size: 12px;
+    font-size: 15px;
   }
   .hero-project-count {
-    font-size: 6px;
+    font-size: 13px;
     gap: 8px;
     letter-spacing: 0;
     max-width: 132px;
   }
   .hero-project-count strong {
-    font-size: 22px;
+    font-size: 25px;
   }
   .hero-watermark {
     font-size: 15.5vw;
@@ -3120,47 +2769,36 @@ textarea:focus-visible {
   .about-visual-note {
     display: none;
   }
-  .about-visual > .section-index {
-    margin-bottom: 0;
-  }
-  .section-index {
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
   .about-copy {
     padding: 0;
     max-width: none;
   }
-  .about-copy > .eyebrow {
-    font-size: 9px;
-    margin-bottom: 20px;
-  }
   .about-copy h2 {
-    font-size: 37px;
+    font-size: 40px;
     letter-spacing: -1.8px;
     margin-bottom: 27px;
   }
   .about-copy p {
-    font-size: 16px;
+    font-size: 19px;
     line-height: 1.75;
     letter-spacing: -0.3px;
     margin-bottom: 20px;
   }
   .about-copy .about-secondary {
-    font-size: 12px;
+    font-size: 15px;
     margin-top: 22px;
     line-height: 1.85;
   }
   .about-meta {
     flex-direction: row;
     align-items: center;
-    font-size: 9px;
+    font-size: 13px;
     gap: 10px;
     margin-top: 25px;
     padding-top: 20px;
   }
   .about-meta svg {
-    font-size: 13px;
+    font-size: 16px;
   }
   .services-section {
     display: flex;
@@ -3170,11 +2808,8 @@ textarea:focus-visible {
     padding-block: 60px 70px;
     gap: 35px;
   }
-  .services-heading .section-index {
-    margin-bottom: 28px;
-  }
   .services-heading h2 {
-    font-size: 58px;
+    font-size: 61px;
     letter-spacing: -3px;
     line-height: 1;
   }
@@ -3182,7 +2817,7 @@ textarea:focus-visible {
     align-self: flex-start;
   }
   .services-heading p {
-    font-size: 11px;
+    font-size: 14px;
     margin-top: 20px;
   }
   .section-arrow {
@@ -3198,15 +2833,15 @@ textarea:focus-visible {
   }
   .service-number {
     display: block;
-    font-size: 8px;
+    font-size: 13px;
     margin-top: 6px;
   }
   .service-trigger h3 {
-    font-size: 20px;
+    font-size: 23px;
     letter-spacing: -0.8px;
   }
   .service-subtitle {
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.5;
   }
   .service-trigger > svg {
@@ -3217,94 +2852,32 @@ textarea:focus-visible {
     padding-inline: 47px 22px;
   }
   .service-body p {
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.85;
     margin-bottom: 22px;
-  }
-  .tools-label {
-    font-size: 7px;
-    letter-spacing: 0.8px;
   }
   .service-body .tool-tags {
     margin-bottom: 25px;
   }
   .tool-tags > span {
-    font-size: 9px;
+    font-size: 13px;
     padding: 4px 8px;
   }
   .services-contact {
-    font-size: 10px;
+    font-size: 13px;
     justify-content: flex-start;
     gap: 12px;
     margin-top: 25px;
   }
-  .career-section {
-    padding: 85px 0;
-  }
-  .career-section .section-heading {
-    margin-bottom: 58px;
-  }
   .section-heading h2 {
-    font-size: 40px;
+    font-size: 43px;
     letter-spacing: -1.8px;
     line-height: 1.08;
   }
   .section-heading p {
-    font-size: 11px;
+    font-size: 14px;
     max-width: 260px;
     margin: 20px auto 0;
-  }
-  .career-entry {
-    grid-template-columns: 1fr auto;
-    gap: 18px 16px;
-    padding: 0 0 40px 20px;
-  }
-  .career-role {
-    padding-right: 0;
-  }
-  .career-role h3 {
-    font-size: 21px;
-    max-width: 220px;
-    line-height: 1.15;
-  }
-  .career-period {
-    font-size: 7px;
-    letter-spacing: 0.1px;
-    margin-bottom: 10px;
-  }
-  .career-organization {
-    font-size: 10px;
-    margin-top: 11px;
-  }
-  .career-year {
-    font-size: 27px;
-    align-self: center;
-    letter-spacing: -1px;
-  }
-  .career-entry:first-of-type .career-year {
-    font-size: 23px;
-  }
-  .career-description {
-    grid-column: 1 / -1;
-    padding: 0;
-  }
-  .career-description p {
-    font-size: 11px;
-    line-height: 1.9;
-  }
-  .timeline-track {
-    left: 0;
-    top: 12px;
-    bottom: 0;
-  }
-  .timeline-node {
-    left: -22px;
-    top: 6px;
-    width: 5px;
-    height: 5px;
-  }
-  .career-entry:last-child {
-    padding-bottom: 0;
   }
   .projects-sticky {
     padding: 75px 0 55px;
@@ -3313,12 +2886,8 @@ textarea:focus-visible {
     display: block;
     margin-bottom: 32px;
   }
-  .projects-heading .section-index {
-    font-size: 8px;
-    margin-bottom: 20px;
-  }
   .projects-heading h2 {
-    font-size: 42px;
+    font-size: 45px;
     letter-spacing: -2px;
     line-height: 1.06;
   }
@@ -3337,16 +2906,16 @@ textarea:focus-visible {
     gap: 12px;
   }
   .project-index {
-    font-size: 31px;
+    font-size: 34px;
   }
   .project-card-heading h3 {
-    font-size: 20px;
+    font-size: 23px;
   }
   .project-card-heading > div > span {
-    font-size: 10px;
+    font-size: 13px;
   }
   .project-go {
-    font-size: 21px;
+    font-size: 24px;
     margin-left: 2px;
   }
   .project-cover > img {
@@ -3357,7 +2926,7 @@ textarea:focus-visible {
     padding-inline: 9px;
   }
   .browser-address {
-    font-size: 6px;
+    font-size: 13px;
   }
   .project-cover-overlay {
     top: 24px;
@@ -3366,17 +2935,17 @@ textarea:focus-visible {
     gap: 18px;
   }
   .project-card-info > p {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.85;
   }
   .project-tools > span {
-    font-size: 7px;
+    font-size: 13px;
   }
   .project-tools > p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .project-card-info > .text-link {
-    font-size: 11px;
+    font-size: 14px;
   }
   .project-more {
     min-height: 380px;
@@ -3384,39 +2953,35 @@ textarea:focus-visible {
     align-items: flex-start;
   }
   .project-more h3 {
-    font-size: 38px;
+    font-size: 41px;
   }
   .project-more p {
-    font-size: 12px;
+    font-size: 15px;
     max-width: 280px;
   }
   .project-more .pill-button {
-    font-size: 12px;
+    font-size: 15px;
     padding: 17px 23px;
     gap: 30px;
     margin-top: 28px;
   }
   .project-more > .project-index {
-    font-size: 11px;
+    font-size: 14px;
     margin-bottom: 25px;
   }
   .more-caption {
-    font-size: 7px;
+    font-size: 13px;
     padding-top: 35px;
   }
   .tech-section {
     padding: 85px 20px 80px;
   }
-  .tech-content > .section-index {
-    font-size: 8px;
-    margin-bottom: 24px;
-  }
   .tech-content h2 {
-    font-size: 46px;
+    font-size: 49px;
     letter-spacing: -2px;
   }
   .tech-content > p {
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.9;
     margin-top: 22px;
   }
@@ -3435,10 +3000,10 @@ textarea:focus-visible {
     gap: 9px;
   }
   .tech-tile > svg {
-    font-size: 24px;
+    font-size: 27px;
   }
   .tech-tile > span {
-    font-size: 8px;
+    font-size: 13px;
   }
   .tech-row:first-child {
     max-width: 280px;
@@ -3478,7 +3043,7 @@ textarea:focus-visible {
   }
   .creative-cta > a {
     width: 230px;
-    font-size: 12px;
+    font-size: 15px;
     padding: 17px 22px;
     gap: 24px;
   }
@@ -3486,17 +3051,12 @@ textarea:focus-visible {
     padding: 75px 0 85px;
     gap: 30px;
   }
-  .certificate-heading .section-index {
-    font-size: 7px;
-    letter-spacing: 0.6px;
-    margin-bottom: 24px;
-  }
   .certificate-heading h2 {
-    font-size: 39px;
+    font-size: 42px;
     letter-spacing: -1.9px;
   }
   .certificate-heading > p {
-    font-size: 11px;
+    font-size: 14px;
     margin-top: 20px;
   }
   .certificate-row {
@@ -3509,73 +3069,66 @@ textarea:focus-visible {
     gap: 5px;
   }
   .certificate-seal > svg {
-    font-size: 25px;
+    font-size: 28px;
   }
   .certificate-details > span {
-    font-size: 8px;
+    font-size: 13px;
   }
   .certificate-date {
     display: block;
     margin-top: 4px;
   }
   .certificate-details h3 {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.4;
     letter-spacing: -0.3px;
     margin-top: 9px;
     max-width: 250px;
   }
   .certificate-details > p {
-    font-size: 9px;
+    font-size: 13px;
   }
   .certificate-action {
     font-size: 0;
     gap: 0;
   }
   .certificate-action svg {
-    font-size: 22px;
+    font-size: 25px;
   }
   .contact-section {
     padding: 80px 0 75px;
     gap: 45px;
   }
-  .contact-intro > .section-index {
-    font-size: 7px;
-    letter-spacing: 0.5px;
-    line-height: 1.8;
-    margin-bottom: 35px;
-    max-width: 280px;
-  }
   .contact-availability {
-    font-size: 9px;
+    font-size: 13px;
     gap: 9px;
     margin-bottom: 23px;
   }
   .contact-intro h2 {
-    font-size: clamp(48px, 13vw, 72px);
+    font-size: clamp(51px, calc(13vw + 3px), 75px);
     letter-spacing: -2.8px;
     line-height: 1.05;
   }
   .contact-intro > p {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.9;
     margin-top: 24px;
   }
   .contact-email {
-    font-size: 15px;
+    font-size: 18px;
     letter-spacing: -0.4px;
     gap: 13px;
     margin-top: 30px;
   }
   .contact-email svg {
-    font-size: 22px;
+    font-size: 25px;
   }
   .whatsapp-link {
-    font-size: 10px;
+    font-size: 13px;
     margin-top: 17px;
   }
   .form-heading {
-    font-size: 7px;
+    font-size: 13px;
     letter-spacing: 0.5px;
     margin-bottom: 32px;
   }
@@ -3583,27 +3136,27 @@ textarea:focus-visible {
     margin-bottom: 25px;
   }
   .form-field label {
-    font-size: 11px;
+    font-size: 14px;
     gap: 12px;
   }
   .form-field input,
   .form-field textarea {
-    font-size: 14px;
+    font-size: 17px;
     padding-block: 10px 13px;
   }
   .form-field input::placeholder,
   .form-field textarea::placeholder {
-    font-size: 12px;
+    font-size: 15px;
   }
   .form-submit-row {
     gap: 10px;
     margin-top: 30px;
   }
   .form-submit-row > span {
-    font-size: 8px;
+    font-size: 13px;
   }
   .send-button {
-    font-size: 8px;
+    font-size: 13px;
     gap: 12px;
     letter-spacing: 0.3px;
   }
@@ -3613,7 +3166,7 @@ textarea:focus-visible {
     padding: 13px;
   }
   .form-feedback {
-    font-size: 10px;
+    font-size: 13px;
     margin-top: 18px;
     min-height: 0;
   }
@@ -3621,7 +3174,7 @@ textarea:focus-visible {
     min-height: 340px;
   }
   .form-success h3 {
-    font-size: 35px;
+    font-size: 38px;
   }
   .site-footer {
     padding-top: 35px;
@@ -3632,13 +3185,13 @@ textarea:focus-visible {
     align-items: center;
   }
   .footer-name {
-    font-size: 29px;
+    font-size: 32px;
     letter-spacing: -1.4px;
   }
   .back-to-top {
     width: 35px;
     height: 35px;
-    font-size: 14px;
+    font-size: 17px;
     flex-shrink: 0;
   }
   .footer-columns {
@@ -3647,19 +3200,19 @@ textarea:focus-visible {
     padding-bottom: 35px;
   }
   .footer-label {
-    font-size: 6px;
+    font-size: 13px;
     letter-spacing: 0.3px;
     max-width: 150px;
     display: block;
     line-height: 1.8;
   }
   .footer-columns > div:first-child > p {
-    font-size: 12px;
+    font-size: 15px;
     margin-top: 12px;
     gap: 10px;
   }
   .footer-clock {
-    font-size: 8px;
+    font-size: 13px;
     margin-top: 10px;
   }
   .footer-socials {
@@ -3667,7 +3220,7 @@ textarea:focus-visible {
     gap: 8px;
   }
   .footer-socials > a {
-    font-size: 12px;
+    font-size: 15px;
     min-width: 93px;
   }
   .footer-credit {
@@ -3675,43 +3228,38 @@ textarea:focus-visible {
     align-items: flex-end;
   }
   .footer-credit > span {
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.7;
   }
   .footer-credit > a {
-    font-size: 9px;
+    font-size: 13px;
     white-space: nowrap;
     gap: 7px;
   }
   .footer-bottom {
-    font-size: 6px;
+    font-size: 13px;
     gap: 12px;
     padding-block: 21px;
     line-height: 1.6;
   }
   .footer-bottom > a {
-    font-size: 8px;
+    font-size: 13px;
   }
   .all-projects-page {
     padding-top: 115px;
   }
   .back-link {
-    font-size: 10px;
+    font-size: 13px;
   }
   .all-projects-heading {
     padding: 60px 0 40px;
   }
-  .all-projects-heading > .section-index {
-    font-size: 7px;
-    letter-spacing: 0.8px;
-    margin-bottom: 25px;
-  }
   .all-projects-heading h1 {
-    font-size: 62px;
+    font-size: 65px;
     letter-spacing: -3.4px;
   }
   .all-projects-heading > p {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.85;
     margin-top: 24px;
   }
@@ -3720,15 +3268,15 @@ textarea:focus-visible {
     padding-bottom: 25px;
   }
   .project-filters > button {
-    font-size: 10px;
+    font-size: 13px;
     padding: 9px 13px;
     gap: 8px;
   }
   .project-filters > button > span {
-    font-size: 7px;
+    font-size: 13px;
   }
   .filter-status {
-    font-size: 7px;
+    font-size: 13px;
     margin: 22px 0;
   }
   .all-project-grid {
@@ -3742,18 +3290,18 @@ textarea:focus-visible {
     padding: 25px;
   }
   .all-project-body h2 {
-    font-size: 26px;
+    font-size: 29px;
   }
   .all-project-body > p {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.9;
     margin: 18px 0 23px;
   }
   .all-project-body .tool-tags > span {
-    font-size: 9px;
+    font-size: 13px;
   }
   .all-project-links > a {
-    font-size: 11px;
+    font-size: 14px;
   }
   .projects-bottom-cta {
     flex-direction: column;
@@ -3762,15 +3310,15 @@ textarea:focus-visible {
     padding: 65px 0 85px;
   }
   .projects-bottom-cta > p {
-    font-size: 32px;
+    font-size: 35px;
     letter-spacing: -1.2px;
   }
   .projects-bottom-cta > .pill-button {
-    font-size: 12px;
+    font-size: 15px;
     padding: 17px 25px;
   }
   .image-dialog-header {
-    font-size: 11px;
+    font-size: 14px;
     padding: 12px 15px;
   }
   .desktop-only {
@@ -3785,22 +3333,22 @@ textarea:focus-visible {
     gap: 15px;
   }
   .hero-intro h1 {
-    font-size: 48px;
+    font-size: 51px;
   }
   .hero-portrait {
     height: 320px;
   }
   .hero-role h2 {
-    font-size: 18px;
+    font-size: 21px;
   }
   .role-rotator {
-    font-size: 27px;
+    font-size: 30px;
   }
   .hero-role .availability {
-    font-size: 8px;
+    font-size: 13px;
   }
   .service-trigger h3 {
-    font-size: 17px;
+    font-size: 20px;
   }
   .service-trigger {
     gap: 9px;
@@ -3811,31 +3359,31 @@ textarea:focus-visible {
     padding-right: 18px;
   }
   .services-heading h2 {
-    font-size: 53px;
+    font-size: 56px;
   }
   .tech-row:nth-child(2) {
     max-width: 280px;
   }
   .contact-email {
-    font-size: 13px;
+    font-size: 16px;
   }
   .contact-intro h2 {
-    font-size: 47px;
+    font-size: 50px;
   }
   .footer-name {
-    font-size: 25px;
+    font-size: 28px;
   }
   .footer-credit > span {
-    font-size: 9px;
+    font-size: 13px;
   }
   .footer-credit > a {
-    font-size: 8px;
+    font-size: 13px;
   }
   .about-meta {
-    font-size: 8px;
+    font-size: 13px;
   }
   .all-projects-heading h1 {
-    font-size: 55px;
+    font-size: 58px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3850,7 +3398,6 @@ textarea:focus-visible {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .intro-screen,
   .cursor-aura,
   .scene-track {
     display: none !important;
@@ -3888,19 +3435,14 @@ textarea:focus-visible {
   gap: 50px;
   padding: 30px 0 30px;
 }
-.playground-intro .section-index {
-  font-size: 8px;
-  letter-spacing: 1px;
-  margin-bottom: 18px;
-}
 .playground-intro h1 {
-  font-size: 50px;
+  font-size: 53px;
   line-height: 1.02;
   font-weight: 400;
   letter-spacing: -3px;
 }
 .playground-intro > p {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.9;
   color: #92aebd;
   padding-bottom: 5px;
@@ -3932,16 +3474,16 @@ textarea:focus-visible {
   background: #91d8e604;
 }
 .chat-header > svg {
-  font-size: 18px;
+  font-size: 21px;
   color: var(--accent);
 }
 .chat-header h2 {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
 }
 .chat-header > div > span {
   display: block;
-  font-size: 8px;
+  font-size: 13px;
   color: #7897a9;
   margin-top: 4px;
 }
@@ -3977,7 +3519,7 @@ textarea:focus-visible {
 .chat-sender {
   display: block;
   font:
-    7px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 1.2px;
   color: #7098ac;
@@ -3987,7 +3529,7 @@ textarea:focus-visible {
   color: var(--accent);
 }
 .chat-bubble p {
-  font-size: 11px;
+  font-size: 14px;
   color: #bacdd8;
   line-height: 1.85;
   overflow-wrap: anywhere;
@@ -3996,7 +3538,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 9px;
+  font-size: 13px;
   color: var(--accent);
   margin-top: 15px;
 }
@@ -4034,7 +3576,7 @@ textarea:focus-visible {
   border: 1px solid #8ac0d32e;
   background: transparent;
   border-radius: 100px;
-  font-size: 8px;
+  font-size: 13px;
   color: #a9c5d4;
   line-height: 1.3;
   transition:
@@ -4059,7 +3601,7 @@ textarea:focus-visible {
   border-radius: 5px;
   background: transparent;
   color: var(--text);
-  font-size: 10px;
+  font-size: 13px;
   padding: 11px;
 }
 .chat-input-form input::placeholder {
@@ -4073,7 +3615,7 @@ textarea:focus-visible {
   background: var(--accent);
   color: #0c222a;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 18px;
 }
 .chat-input-form button:disabled {
   opacity: 0.35;
@@ -4098,7 +3640,7 @@ textarea:focus-visible {
   background: #88e6ed0e;
   border: 1px solid #88e6ed20;
   border-radius: 50%;
-  font-size: 10px;
+  font-size: 13px;
   color: var(--accent);
   font-weight: 600;
 }
@@ -4108,17 +3650,17 @@ textarea:focus-visible {
   bottom: 8px;
 }
 .player-avatar.you {
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 400;
   color: #c3d9e4;
 }
 .player-bar > div:nth-child(2) > strong {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 450;
   display: block;
 }
 .player-bar > div:nth-child(2) > span {
-  font-size: 8px;
+  font-size: 13px;
   color: #7c9db0;
   display: block;
   margin-top: 5px;
@@ -4185,7 +3727,7 @@ textarea:focus-visible {
 }
 .chess-piece {
   font-family: "DejaVu Sans", "Segoe UI Symbol", sans-serif;
-  font-size: clamp(27px, 3.2vw, 47px);
+  font-size: clamp(30px, calc(3.2vw + 3px), 50px);
   line-height: 1;
   position: relative;
   z-index: 1;
@@ -4210,7 +3752,7 @@ textarea:focus-visible {
 .board-file {
   position: absolute;
   font:
-    7px var(--font-mono),
+    13px var(--font-body),
     monospace;
   color: #173947a8;
   z-index: 2;
@@ -4243,7 +3785,7 @@ textarea:focus-visible {
   border: 3px solid #0e4b5560;
 }
 .board-help {
-  font-size: 8px;
+  font-size: 13px;
   line-height: 1.8;
   color: #718fa2;
   margin-top: 15px;
@@ -4272,7 +3814,7 @@ textarea:focus-visible {
   box-shadow: none;
 }
 .game-status > p {
-  font-size: 9px;
+  font-size: 13px;
   line-height: 1.7;
   color: #c0d3de;
 }
@@ -4284,7 +3826,7 @@ textarea:focus-visible {
 }
 .move-history > h2 {
   font:
-    8px var(--font-mono),
+    13px var(--font-body),
     monospace;
   letter-spacing: 1px;
   padding: 15px 13px;
@@ -4299,7 +3841,7 @@ textarea:focus-visible {
   padding: 13px 13px 10px;
   color: #7898aa;
   font:
-    6px var(--font-mono),
+    13px var(--font-body),
     monospace;
 }
 .move-history-list {
@@ -4309,7 +3851,7 @@ textarea:focus-visible {
   scrollbar-width: thin;
 }
 .history-empty {
-  font-size: 9px;
+  font-size: 13px;
   line-height: 1.9;
   color: #6c8fa3;
   padding-top: 30px;
@@ -4320,7 +3862,7 @@ textarea:focus-visible {
   gap: 5px;
   padding: 9px 0;
   font:
-    10px var(--font-mono),
+    13px var(--font-body),
     monospace;
   border-bottom: 1px solid #bddcee0a;
 }
@@ -4347,7 +3889,7 @@ textarea:focus-visible {
   background: transparent;
   border-radius: 5px;
   padding: 13px 8px;
-  font-size: 9px;
+  font-size: 13px;
   color: #b6ccd9;
   transition:
     border-color 0.25s,
@@ -4358,7 +3900,7 @@ textarea:focus-visible {
   background: #88e6ed08;
 }
 .game-controls > button > svg {
-  font-size: 13px;
+  font-size: 16px;
   color: #85b7c8;
 }
 .playground-contact {
@@ -4366,7 +3908,7 @@ textarea:focus-visible {
 }
 .playground-contact > span {
   font:
-    6px/1.8 var(--font-mono),
+    13px/1.8 var(--font-body),
     monospace;
   letter-spacing: 0.5px;
   color: #64889d;
@@ -4376,7 +3918,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: 11px;
+  font-size: 14px;
   color: var(--accent);
   margin-top: 12px;
 }
@@ -4393,12 +3935,12 @@ textarea:focus-visible {
   backdrop-filter: blur(7px);
 }
 .reset-dialog > h2 {
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 400;
   letter-spacing: -0.8px;
 }
 .reset-dialog > p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.8;
   color: var(--muted);
   margin-top: 15px;
@@ -4409,7 +3951,7 @@ textarea:focus-visible {
   margin-top: 28px;
 }
 .reset-dialog button {
-  font-size: 11px;
+  font-size: 14px;
   padding: 13px 18px;
   gap: 15px;
 }
@@ -4455,14 +3997,14 @@ textarea:focus-visible {
     height: 400px;
   }
   .playground-intro h1 {
-    font-size: 60px;
+    font-size: 63px;
   }
   .playground-intro > p {
-    font-size: 10px;
+    font-size: 13px;
     max-width: 230px;
   }
   .chess-piece {
-    font-size: 38px;
+    font-size: 41px;
   }
 }
 @media (max-width: 900px) {
@@ -4475,10 +4017,10 @@ textarea:focus-visible {
     gap: 30px;
   }
   .playground-intro h1 {
-    font-size: 50px;
+    font-size: 53px;
   }
   .playground-intro > p {
-    font-size: 10px;
+    font-size: 13px;
     max-width: 210px;
   }
   .playground-layout {
@@ -4519,44 +4061,44 @@ textarea:focus-visible {
     grid-column: 2;
   }
   .chess-piece {
-    font-size: 48px;
+    font-size: 51px;
   }
   .board-help {
-    font-size: 9px;
+    font-size: 13px;
   }
   .chat-bubble > p {
-    font-size: 12px;
+    font-size: 15px;
   }
   .chat-bubble {
     max-width: 90%;
   }
   .chat-input-form input {
-    font-size: 12px;
+    font-size: 15px;
     padding: 13px;
   }
   .chat-input-form button {
     width: 42px;
   }
   .chat-questions button {
-    font-size: 9px;
+    font-size: 13px;
   }
   .chat-header h2 {
-    font-size: 14px;
+    font-size: 17px;
   }
   .chat-header > div > span {
-    font-size: 9px;
+    font-size: 13px;
   }
   .player-bar > div:nth-child(2) > strong {
-    font-size: 12px;
+    font-size: 15px;
   }
   .player-bar > div:nth-child(2) > span {
-    font-size: 9px;
+    font-size: 13px;
   }
   .game-status > p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .game-controls > button {
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 @media (max-width: 600px) {
@@ -4569,20 +4111,13 @@ textarea:focus-visible {
     gap: 23px;
     padding: 50px 0 35px;
   }
-  .playground-intro .section-index {
-    font-size: 7px;
-    letter-spacing: 0.65px;
-    max-width: 260px;
-    line-height: 1.8;
-    margin-bottom: 22px;
-  }
   .playground-intro h1 {
-    font-size: 53px;
+    font-size: 56px;
     letter-spacing: -2.8px;
   }
   .playground-intro > p {
     max-width: 320px;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.85;
   }
   .playground-layout {
@@ -4600,28 +4135,28 @@ textarea:focus-visible {
     max-width: 95%;
   }
   .chat-bubble > p {
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.9;
   }
   .chat-action {
-    font-size: 10px;
+    font-size: 13px;
   }
   .chat-questions {
     padding: 13px;
     gap: 6px;
   }
   .chat-questions button {
-    font-size: 8px;
+    font-size: 13px;
     padding: 7px 10px;
   }
   .chat-header {
     padding: 15px;
   }
   .chat-header h2 {
-    font-size: 13px;
+    font-size: 16px;
   }
   .chat-input-form input {
-    font-size: 11px;
+    font-size: 14px;
     padding: 13px 10px;
   }
   .chat-input-form button {
@@ -4632,11 +4167,11 @@ textarea:focus-visible {
     border-radius: 6px;
   }
   .chess-piece {
-    font-size: clamp(29px, 9vw, 43px);
+    font-size: clamp(32px, calc(9vw + 3px), 46px);
   }
   .board-rank,
   .board-file {
-    font-size: 6px;
+    font-size: 13px;
   }
   .board-rank {
     top: 2px;
@@ -4650,10 +4185,10 @@ textarea:focus-visible {
     padding: 11px 12px;
   }
   .player-bar > div:nth-child(2) > strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .player-bar > div:nth-child(2) > span {
-    font-size: 8px;
+    font-size: 13px;
   }
   .player-avatar {
     width: 29px;
@@ -4668,15 +4203,15 @@ textarea:focus-visible {
     min-height: 60px;
   }
   .game-status > p {
-    font-size: 9px;
+    font-size: 13px;
   }
   .move-history > h2 {
-    font-size: 7px;
+    font-size: 13px;
     letter-spacing: 0.8px;
     padding: 13px 11px;
   }
   .move-history-head {
-    font-size: 5px;
+    font-size: 13px;
     gap: 4px;
     grid-template-columns: 18px 1fr 1fr;
     padding: 12px 10px;
@@ -4686,16 +4221,16 @@ textarea:focus-visible {
     height: 160px;
   }
   .move-row {
-    font-size: 9px;
+    font-size: 13px;
     grid-template-columns: 18px 1fr 1fr;
   }
   .history-empty {
-    font-size: 8px;
+    font-size: 13px;
     padding-top: 18px;
     line-height: 1.9;
   }
   .game-controls > button {
-    font-size: 9px;
+    font-size: 13px;
     gap: 8px;
     padding: 12px 6px;
   }
@@ -4703,18 +4238,18 @@ textarea:focus-visible {
     padding-top: 8px;
   }
   .playground-contact > span {
-    font-size: 5px;
+    font-size: 13px;
     letter-spacing: 0.2px;
   }
   .playground-contact > a {
-    font-size: 10px;
+    font-size: 13px;
     margin-top: 9px;
   }
   .reset-dialog {
     padding: 25px;
   }
   .reset-dialog h2 {
-    font-size: 23px;
+    font-size: 26px;
     line-height: 1.2;
   }
   .reset-dialog > div {
@@ -4722,12 +4257,743 @@ textarea:focus-visible {
     gap: 10px;
   }
   .reset-dialog button {
-    font-size: 10px;
+    font-size: 13px;
     padding: 12px 15px;
   }
   .board-help {
-    font-size: 8px;
+    font-size: 13px;
     max-width: 280px;
     line-height: 1.9;
+  }
+}
+
+/* Larger Geist typography, continuous motion and more depth within the palette. */
+:root {
+  --surface-blue: #101f30;
+  --surface-cyan: #10272d;
+  --mint: #a3f1df;
+  --ice: #d5edff;
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+body {
+  font-size: 19px;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.nav-label {
+  height: 1.5em;
+  line-height: 1.5;
+}
+.nav-link {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+.nav-label > span {
+  transition: transform 0.5s var(--motion-ease);
+}
+.header-email {
+  font-size: 15px;
+}
+.scene-sticky canvas {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.has-scene .scene-sticky canvas {
+  opacity: 1;
+}
+.hero-portrait {
+  transition: opacity 0.8s ease;
+}
+.hero-portrait > img {
+  filter: none;
+  mask-image: linear-gradient(#000 92%, transparent);
+}
+.hero-intro > p {
+  font-size: 19px;
+  line-height: 1.7;
+}
+.hero-role > p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.hero-role .availability {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.hero-role {
+  padding-left: 0;
+  padding-top: 60px;
+}
+.hero-project-link {
+  font-size: 16px;
+}
+.hero-project-count {
+  max-width: 230px;
+  line-height: 1.5;
+}
+.hero-bottom {
+  font-size: 13px;
+}
+.scroll-cue {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+.about-copy .about-secondary {
+  font-size: 18px;
+}
+.about-meta {
+  font-size: 15px;
+}
+.about-visual-note {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #a1b8c5;
+}
+.services-heading p {
+  font-size: 18px;
+}
+.service-panel {
+  transition:
+    background 0.55s ease,
+    border-color 0.55s ease;
+  background: linear-gradient(125deg, #79aaff0c, #080c0f80 70%);
+}
+.service-panel:nth-child(2) {
+  background: linear-gradient(125deg, #88e6ed0e, #080c0f80 70%);
+}
+.service-panel.is-open {
+  background: linear-gradient(125deg, #1b3448c9, #0d181fc9);
+}
+.service-panel:nth-child(2).is-open {
+  background: linear-gradient(125deg, #17383bc9, #0d181fc9);
+}
+.service-body {
+  transition: grid-template-rows 0.65s var(--motion-ease);
+}
+.service-body p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+.service-trigger h3 {
+  white-space: normal;
+  line-height: 1.25;
+}
+.service-subtitle {
+  font-size: 15px;
+}
+.services-contact {
+  font-size: 15px;
+}
+.project-track {
+  transform: translateZ(0);
+}
+.featured-project {
+  background: linear-gradient(160deg, #13223180, #080c0f00 70%);
+}
+.featured-project:nth-child(2n) {
+  background: linear-gradient(160deg, #11313565, #080c0f00 70%);
+}
+.project-card-info > p {
+  font-size: 17px;
+  line-height: 1.65;
+}
+.project-tools p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+.project-card-heading > div > span {
+  font-size: 14px;
+}
+.project-view-link {
+  font-size: 15px;
+}
+.projects-heading h2 {
+  line-height: 1.08;
+}
+.tech-content > p {
+  font-size: 18px;
+}
+.tech-tile {
+  width: 106px;
+  height: 104px;
+  backdrop-filter: none;
+  background: linear-gradient(145deg, #233b4b90, #101a2475);
+}
+.tech-tile:nth-child(3n + 2) {
+  background: linear-gradient(145deg, #13363d95, #101c2575);
+}
+.tech-tile:nth-child(3n) {
+  background: linear-gradient(145deg, #23345295, #11192575);
+}
+.tech-tile > span {
+  font-size: 14px;
+}
+.tech-tile > svg {
+  font-size: 32px;
+}
+.certificates-section {
+  display: block;
+  padding-block: 110px 130px;
+  border-top: 0;
+  position: relative;
+}
+.certificate-heading {
+  margin-bottom: 48px;
+}
+.certificate-heading h2 {
+  font-size: clamp(42px, 4.7vw, 70px);
+  font-weight: 400;
+  letter-spacing: -2.5px;
+  line-height: 1.1;
+}
+.certificate-heading > p {
+  font-size: 18px;
+  margin-top: 22px;
+  color: #b1c5d2;
+}
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+.certificate-grid > .reveal {
+  display: flex;
+}
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #79aaff38;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #172b41, #0e1821);
+  transition:
+    transform 0.6s var(--motion-ease),
+    border-color 0.5s;
+}
+.certificate-grid > :nth-child(2) .certificate-card {
+  border-color: #88e6ed38;
+  background: linear-gradient(145deg, #133338, #0c1b23);
+}
+.certificate-card:hover {
+  transform: translateY(-6px);
+  border-color: #79aaff90;
+}
+.certificate-grid > :nth-child(2) .certificate-card:hover {
+  border-color: #88e6ed90;
+}
+.certificate-preview {
+  position: relative;
+  padding: 25px;
+  aspect-ratio: 1.55;
+  background: #ffffff06;
+}
+.certificate-preview > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 3px;
+  filter: drop-shadow(0 10px 18px #0005);
+}
+.certificate-open {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: #173348;
+  border: 1px solid #87b7e36b;
+  border-radius: 50%;
+  color: var(--ice);
+}
+.certificate-details {
+  padding: 28px 30px 30px;
+}
+.certificate-details h3 {
+  font-size: 25px;
+  font-weight: 500;
+  max-width: none;
+  margin: 0 0 15px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+}
+.certificate-details > p {
+  font-size: 16px;
+  color: #bdd1dc;
+  margin-top: 5px;
+  line-height: 1.65;
+}
+.certificate-action {
+  display: inline-flex;
+  margin-top: 25px;
+  gap: 14px;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 16px;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+.certificate-action svg {
+  width: 21px;
+  height: 21px;
+}
+.contact-section {
+  align-items: center;
+  padding-block: 100px 140px;
+  gap: 70px;
+}
+.contact-intro > p {
+  font-size: 19px;
+}
+.contact-availability {
+  margin-top: 28px;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+.contact-email {
+  font-size: clamp(16px, 1.6vw, 23px);
+  overflow-wrap: anywhere;
+}
+.whatsapp-link {
+  font-size: 16px;
+}
+.contact-form-wrap {
+  padding: 36px;
+  border: 1px solid #7ab8dd38;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #162b3a, #101c25 65%, #112c31);
+  box-shadow: 0 25px 80px #0002;
+}
+.form-heading {
+  font-family: var(--font-body);
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  color: var(--text);
+  margin: 0 0 14px;
+  gap: 13px;
+}
+.form-heading > svg {
+  width: 25px;
+  height: 25px;
+}
+.form-description {
+  font-size: 16px;
+  color: #aec3cf;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+.form-field {
+  margin-bottom: 22px;
+}
+.form-field label {
+  font-size: 17px;
+  color: #e4eff5;
+  margin-bottom: 10px;
+}
+.form-field input,
+.form-field textarea {
+  border: 1px solid #91bcd13b;
+  border-radius: 9px;
+  background: #050f1880;
+  padding: 13px 16px;
+  font-size: 18px;
+  min-height: 54px;
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    box-shadow 0.3s;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  font-size: 17px;
+  color: #91a9b7;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  background: #0b1c29;
+  border-color: #88e6edaa;
+  box-shadow: 0 0 0 3px #88e6ed12;
+}
+.form-field textarea {
+  min-height: 145px;
+}
+.form-submit-row {
+  margin-top: 28px;
+}
+.send-button {
+  margin: 0;
+  width: 100%;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 550;
+  letter-spacing: 0;
+  padding: 15px 20px;
+  border-radius: 9px;
+  background: linear-gradient(100deg, #a3f1df, #88e6ed 55%, #88b9f6);
+  color: #09212b;
+  transition:
+    transform 0.4s var(--motion-ease),
+    box-shadow 0.4s;
+}
+.send-button > svg {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+.send-button:hover {
+  box-shadow: 0 8px 30px #68dce820;
+  transform: translateY(-2px);
+}
+.send-button:hover > svg {
+  background: transparent;
+  transform: translate(2px, -2px);
+}
+.form-feedback {
+  min-height: 0;
+  margin-top: 16px;
+  font-size: 15px;
+}
+.form-feedback:empty {
+  margin: 0;
+}
+.form-success h3 {
+  font-size: clamp(30px, 3vw, 41px);
+}
+.form-success > p {
+  font-size: 17px;
+}
+@media (min-width: 1100px) {
+  .service-panels {
+    max-width: 460px;
+    width: 100%;
+  }
+  .services-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 220px;
+  }
+  .services-heading h2 {
+    font-size: clamp(50px, 4.2vw, 70px);
+  }
+}
+@media (max-width: 1099px) {
+  .hero-role {
+    padding: 0;
+  }
+  .contact-section {
+    gap: 35px;
+  }
+  .contact-form-wrap {
+    padding: 28px;
+  }
+}
+@media (max-width: 900px) {
+  .site-header {
+    gap: 16px;
+  }
+  .site-header nav ul {
+    gap: 18px;
+  }
+  .mobile-cv {
+    font-size: 13px;
+  }
+  .hero-intro > p {
+    font-size: 18px;
+  }
+  .hero-role > p {
+    font-size: 17px;
+  }
+  .certificate-grid {
+    gap: 20px;
+  }
+  .certificate-preview {
+    padding: 16px;
+  }
+  .certificate-details {
+    padding: 24px;
+  }
+  .certificate-details h3 {
+    font-size: 23px;
+  }
+  .certificate-details > p {
+    font-size: 15px;
+  }
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .contact-form-wrap {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .site-header {
+    padding-inline: 20px;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 12px;
+  }
+  .wordmark {
+    font-size: 24px;
+  }
+  .site-header nav {
+    order: 3;
+    width: 100%;
+  }
+  .site-header nav ul {
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .site-header .mobile-cv {
+    margin-left: auto;
+  }
+  .site-header.is-scrolled {
+    padding-block: 12px;
+  }
+  .nav-link {
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .hero-section {
+    padding-top: 170px;
+    padding-bottom: 145px;
+  }
+  .hero-intro h1 {
+    font-size: clamp(51px, 14vw, 75px);
+  }
+  .hero-portrait {
+    height: 420px;
+    margin: 25px 0 0;
+  }
+  .hero-role {
+    margin-top: 18px;
+    padding: 0;
+  }
+  .hero-role > p {
+    margin-block: 20px;
+  }
+  .hero-role .availability {
+    font-size: 14px;
+  }
+  .hero-bottom {
+    flex-wrap: wrap;
+    gap: 22px;
+    bottom: 45px;
+  }
+  .scroll-cue {
+    font-size: 12px;
+    max-width: 55%;
+  }
+  .hero-project-count {
+    font-size: 12px;
+    max-width: 120px;
+  }
+  .about-section {
+    gap: 0;
+  }
+  .about-visual {
+    display: none;
+  }
+  .about-copy p {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+  .about-copy .about-secondary {
+    font-size: 18px;
+  }
+  .about-meta {
+    font-size: 14px;
+    gap: 10px;
+  }
+  .services-heading h2 {
+    font-size: clamp(46px, 12vw, 61px);
+  }
+  .service-trigger {
+    padding: 24px 20px;
+    gap: 12px;
+  }
+  .service-trigger h3 {
+    font-size: 22px;
+    letter-spacing: -0.6px;
+  }
+  .service-subtitle {
+    font-size: 14px;
+  }
+  .service-body > div {
+    padding-inline: 20px;
+  }
+  .service-body p {
+    font-size: 17px;
+  }
+  .service-number {
+    display: none;
+  }
+  .tool-tags > span {
+    font-size: 13px;
+  }
+  .services-contact {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .projects-heading h2 {
+    font-size: clamp(37px, 10vw, 46px);
+  }
+  .project-card-info > p {
+    font-size: 17px;
+  }
+  .project-card-heading > div > span {
+    font-size: 14px;
+  }
+  .certificate-heading {
+    margin-bottom: 32px;
+  }
+  .certificate-heading h2 {
+    font-size: clamp(35px, 9vw, 48px);
+    letter-spacing: -1.5px;
+  }
+  .certificate-heading > p {
+    font-size: 17px;
+  }
+  .certificate-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .certificates-section {
+    padding-block: 65px 75px;
+  }
+  .certificate-preview {
+    padding: 22px;
+  }
+  .certificate-details h3 {
+    font-size: 25px;
+  }
+  .certificate-action {
+    font-size: 16px;
+  }
+  .tech-section {
+    padding-inline: 20px;
+    padding-top: 95px;
+  }
+  .tech-pyramid {
+    display: block;
+  }
+  .tech-row {
+    display: contents;
+  }
+  .tech-pyramid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .tech-tile {
+    width: 100%;
+    height: 105px;
+    gap: 10px;
+  }
+  .tech-tile > span {
+    font-size: 14px;
+  }
+  .tech-content > p {
+    font-size: 17px;
+  }
+  .creative-cta {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+  }
+  .creative-cta a {
+    font-size: 16px;
+  }
+  .contact-section {
+    padding-block: 70px 85px;
+    gap: 38px;
+  }
+  .contact-intro h2 {
+    font-size: clamp(45px, 12vw, 75px);
+  }
+  .contact-intro > p {
+    font-size: 18px;
+  }
+  .contact-availability {
+    font-size: 14px;
+  }
+  .contact-email {
+    font-size: 19px;
+    gap: 8px;
+  }
+  .whatsapp-link {
+    font-size: 16px;
+  }
+  .contact-form-wrap {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+  .form-heading {
+    font-size: 28px;
+  }
+  .form-description {
+    font-size: 16px;
+  }
+  .form-field label {
+    font-size: 17px;
+  }
+  .form-field input,
+  .form-field textarea {
+    font-size: 18px;
+    padding-inline: 14px;
+  }
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    font-size: 16px;
+  }
+  .send-button {
+    font-size: 17px;
+  }
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer-credit p {
+    font-size: 16px;
+  }
+  .project-filters {
+    gap: 10px;
+  }
+  .project-filters button {
+    font-size: 14px;
+  }
+  .chat-suggestions {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

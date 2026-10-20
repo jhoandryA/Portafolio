@@ -24,7 +24,6 @@ export default function TechStack() {
         <div className="tech-grid" />
       </div>
       <Reveal className="tech-content">
-        <span className="section-index">05 / CON QUÉ CONSTRUYO</span>
         <h2 id="tech-title">
           Mi caja de
           <br />

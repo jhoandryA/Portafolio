@@ -53,7 +53,6 @@ export default function Services() {
       aria-labelledby="services-title"
     >
       <div className="services-heading">
-        <span className="section-index">02 / LO QUE HAGO</span>
         <Reveal>
           <h2 id="services-title">
             IDEAS.
@@ -103,7 +102,6 @@ export default function Services() {
             >
               <div>
                 <p>{area.description}</p>
-                <span className="tools-label">CON QUÉ LO CONSTRUYO</span>
                 <div className="tool-tags">
                   {area.tools.map((tool) => (
                     <span key={tool}>{tool}</span>

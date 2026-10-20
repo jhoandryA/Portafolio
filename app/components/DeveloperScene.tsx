@@ -14,10 +14,15 @@ export default function DeveloperScene() {
     let cancelled = false;
     let dispose: (() => void) | undefined;
     import("./scene/createDeveloperScene")
-      .then(({ createDeveloperScene }) => {
+      .then(async ({ createDeveloperScene }) => {
         if (cancelled) return;
         try {
-          dispose = createDeveloperScene(container, story);
+          const destroy = await createDeveloperScene(container, story);
+          if (cancelled) {
+            destroy();
+            return;
+          }
+          dispose = destroy;
           story.classList.add("has-scene");
         } catch (error) {
           console.warn("Scene initialization failed", error);

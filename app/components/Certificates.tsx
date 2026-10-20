@@ -1,4 +1,5 @@
-import { FiArrowUpRight, FiAward } from "react-icons/fi";
+import Image from "next/image";
+import { FiArrowUpRight } from "react-icons/fi";
 import { certificates } from "@/app/lib/constants";
 import Reveal from "./Reveal";
 
@@ -10,40 +11,43 @@ export default function Certificates() {
       aria-labelledby="certificates-title"
     >
       <Reveal className="certificate-heading">
-        <span className="section-index">
-          06 / APRENDER ES PARTE DEL PROCESO
-        </span>
         <h2 id="certificates-title">
-          Siempre hay
-          <br />
-          <span className="gradient-text">algo por descubrir.</span>
+          Mis <span className="gradient-text">certificaciones.</span>
         </h2>
-        <p>Formación que se convierte en mejores soluciones.</p>
+        <p>Dos pasos más en mi formación como desarrollador.</p>
       </Reveal>
-      <div className="certificate-list">
+      <div className="certificate-grid">
         {certificates.map((certificate, index) => (
           <Reveal key={certificate.name} delay={index * 0.08}>
             <a
               href={certificate.pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="certificate-row"
+              className="certificate-card"
+              aria-label={`Ver certificado: ${certificate.name}`}
             >
-              <div className="certificate-seal">
-                <FiAward />
-                <span>0{index + 1}</span>
+              <div className="certificate-preview">
+                <Image
+                  src={certificate.image}
+                  alt={`Certificado de ${certificate.name} a nombre de Jhoandry Apaza`}
+                  width={1400}
+                  height={990}
+                  sizes="(max-width: 700px) 90vw, 45vw"
+                />
+                <span className="certificate-open" aria-hidden="true">
+                  <FiArrowUpRight />
+                </span>
               </div>
               <div className="certificate-details">
-                <span>
-                  {certificate.issuer}{" "}
-                  <span className="certificate-date">/ {certificate.date}</span>
-                </span>
                 <h3>{certificate.name}</h3>
+                <p>
+                  {certificate.issuer} · {certificate.date}
+                </p>
                 {"detail" in certificate && <p>{certificate.detail}</p>}
+                <span className="certificate-action">
+                  Ver certificado en PDF <FiArrowUpRight />
+                </span>
               </div>
-              <span className="certificate-action">
-                VER CERTIFICADO <FiArrowUpRight />
-              </span>
             </a>
           </Reveal>
         ))}

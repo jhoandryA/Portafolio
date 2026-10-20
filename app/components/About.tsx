@@ -8,18 +8,9 @@ export default function About() {
       className="about-section page-width"
       aria-labelledby="about-title"
     >
-      <div className="about-visual">
-        <span className="section-index">01 / SOBRE MÍ</span>
-        <div className="about-visual-note">
-          <span>La curiosidad es el inicio.</span>
-          <span>Construir es el siguiente paso. ↗</span>
-        </div>
-      </div>
+      <div className="about-visual" aria-hidden="true" />
       <Reveal className="about-copy">
-        <span className="eyebrow" id="about-title">
-          MÁS ALLÁ DEL CÓDIGO
-        </span>
-        <h2>
+        <h2 id="about-title">
           Me gusta entender.
           <br />
           <span className="accent">Me mueve crear.</span>
@@ -43,7 +34,7 @@ export default function About() {
             <FiMapPin /> Lima, Perú
           </span>
           <a href="/CV_JHOANDRY.pdf" target="_blank" rel="noopener noreferrer">
-            Conoce mi recorrido <FiArrowUpRight />
+            Descargar CV <FiArrowUpRight />
           </a>
         </div>
       </Reveal>
