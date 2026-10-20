@@ -1,46 +1,91 @@
-import Link from 'next/link'
-import { socialLinks } from '@/app/lib/constants'
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { FiArrowUp, FiArrowUpRight } from "react-icons/fi";
+import { profile, socialLinks } from "@/app/lib/constants";
 
-export default function Footer(): JSX.Element {
-    return (
-        <footer className="border-t border-slate-800 py-10">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-
-                {/* NOMBRE + tagline */}
-                <div className="text-center md:text-left">
-                    <Link
-                        href="/"
-                        className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400"
-                    >
-                        Jhoandry Apaza
-                    </Link>
-                    <p className="text-slate-500 text-sm mt-1">
-                        Desarrollador de Software & Sistemas
-                    </p>
-                </div>
-
-                {/* REDES + COPYRIGHT */}
-                <div className="flex flex-col items-center md:items-end gap-3">
-                    <div className="flex gap-3">
-                        {socialLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={link.name}
-                                className="w-9 h-9 flex items-center justify-center rounded-lg border border-slate-800 text-slate-500 hover:text-blue-400 hover:border-blue-500/40 transition-all duration-200"
-                            >
-                                <link.icon className="w-4 h-4" />
-                            </a>
-                        ))}
-                    </div>
-                    <p className="text-slate-600 text-xs">
-                        © {new Date().getFullYear()} Jhoandry Apaza. Todos los derechos reservados.
-                    </p>
-                </div>
-
-            </div>
-        </footer>
-    )
+export default function Footer() {
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const update = () =>
+      setTime(
+        new Intl.DateTimeFormat("es-PE", {
+          timeZone: "America/Lima",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        }).format(new Date()),
+      );
+    update();
+    const timer = setInterval(update, 60000);
+    return () => clearInterval(timer);
+  }, []);
+  return (
+    <footer className="site-footer content-width">
+      <div className="footer-top">
+        <Link
+          href="/#home"
+          className="footer-name"
+          aria-label="Volver al inicio"
+        >
+          JHOANDRY APAZA<span>.</span>
+        </Link>
+        <Link
+          href="/#home"
+          className="back-to-top"
+          aria-label="Volver al inicio de la página"
+        >
+          <FiArrowUp />
+        </Link>
+      </div>
+      <div className="footer-columns">
+        <div>
+          <span className="footer-label">
+            DESDE LIMA, PARA CUALQUIER LUGAR.
+          </span>
+          <p>
+            {profile.location}{" "}
+            <span className="peru-flag" aria-label="Bandera de Perú" role="img">
+              <i />
+              <i />
+              <i />
+            </span>
+          </p>
+          <span className="footer-clock">
+            {time ? `${time} PET` : "UTC −05:00"}
+          </span>
+        </div>
+        <nav aria-label="Redes sociales" className="footer-socials">
+          {socialLinks.map((link) => (
+            <a
+              href={link.url}
+              key={link.name}
+              target={link.url.startsWith("mailto:") ? undefined : "_blank"}
+              rel="noopener noreferrer"
+            >
+              {link.name === "Correo electrónico" ? "Email" : link.name}
+              <FiArrowUpRight />
+            </a>
+          ))}
+        </nav>
+        <div className="footer-credit">
+          <span>
+            Diseñado y desarrollado
+            <br />
+            con curiosidad y propósito.
+          </span>
+          <Link href="/proyectos">
+            Sigue explorando <FiArrowUpRight />
+          </Link>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <span>© {new Date().getFullYear()} Jhoandry Apaza</span>
+        <span>IDEAS CLARAS. CÓDIGO CON PROPÓSITO.</span>
+        <a href={profile.cv} target="_blank" rel="noopener noreferrer">
+          Currículum <FiArrowUpRight />
+        </a>
+      </div>
+    </footer>
+  );
 }

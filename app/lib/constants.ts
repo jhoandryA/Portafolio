@@ -1,183 +1,273 @@
 import {
-    FiGithub,
-    FiLinkedin,
-    FiMail,
-    FiLayers,
-    FiDatabase,
-    FiCpu,
-    FiCode,
-    FiAward
-} from 'react-icons/fi'
-
+  FiCode,
+  FiDatabase,
+  FiGithub,
+  FiLayers,
+  FiLinkedin,
+  FiMail,
+  FiMonitor,
+  FiServer,
+} from "react-icons/fi";
 import {
-    FaJava,
-    FaNodeJs,
-    FaPython,
-    FaPhp,
-    FaWordpress,
-    FaJs,
-    FaCss3Alt
-} from 'react-icons/fa'
-
+  FaCss3Alt,
+  FaHtml5,
+  FaJava,
+  FaJs,
+  FaNodeJs,
+  FaPhp,
+  FaPython,
+  FaReact,
+  FaWordpress,
+} from "react-icons/fa";
 import {
-    SiNextdotjs,
-    SiTypescript,
-    SiSpringboot
-} from 'react-icons/si'
+  SiMysql,
+  SiNextdotjs,
+  SiPostgresql,
+  SiSpringboot,
+  SiTypescript,
+} from "react-icons/si";
 
-// 🔹 NAV
+export const profile = {
+  name: "Jhoandry Apaza",
+  fullName: "Jhoandry Apaza Sandagorda",
+  role: "Desarrollador de software",
+  email: "jhoandryoficial@gmail.com",
+  location: "Lima, Perú",
+  whatsapp: "https://wa.me/51928806831",
+  cv: "/CV_JHOANDRY.pdf",
+  github: "https://github.com/jhoandryA",
+  linkedin: "https://www.linkedin.com/in/jhoandry-apaza-sandagorda-61b852357/",
+};
+
 export const navLinks = [
-    { name: 'Inicio', href: 'home' },
-    { name: 'Sobre mí', href: 'about' },
-    { name: 'Proyectos', href: 'projects' },
-    { name: 'Servicios', href: 'services' },
-    { name: 'Contacto', href: 'contact' },
+  { name: "Sobre mí", href: "about" },
+  { name: "Proyectos", href: "projects" },
+  { name: "Contacto", href: "contact" },
 ];
 
-// 🔹 REDES
 export const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/jhoandryA', icon: FiGithub },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jhoandry-apaza-sandagorda-61b852357/', icon: FiLinkedin },
-    { name: 'Email', url: 'mailto:jhoandryoficial@gmail.com', icon: FiMail },
-]
+  { name: "GitHub", url: profile.github, icon: FiGithub },
+  { name: "LinkedIn", url: profile.linkedin, icon: FiLinkedin },
+  { name: "Correo electrónico", url: `mailto:${profile.email}`, icon: FiMail },
+];
 
-// 🔹 SKILLS
 export const skills = [
-    // Lenguajes
-    { name: 'Java', icon: FaJava },
-    { name: 'PHP', icon: FaPhp },
-    { name: 'Python', icon: FaPython },
-    { name: 'TypeScript', icon: SiTypescript },
-    { name: 'JavaScript', icon: FaJs },
+  { name: "Java", icon: FaJava, category: "Lenguajes" },
+  { name: "JavaScript", icon: FaJs, category: "Lenguajes" },
+  { name: "TypeScript", icon: SiTypescript, category: "Lenguajes" },
+  { name: "Python", icon: FaPython, category: "Lenguajes" },
+  { name: "PHP", icon: FaPhp, category: "Lenguajes" },
+  { name: "C#", icon: FiCode, category: "Lenguajes" },
+  { name: "React", icon: FaReact, category: "Desarrollo web" },
+  { name: "Next.js", icon: SiNextdotjs, category: "Desarrollo web" },
+  { name: "HTML", icon: FaHtml5, category: "Desarrollo web" },
+  { name: "CSS", icon: FaCss3Alt, category: "Desarrollo web" },
+  { name: "WordPress", icon: FaWordpress, category: "Desarrollo web" },
+  { name: "Node.js", icon: FaNodeJs, category: "Backend y datos" },
+  { name: "Spring Boot", icon: SiSpringboot, category: "Backend y datos" },
+  { name: "MySQL", icon: SiMysql, category: "Backend y datos" },
+  { name: "PostgreSQL", icon: SiPostgresql, category: "Backend y datos" },
+  { name: "SQL Server", icon: FiDatabase, category: "Backend y datos" },
+  { name: "Git", icon: FiCode, category: "Herramientas" },
+  { name: "GitHub", icon: FiGithub, category: "Herramientas" },
+];
 
-    // Backend
-    { name: 'Node.js', icon: FaNodeJs },
-    { name: 'Spring Boot', icon: SiSpringboot },
-    { name: 'Next.js', icon: SiNextdotjs },
-
-    // Base de datos
-    { name: 'SQL', icon: FiDatabase },
-
-    // Web / CMS
-    { name: 'WordPress', icon: FaWordpress },
-    { name: 'CSS', icon: FaCss3Alt },
-]
-
-// 🔹 PROYECTOS
 export const projects = [
-    {
-        name: 'FortexMan360',
-        image: '/images/fortexman360.png',
-        url: 'fortexman360.com.pe',
-        description: 'Desarrollé el sitio web para empresa de seguridad privada, construyendo secciones clave del sitio y asegurando una experiencia completamente responsive en todos los dispositivos.',
-        technologies: ['WordPress', 'JS', 'CSS'],
-        githubUrl: null,
-        liveUrl: 'https://fortexman360.com.pe/'
-    },
-    {
-        name: 'Shiyan Ryans',
-        image: '/images/shiyan.png',
-        url: 'shiyan.pe',
-        description: 'Lideré el desarrollo completo de este e-commerce de repuestos importados, desde el catálogo filtrable por marca y categoría hasta el flujo de cotización vía WhatsApp.',
-        technologies: ['WordPress', 'WooCommerce', 'JS', 'CSS'],
-        githubUrl: null,
-        liveUrl: 'https://shiyan.pe/'
-    },
-    {
-        name: 'Cody Motors',
-        image: '/images/codymotors.png',
-        url: 'codymotors.pe',
-        description: 'Desarrollé la página principal de esta tienda de repuestos automotrices, incluyendo hero, categorías destacadas y secciones de confianza para el usuario.',
-        technologies: ['WordPress', 'WooCommerce', 'JS', 'CSS'],
-        githubUrl: null,
-        liveUrl: 'https://codymotors.pe/'
-    },
-    {
-        name: 'FOCCADI',
-        image: '/images/foccadi.png',
-        url: 'foccadi.consigueventas.com',
-        description: 'Colaboré en el desarrollo del sitio web de esta ONGD dedicada a la capacitación y acompañamiento en el cuidado del Alzheimer, integrando secciones de servicios, testimonios, preguntas frecuentes y formulario de contacto.',
-        technologies: ['WordPress', 'JS', 'CSS'],
-        githubUrl: null,
-        liveUrl: 'https://foccadi.consigueventas.com/'
-    },
-    {
-        name: 'PostulaPe - Sistema de Reclutamiento',
-        image: '/images/postulape.jpg',
-        url: null,
-        description: 'Sistema backend para la gestión de procesos de reclutamiento que permite administrar postulantes, convocatorias y etapas de selección, optimizando el flujo de contratación en recursos humanos.',
-        technologies: ['Java', 'Spring Boot', 'MySQL', 'REST API'],
-        githubUrl: 'https://github.com/jhoandryA/postulape_backend',
-        liveUrl: '#'
-    },
-    {
-        name: 'Sistema Académico Universitario',
-        image: '/images/universidad.jpg',
-        url: null,
-        description: 'Backend para la gestión académica de una universidad, enfocado en un diseño relacional robusto con integridad referencial, auditoría y control de matrículas mediante reglas en base de datos.',
-        technologies: ['Node.js', 'MySQL', 'API REST'],
-        githubUrl: 'https://github.com/jhoandryA/universidad_backend',
-        liveUrl: '#'
-    },
-    {
-        name: 'EquilibrioS - Finanzas Personales',
-        image: '/images/equilibrios.jpg',
-        url: 'jhoandrya.github.io/EquilibrioS',
-        description: 'Aplicación web para gestionar ingresos y gastos mensuales con visualización gráfica, control de presupuesto y almacenamiento local sin necesidad de backend.',
-        technologies: ['JavaScript', 'HTML', 'CSS', 'LocalStorage'],
-        githubUrl: 'https://github.com/jhoandryA/EquilibrioS',
-        liveUrl: 'https://jhoandrya.github.io/EquilibrioS/'
-    }
-]
+  {
+    slug: "fortexman360",
+    name: "FortexMan360",
+    category: "Desarrollo web",
+    group: "Web y e-commerce",
+    image: "/images/fortexman360.png",
+    url: "fortexman360.com.pe",
+    description:
+      "Sitio web para una empresa de seguridad privada. Desarrollé sus secciones principales y una experiencia adaptable a todos los dispositivos.",
+    technologies: ["WordPress", "JavaScript", "CSS"],
+    githubUrl: null,
+    liveUrl: "https://fortexman360.com.pe/",
+  },
+  {
+    slug: "shiyan",
+    name: "Shiyan Ryans",
+    category: "E-commerce",
+    group: "Web y e-commerce",
+    image: "/images/shiyan.png",
+    url: "shiyan.pe",
+    description:
+      "E-commerce de repuestos importados que desarrollé de principio a fin: catálogo por marca y categoría, y un flujo de cotización conectado a WhatsApp.",
+    technologies: ["WordPress", "WooCommerce", "JavaScript", "CSS"],
+    githubUrl: null,
+    liveUrl: "https://shiyan.pe/",
+  },
+  {
+    slug: "cody-motors",
+    name: "Cody Motors",
+    category: "E-commerce",
+    group: "Web y e-commerce",
+    image: "/images/codymotors.png",
+    url: "codymotors.pe",
+    description:
+      "Página principal para una tienda de repuestos automotrices, con categorías destacadas, presentación de productos y secciones de confianza.",
+    technologies: ["WordPress", "WooCommerce", "JavaScript", "CSS"],
+    githubUrl: null,
+    liveUrl: "https://codymotors.pe/",
+  },
+  {
+    slug: "foccadi",
+    name: "FOCCADI",
+    category: "Sitio institucional",
+    group: "Web y e-commerce",
+    image: "/images/foccadi.png",
+    url: "foccadi.consigueventas.com",
+    description:
+      "Colaboré en el sitio de esta ONGD dedicada al cuidado del Alzheimer: servicios, testimonios, preguntas frecuentes y formulario de contacto.",
+    technologies: ["WordPress", "JavaScript", "CSS"],
+    githubUrl: null,
+    liveUrl: "https://foccadi.consigueventas.com/",
+  },
+  {
+    slug: "postulape",
+    name: "PostulaPe",
+    category: "Sistema de reclutamiento",
+    group: "Backend",
+    image: "/images/postulape.jpg",
+    url: null,
+    description:
+      "Backend para administrar postulantes, convocatorias y etapas de selección. Un flujo organizado para la gestión de procesos de reclutamiento.",
+    technologies: ["Java", "Spring Boot", "MySQL", "API REST"],
+    githubUrl: "https://github.com/jhoandryA/postulape_backend",
+    liveUrl: null,
+  },
+  {
+    slug: "sistema-academico",
+    name: "Sistema académico",
+    category: "Gestión universitaria",
+    group: "Backend",
+    image: "/images/universidad.jpg",
+    url: null,
+    description:
+      "Backend de gestión académica con un modelo relacional robusto, integridad referencial, auditoría y reglas para el control de matrículas.",
+    technologies: ["Node.js", "MySQL", "API REST"],
+    githubUrl: "https://github.com/jhoandryA/universidad_backend",
+    liveUrl: null,
+  },
+  {
+    slug: "equilibrios",
+    name: "EquilibrioS",
+    category: "Finanzas personales",
+    group: "Aplicaciones",
+    image: "/images/equilibrios.jpg",
+    url: "jhoandrya.github.io/EquilibrioS",
+    description:
+      "Aplicación para organizar ingresos, gastos y presupuestos mensuales, con visualización gráfica y almacenamiento local en el navegador.",
+    technologies: ["JavaScript", "HTML", "CSS", "LocalStorage"],
+    githubUrl: "https://github.com/jhoandryA/EquilibrioS",
+    liveUrl: "https://jhoandrya.github.io/EquilibrioS/",
+  },
+];
+export type Project = (typeof projects)[number];
+export const featuredProjects = [
+  projects[0],
+  projects[1],
+  projects[4],
+  projects[5],
+  projects[6],
+];
 
-// 🔹 CERTIFICACIONES
 export const certificates = [
-    {
-        name: 'WordPress para Desarrollo Web',
-        issuer: 'Consigue Ventas',
-        date: 'Junio 2026',
-        pdfUrl: '/certificates/CertificadoWordpress.pdf',
-        icon: FiAward
-    },
-    {
-        name: 'Fundamentos del Desarrollo Web Moderno (HTML, CSS, JavaScript)',
-        issuer: 'Consigue Ventas',
-        date: 'Marzo 2026',
-        pdfUrl: '/certificates/certificado-fundamentos-web.pdf',
-        icon: FiAward
-    },
-]
- 
+  {
+    name: "WordPress para Desarrollo Web",
+    issuer: "Consigue Ventas",
+    date: "Junio 2026",
+    pdfUrl: "/certificates/CertificadoWordpress.pdf",
+  },
+  {
+    name: "Fundamentos del Desarrollo Web Moderno",
+    detail: "HTML, CSS y JavaScript",
+    issuer: "Consigue Ventas",
+    date: "Marzo 2026",
+    pdfUrl: "/certificates/certificado-fundamentos-web.pdf",
+  },
+];
 
 export const services = [
-    {
-        title: 'Desarrollo Web',
-        description: 'Creación de aplicaciones web modernas, funcionales y responsivas utilizando tecnologías actuales.',
-        icon: FaNodeJs
-    },
-    {
-        title: 'Diseño UI/UX',
-        description: 'Interfaces intuitivas y atractivas enfocadas en mejorar la experiencia del usuario.',
-        icon: FiLayers
-    },
-    {
-        title: 'Desarrollo Backend',
-        description: 'Construcción de APIs, lógica de negocio y sistemas escalables con Spring Boot y Node.js.',
-        icon: SiSpringboot
-    },
-    {
-        title: 'Bases de Datos',
-        description: 'Diseño, modelado y gestión de bases de datos relacionales con SQL Server, MySQL y PostgreSQL.',
-        icon: FiDatabase
-    },
-    {
-        title: 'Desarrollo de Sistemas',
-        description: 'Creación de sistemas completos de gestión (ventas, reclutamiento, académico) con arquitectura cliente-servidor.',
-        icon: FiCpu
-    },
-    {
-        title: 'Programación Multilenguaje',
-        description: 'Desarrollo en múltiples lenguajes como Java, C#, PHP, Python, JavaScript y TypeScript.',
-        icon: FiCode
-    }
-]
+  {
+    title: "Desarrollo web",
+    description:
+      "Aplicaciones y sitios modernos, rápidos y adaptables. Desde la primera pantalla hasta una experiencia lista para tus usuarios.",
+    icon: FiMonitor,
+  },
+  {
+    title: "Diseño UI/UX",
+    description:
+      "Interfaces claras, intuitivas y consistentes que ponen a las personas en el centro de cada decisión.",
+    icon: FiLayers,
+  },
+  {
+    title: "Desarrollo backend",
+    description:
+      "APIs, lógica de negocio y aplicaciones con Spring Boot y Node.js, pensadas para crecer.",
+    icon: FiServer,
+  },
+  {
+    title: "Bases de datos",
+    description:
+      "Modelado relacional, consultas y gestión de datos con MySQL, PostgreSQL y SQL Server.",
+    icon: FiDatabase,
+  },
+  {
+    title: "Sistemas de gestión",
+    description:
+      "Soluciones para ventas, reclutamiento y gestión académica, conectando procesos y personas.",
+    icon: FiCode,
+  },
+  {
+    title: "Programación multilenguaje",
+    description:
+      "Java, C#, PHP, Python, JavaScript y TypeScript al servicio del problema que necesitamos resolver.",
+    icon: FiCode,
+  },
+];
+
+export const experience = [
+  {
+    year: "AHORA",
+    period: "Desarrollo independiente",
+    title: "De la idea al producto",
+    organization: "Proyectos web y sistemas",
+    description:
+      "Construyo sitios, aplicaciones y soluciones de gestión. Combino desarrollo frontend, backend y bases de datos para resolver necesidades reales.",
+  },
+  {
+    year: "2026",
+    period: "Marzo — junio",
+    title: "Aprender para construir mejor",
+    organization: "Consigue Ventas",
+    description:
+      "Formación certificada en fundamentos del desarrollo web moderno y desarrollo con WordPress.",
+  },
+  {
+    year: "2024",
+    period: "Enero 2024 — junio 2025",
+    title: "Back Office · Área técnica",
+    organization: "ATENTO",
+    description:
+      "Resolución de incidencias de conectividad, seguimiento de tickets y coordinación con equipos técnicos para dar continuidad al servicio.",
+  },
+  {
+    year: "2023",
+    period: "2023 — actualidad",
+    title: "Desarrollo de Sistemas",
+    organization: "Instituto SISE",
+    description:
+      "Formación en Desarrollo de Sistemas de Información y Software: programación, aplicaciones y diseño de bases de datos.",
+  },
+  {
+    year: "2023",
+    period: "Enero 2023 — febrero 2024",
+    title: "Administración de datos",
+    organization: "Auxiliar administrativo",
+    description:
+      "Elaboración de reportes en Excel, organización de bases de datos y control de información en sistemas internos.",
+  },
+];
