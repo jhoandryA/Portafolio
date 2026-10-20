@@ -47,7 +47,9 @@ export default function RootLayout({
         <Providers>{children}</Providers>
         <noscript>
           <style>
-            {".reveal{opacity:1!important;transform:none!important}"}
+            {
+              ".reveal{opacity:1!important;transform:none!important;filter:none!important}"
+            }
           </style>
         </noscript>
       </body>

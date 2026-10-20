@@ -39,18 +39,15 @@ npm run test:e2e
 
 Si existe Chromium en `/usr/bin/chromium`, las pruebas lo reutilizan. También se puede indicar `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. Para probar un servidor ya iniciado, usa `E2E_BASE_URL`.
 
-Las pruebas cubren navegación, acceso a documentos, servicios con teclado, galería, filtros, vista ampliada, móvil, tablet, movimiento reducido, ajedrez y la guía del portafolio. Las pruebas del formulario interceptan EmailJS y simulan éxito y error; no envían correos reales.
+Las pruebas cubren navegación, acceso a documentos, servicios con teclado, galería, filtros, vista ampliada, móvil, tablet, movimiento reducido, la introducción y el personaje 3D. Las pruebas del formulario interceptan EmailJS y simulan éxito y error; no envían correos reales.
 
 ## Contenidos y estructura
 
 - `/`: presentación, sobre mí, servicios, proyectos seleccionados, dos certificaciones con vista previa, tecnologías y contacto.
 - `/proyectos`: catálogo de los siete proyectos, filtros y vistas ampliadas.
-- `/laboratorio`: ajedrez de práctica y guía interactiva sobre el portafolio.
 
 Los textos, proyectos, enlaces y datos de contacto están centralizados en `app/lib/constants.ts`. Los certificados y capturas de los proyectos se conservan en `public`.
 
-La guía del laboratorio responde a preguntas frecuentes a partir del contenido del portafolio; no usa una API generativa ni requiere nuevas credenciales. El ajedrez utiliza `chess.js` para las reglas y un motor de práctica propio en un Web Worker. No se le atribuye una puntuación ELO.
-
 El personaje usa geometría volumétrica GLB: rostro, ojos, cabello, cuerpo, manos, ropa y escritorio. La cabeza sigue al puntero, los ojos parpadean y las manos se animan al revelar la pose de trabajo con el desplazamiento. No utiliza una fotografía como superficie del rostro. El código de modelado reproducible está en `scripts/build-character.py`; se ejecuta con Blender 4.3 o posterior. El mismo modelo genera el retrato de reserva para móvil, tablet, movimiento reducido o ausencia de WebGL.
 
-El contenido aparece directamente, sin pantalla de carga. Lenis suaviza la rueda y las anclas en escritorio; las pantallas táctiles y el movimiento reducido conservan el desplazamiento nativo. Los proyectos pasan de una galería horizontal a una distribución vertical según el espacio disponible y la preferencia de movimiento.
+La entrada de escritorio muestra el progreso de carga del personaje y permite saltar la introducción. La presentación se omite en móvil, tablet, movimiento reducido y enlaces directos a secciones. Lenis suaviza la rueda y las anclas en escritorio; las pantallas táctiles y el movimiento reducido conservan el desplazamiento nativo. Los proyectos pasan de una galería horizontal a una distribución vertical según el espacio disponible y la preferencia de movimiento.

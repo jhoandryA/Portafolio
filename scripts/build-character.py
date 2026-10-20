@@ -22,10 +22,10 @@ def group(name, parent=None, location=(0,0,0)):
 root=group('JhoandryCharacter')
 body=group('Body',root)
 head=group('HeadPivot',root,(0,0,3.32))
-left_eye=group('EyeLeft',head,(-.30,-.497,.105))
-right_eye=group('EyeRight',head,(.30,-.497,.105))
-left_brow=group('BrowLeft',head,(-.30,-.53,.37))
-right_brow=group('BrowRight',head,(.30,-.53,.37))
+left_eye=group('EyeLeft',head,(-.305,-.497,.035))
+right_eye=group('EyeRight',head,(.305,-.497,.035))
+left_brow=group('BrowLeft',head,(-.305,-.53,.30))
+right_brow=group('BrowRight',head,(.305,-.53,.30))
 left_hand=group('HandLeft',root,(-.40,-.75,1.65))
 right_hand=group('HandRight',root,(.40,-.75,1.65))
 desk=group('Workstation',root)
@@ -40,29 +40,29 @@ def material(name, color, rough=.5, metal=0, coat=0):
     p.inputs['Roughness'].default_value=rough;p.inputs['Metallic'].default_value=metal
     p.inputs['Coat Weight'].default_value=coat
     return m
-skin=material('Warm tan skin','#be896c',.48,coat=.08)
-skin_inner=material('Inner ear and eyelids','#ac755e',.57)
-lip=material('Natural warm lips','#b37d6c',.57)
-brow_mat=material('Natural dark eyebrows','#211c1b',.65)
-crease=material('Soft facial creases','#775044',.7)
-hair=material('Swept black hair','#171619',.43,coat=.06)
-hair_ridge=material('Hair sculpt highlights','#242023',.34,coat=.1)
-white=material('Eye whites','#eee7dc',.28,coat=.15)
-iris=material('Brown iris','#483225',.24,coat=.35)
-iris_rim=material('Iris limbal ring','#261d1b',.25)
+skin=material('Warm tan skin','#d6cbc5',.58,coat=.03)
+skin_inner=material('Inner ear and eyelids','#bfb2b0',.65)
+lip=material('Natural warm lips','#c3b7b5',.62)
+brow_mat=material('Natural dark eyebrows','#201d22',.54)
+crease=material('Soft facial creases','#91838c',.7)
+hair=material('Swept black hair','#161419',.32,coat=.08)
+hair_ridge=material('Hair sculpt highlights','#201d23',.38,coat=.06)
+white=material('Eye whites','#ede8e9',.36,coat=.12)
+iris=material('Brown iris','#55443d',.3,coat=.18)
+iris_rim=material('Iris limbal ring','#2c252e',.32)
 pupil=material('Pupils','#090e13',.15,coat=.5)
 catchlight=material('Eye catchlights','#ffffff',.12)
-navy=material('Navy jacket','#1d3149',.65)
-navy_dark=material('Jacket lapels and trousers','#152235',.64)
-shirt=material('Ivory shirt','#e7edf0',.8)
+navy=material('Navy jacket','#d8d4d6',.68)
+navy_dark=material('Jacket lapels and trousers','#bcb6bd',.66)
+shirt=material('Ivory shirt','#e8e1dc',.8)
 tie=material('Navy tie','#28415b',.52)
-sole=material('Shoe soles','#101a26',.65)
-leather=material('Graphite shoes','#28394b',.38,coat=.2)
-metal=material('Brushed slate metal','#324856',.35,.65)
-desk_top=material('Ice desk top','#c8dce1',.48,.08)
-keys=material('Keyboard keys','#334959',.58)
-screen=material('Monitor glass','#0c1824',.22,.22,coat=.4)
-cyan=material('Cyan details','#88e6ed',.32,.22)
+sole=material('Shoe soles','#afa8b0',.7)
+leather=material('Graphite shoes','#d0c8ce',.48,coat=.08)
+metal=material('Brushed slate metal','#c4bac2',.5,.18)
+desk_top=material('Ice desk top','#e7dfd9',.6,.04)
+keys=material('Keyboard keys','#a79ca9',.64)
+screen=material('Monitor glass','#282329',.4,.08,coat=.08)
+cyan=material('Cyan details','#e7b69e',.46,.1)
 
 # Geometry helpers; curved surfaces are real geometry rather than textures.
 def mesh(name, verts, faces, mat, parent):
@@ -131,18 +131,18 @@ def interp(keys,x):
 def gauss(x,z,cx,cz,sx,sz):return exp(-((x-cx)/sx)**2-((z-cz)/sz)**2)
 
 # An oval face, tapered jaw, straight bridge and broad swept hair follow the photo.
-width_profile=[(-1,.10),(-.94,.30),(-.78,.44),(-.56,.57),(-.25,.675),(.1,.705),(.42,.72),(.7,.66),(.9,.46),(1,.02)]
+width_profile=[(-1,.12),(-.94,.33),(-.78,.51),(-.56,.64),(-.25,.70),(.1,.72),(.42,.72),(.7,.69),(.9,.49),(1,.02)]
 depth_profile=[(-1,.12),(-.88,.33),(-.55,.48),(-.1,.535),(.45,.54),(.8,.43),(1,.03)]
 verts=[];faces=[];rows=88;segments=112
 for i in range(rows+1):
-    t=-1+2*i/rows;z=t*.94
+    t=-1+2*i/rows;z=t*.86
     for j in range(segments):
         angle=2*pi*j/segments;c=cos(angle);x=interp(width_profile,t)*sin(angle)
-        y=-interp(depth_profile,t)*(abs(c)**.56)*(1 if c>=0 else -1)
+        y=-interp(depth_profile,t)*(abs(c)**.44)*(1 if c>=0 else -1)
         if c>0:
             front=max(0,c)**5
-            sculpt=-.095*gauss(x,z,0,.12,.105,.37)
-            sculpt-=.195*gauss(x,z,0,-.13,.14,.14)
+            sculpt=-.085*gauss(x,z,0,.01,.11,.30)
+            sculpt-=.25*gauss(x,z,0,-.20,.13,.15)
             sculpt-=.075*(gauss(x,z,-.11,-.18,.08,.07)+gauss(x,z,.11,-.18,.08,.07))
             sculpt+=.055*(gauss(x,z,-.30,.11,.22,.145)+gauss(x,z,.30,.11,.22,.145))
             sculpt-=.033*(gauss(x,z,-.41,-.18,.22,.23)+gauss(x,z,.41,-.18,.22,.23))
@@ -177,21 +177,23 @@ for side in [-1,1]:
     uv('Ear concha',(side*.778,-.074,.01),(.078,.036,.15),skin_inner,head,32,20)
     points=[(side*(.77+.048*cos(a)),-.105,.015+.13*sin(a)) for a in [i*pi*1.7/30-.65*pi for i in range(31)]]
     tube('Ear helix',points,.023,plain_skin,head,8)
-    uv('Nostril',(side*.092,-.701,-.202),(.025,.012,.014),crease,head,20,12)
+    uv('Nostril',(side*.075,-.725,-.29),(.018,.008,.009),crease,head,20,12)
+
+uv('Sculpted nose tip',(0,-.73,-.20),(.11,.125,.16),plain_skin,head,48,28)
 
 # Almond eye openings, convex corneas, brown irises and sculpted eyelids.
 for eye in [left_eye,right_eye]:
-    uv('Eyeball',(0,.025,0),(.196,.105,.115),white,eye,48,28)
-    uv('Limbal ring',(0,-.084,-.003),(.090,.014,.088),iris_rim,eye,40,24)
-    uv('Brown iris',(0,-.095,-.003),(.076,.010,.075),iris,eye,40,24)
-    uv('Pupil',(0,-.104,-.003),(.042,.007,.046),pupil,eye,32,20)
+    uv('Eyeball',(0,.045,-.015),(.218,.125,.143),white,eye,48,28)
+    uv('Limbal ring',(0,-.084,-.022),(.110,.016,.110),iris_rim,eye,40,24)
+    uv('Brown iris',(0,-.095,-.022),(.096,.010,.098),iris,eye,40,24)
+    uv('Pupil',(0,-.104,-.022),(.049,.007,.052),pupil,eye,32,20)
     uv('Softbox catchlight',(-.026,-.113,.031),(.020,.004,.018),catchlight,eye,20,12)
     uv('Small catchlight',(.023,-.112,-.035),(.008,.003,.008),catchlight,eye,16,10)
     for upper in [True,False]:
         points=[]
         for i in range(33):
             t=i*pi/32;x=-.203*cos(t)
-            z=(.085 if upper else -.075)*sin(t)
+            z=(.025 if upper else -.128)*sin(t)
             y=-.031-.045*sin(t)
             points.append((x,y,z))
         tube('Upper sculpted lid' if upper else 'Lower sculpted lid',points,[.009+.010*sin(i*pi/32) for i in range(33)],plain_skin,eye,10)
@@ -200,15 +202,15 @@ for eye in [left_eye,right_eye]:
     for i in range(33):
         t=i*pi/32;x=-.204*cos(t)
         for k in range(5):
-            r=k/4;z=(.084+.103*r)*sin(t)
-            y=-.025-.055*sin(t)+.09*r
+            r=k/4;z=(.024+.195*r)*sin(t)
+            y=-.027-.10*sin(t)+.16*r**3
             verts.append((x,y,z))
     for i in range(32):
         for k in range(4):
             a=i*5+k;faces.append((a,a+1,a+6,a+5))
     mesh('Upper orbital skin',verts,faces,plain_skin,eye)
-    lower=[(x,y,-z*.86) for x,y,z in verts]
-    mesh('Lower orbital skin',lower,faces,plain_skin,eye)
+    lower=[(x,y+.018,-(.125+(.215-.024)*k/4)*sin(i*pi/32)) for i in range(33) for k in range(5) for x,y,z in [verts[i*5+k]]]
+
 
 for side,brow in [(-1,left_brow),(1,right_brow)]:
     points=[]
@@ -222,10 +224,10 @@ for side,brow in [(-1,left_brow),(1,right_brow)]:
 for upper in [True,False]:
     verts=[];faces=[]
     for i in range(49):
-        t=-1+2*i/48;x=t*.245;seam=-.437+.025*t*t
+        t=-1+2*i/48;x=t*.275;seam=-.437+.055*t*t
         for j in range(7):
             v=j/6
-            thickness=(.033 if upper else .047)*(max(0,1-t*t)**.7)
+            thickness=(.016 if upper else .025)*(max(0,1-t*t)**.7)
             if upper:thickness*=.86+.24*exp(-((abs(t)-.28)/.18)**2)
             z=seam+(1 if upper else -1)*thickness*v
             y=-.548-.034*(1-t*t)*sin(v*pi*.78)
@@ -234,43 +236,37 @@ for upper in [True,False]:
         for j in range(6):
             a=i*7+j;faces.append((a,a+1,a+8,a+7))
     mesh('Upper lip' if upper else 'Lower lip',verts,faces,lip,head)
-points=[(t*.246,-.555,-.437+.025*t*t) for t in [-1+2*i/48 for i in range(49)]]
+points=[(t*.276,-.555,-.437+.055*t*t) for t in [-1+2*i/48 for i in range(49)]]
 tube('Mouth seam',points,[.004+.003*sin(i*pi/48) for i in range(49)],crease,head,8)
 
-# The cap follows the sculpted skull; a high forehead and side part match
-# the source photo. Swept ridges are modeled along its surface, not painted.
+# Broad, smooth quiff with a subtle side sweep: the reference clay silhouette,
+# with the photograph informing only the part and the softened face proportions.
 def hair_point(u,theta):
     c=cos(theta)
-    boundary=.18+.58*max(0,c)**1.5-.30*max(0,-c)
+    boundary=.08+.57*max(0,c)**1.1-.31*max(0,-c)
+    boundary+=.025*sin(theta*2)*max(0,c)
     polar=math.acos(max(-1,min(1,boundary)))*(1-u)
     t=cos(polar)
-    x=(interp(width_profile,t)+.045)*sin(theta)*(1-u**8)-.045*sin(u*pi)
-    y=-(interp(depth_profile,t)+.055)*(abs(c)**.56)*(1 if c>=0 else -1)*(1-u**8)+.018
-    z=.94*t+.105*sin(u*pi/2)+.105*exp(-((x+.25)/.46)**2)*sin(u*pi)**.8
+    x=(interp(width_profile,t)+.055)*sin(theta)*(1-u**8)-.06*sin(u*pi)
+    y=-(interp(depth_profile,t)+.08)*(abs(c)**.44)*(1 if c>=0 else -1)*(1-u**8)+.018
+    z=.86*t+.18*sin(u*pi/2)+.13*exp(-((x+.25)/.55)**2)*sin(u*pi)**.8
     return (x,y,z)
-verts=[];faces=[];hair_rows=40;hair_segs=112
+verts=[];faces=[];hair_rows=38;hair_segs=112
 for i in range(hair_rows+1):
     for j in range(hair_segs):verts.append(hair_point(i/hair_rows,j*2*pi/hair_segs))
 for i in range(hair_rows):
     for j in range(hair_segs):
         a=i*hair_segs+j;b=i*hair_segs+(j+1)%hair_segs
         faces.append((a,b,b+hair_segs,a+hair_segs))
-mesh('Continuous swept hair',verts,faces,hair,head)
-for i in range(18):
-    left=i<14
-    theta0=(-1.16+i*.139) if left else (.84+(i-14)*.18)
-    points=[]
-    for j in range(31):
-        t=j/30
-        u=.02+.70*sin(t*pi*.85)
-        theta=theta0+(-.72*t if left else .60*t)
-        x,y,z=hair_point(u,theta)
-        points.append((x*.995,y*.995,z-.005))
-    radius=.022 if i%4 else .032
-    tube('Swept sculpted hair lock',points,[.002+radius*max(0,sin(j*pi/30))**.65 for j in range(31)],hair,head,10)
+mesh('Smooth sculpted quiff',verts,faces,hair,head)
+# Two large flowing sculpted locks; fine metallic strands are deliberately absent.
+for i in range(2):
+    q=i/2
+    points=bezier((.46,-.49+q*.10,.66+q*.10),(.06,-.66+q*.12,1.17+q*.02),(-.56,-.34+q*.12,1.13),(-.69,.12+q*.16,.60+q*.10),34)
+    tube('Broad swept quiff',points,[(.005+.085*max(0,sin(j*pi/33))**.65,.005+.050*max(0,sin(j*pi/33))**.65) for j in range(34)],hair,head,16)
 for side in [-1,1]:
-    points=bezier((side*.68,-.09,.57),(side*.76,-.07,.40),(side*.75,-.01,.07),(side*.70,-.012,-.15),22)
-    tube('Tapered sideburn',points,[.012+.05*(1-i/21) for i in range(22)],hair,head,10)
+    points=bezier((side*.69,-.06,.55),(side*.76,-.04,.35),(side*.74,.01,.05),(side*.70,.015,-.14),22)
+    tube('Tapered sideburn',points,[.012+.048*(1-i/21) for i in range(22)],hair,head,10)
 
 # Seated body: curved jacket, shirt, collar and a restrained navy tie.
 uv('Neck',(0,.025,2.38),(.235,.235,.25),plain_skin,body)
@@ -367,11 +363,11 @@ for parent in [head,left_eye,right_eye,left_brow,right_brow,body,left_hand,right
         objects[0].name=parent.name+' '+material_name
 root['design']='Original stylized character modeled from the owner photograph'
 root['animation']='HeadPivot, EyeLeft, EyeRight, BrowLeft, BrowRight, HandLeft, HandRight'
-root['version']=1
+root['version']=2
 bpy.ops.object.select_all(action='DESELECT')
 for o in [root,*root.children_recursive]:o.select_set(True)
 bpy.context.view_layer.objects.active=root
-bpy.ops.export_scene.gltf(filepath=os.path.join(OUT,'jhoandry-developer.glb'),export_format='GLB',use_selection=True,export_yup=True,export_extras=True,export_cameras=False,export_lights=False)
+bpy.ops.export_scene.gltf(filepath=os.path.join(OUT,'jhoandry-clay.glb'),export_format='GLB',use_selection=True,export_yup=True,export_extras=True,export_cameras=False,export_lights=False)
 print('MODEL EXPORTED',sum(len(o.data.polygons) for o in bpy.context.scene.objects if o.type=='MESH'),'polygons')
 
 # A true render of the same model provides the mobile/no-WebGL fallback.
@@ -387,8 +383,8 @@ def area(name,location,power,color,size):
     o=bpy.data.objects.new(name,data);bpy.context.collection.objects.link(o);o.location=location
     o.rotation_euler=(Vector((0,0,3))-o.location).to_track_quat('-Z','Y').to_euler()
 area('Large soft key',(-3,-4,6),650,(1,.91,.82),4)
-area('Cool fill',(3,-2,3.8),230,(.64,.79,1),3)
-area('Cyan rim',(2,2,5),950,(.40,.85,1),3)
+area('Soft fill',(3,-2,3.8),230,(.89,.85,.91),3)
+area('Copper rim',(2,2,5),750,(1,.66,.49),3)
 camdata=bpy.data.cameras.new('PortraitCamera');camera=bpy.data.objects.new('PortraitCamera',camdata);bpy.context.collection.objects.link(camera)
 camera.location=(.17,-7.1,3.36);camera.rotation_euler=(Vector((0,0,3.25))-camera.location).to_track_quat('-Z','Y').to_euler()
 camdata.type='ORTHO';camdata.ortho_scale=2.90;scene.camera=camera
@@ -403,5 +399,5 @@ scene.render.image_settings.file_format='PNG';scene.render.filepath=os.path.join
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(VALIDATION,'jhoandry-character.blend'))
 bpy.ops.render.render(write_still=True)
 
-subprocess.run(['node', '-e', "const sharp=require('sharp');sharp(process.argv[1]).webp({quality:91,effort:6}).toFile(process.argv[2]);", scene.render.filepath, os.path.join(ROOT, 'public', 'images', 'jhoandry-character.webp')], cwd=ROOT, check=True)
+subprocess.run(['node', '-e', "const sharp=require('sharp');sharp(process.argv[1]).webp({quality:91,effort:6}).toFile(process.argv[2]);", scene.render.filepath, os.path.join(ROOT, 'public', 'images', 'jhoandry-clay.webp')], cwd=ROOT, check=True)
 print('Character GLB and matching WebP poster generated successfully.')

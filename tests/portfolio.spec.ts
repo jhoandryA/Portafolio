@@ -1,9 +1,49 @@
 import { test, expect } from "@playwright/test";
 
+test("la carga inicial se puede saltar mientras el personaje sigue descargando", async ({
+  page,
+}) => {
+  let release!: () => void;
+  const gate = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  await page.route("**/models/jhoandry-clay.glb", async (route) => {
+    await gate;
+    await route.continue();
+  });
+  try {
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+    await expect(page.locator(".intro-screen")).toBeVisible();
+    await expect(
+      page.getByRole("progressbar", { name: "Carga del portafolio" }),
+    ).not.toHaveAttribute("aria-valuenow", "100");
+    await page.getByRole("button", { name: "Saltar introducción" }).click();
+    await expect(page.locator(".intro-screen")).toHaveCount(0);
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  } finally {
+    release();
+  }
+  await expect(page.locator("#story")).toHaveClass(/has-scene/, {
+    timeout: 20000,
+  });
+});
+
+test("la pausa creativa y el laboratorio se retiran del sitio", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/#technologies");
+  await expect(
+    page.getByRole("link", { name: "Una pausa creativa" }),
+  ).toHaveCount(0);
+  await expect(page.locator('a[href="/laboratorio"]')).toHaveCount(0);
+  expect((await request.get("/laboratorio")).status()).toBe(404);
+});
+
 test("el personaje contiene un rostro con volumen real y sus partes animables", async ({
   request,
 }) => {
-  const response = await request.get("/models/jhoandry-developer.glb");
+  const response = await request.get("/models/jhoandry-clay.glb");
   expect(response.status()).toBe(200);
   const binary = await response.body();
   expect(binary.toString("ascii", 0, 4)).toBe("glTF");
@@ -37,7 +77,9 @@ test("la portada tiene escena propia, navegación y documentos reales", async ({
   request,
 }) => {
   await page.goto("/");
-  await expect(page.locator(".intro-screen")).toHaveCount(0);
+  await expect(page.locator(".intro-screen")).toHaveCount(0, {
+    timeout: 15000,
+  });
   await expect(page.locator("#story")).toHaveClass(/has-scene/);
   await expect(page.locator(".scene-sticky canvas")).toHaveCount(1);
   await expect(page.locator("#experience")).toHaveCount(0);
@@ -145,7 +187,9 @@ test("tablet permite entrar y navegar sin depender de WebGL", async ({
 }) => {
   await page.setViewportSize({ width: 820, height: 1180 });
   await page.goto("/");
-  await expect(page.locator(".intro-screen")).toHaveCount(0);
+  await expect(page.locator(".intro-screen")).toHaveCount(0, {
+    timeout: 15000,
+  });
   await expect(page.locator(".scene-sticky canvas")).toHaveCount(0);
   await page
     .getByRole("navigation", { name: "Navegación principal" })
@@ -171,7 +215,9 @@ test("móvil conserva contenidos y permite expandir servicios", async ({
   });
   const page = await context.newPage();
   await page.goto("/");
-  await expect(page.locator(".intro-screen")).toHaveCount(0);
+  await expect(page.locator(".intro-screen")).toHaveCount(0, {
+    timeout: 15000,
+  });
   await expect(page.locator(".hero-portrait img")).toBeVisible();
   expect(
     await page
@@ -198,7 +244,9 @@ test("movimiento reducido mantiene la presentación y una galería vertical", as
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
-  await expect(page.locator(".intro-screen")).toHaveCount(0);
+  await expect(page.locator(".intro-screen")).toHaveCount(0, {
+    timeout: 15000,
+  });
   await expect(page.locator(".scene-sticky canvas")).toHaveCount(0);
   await expect(page.locator(".hero-portrait img")).toBeVisible();
   await expect(page.locator("#projects")).not.toHaveClass(/is-horizontal/);
@@ -275,59 +323,6 @@ test("el formulario conserva el mensaje cuando falla y permite reintentar", asyn
   expect(attempts).toBe(2);
 });
 
-test("el ajedrez responde a una jugada y permite girar y reiniciar", async ({
-  page,
-}) => {
-  await page.goto("/laboratorio");
-  await expect(page.locator(".chess-square")).toHaveCount(64);
-  await page.locator('[data-square="e2"]').click();
-  await expect(page.locator(".legal-move")).toHaveCount(2);
-  await page.locator('[data-square="e4"]').click();
-  await expect(page.locator(".move-row").first()).toContainText("e4");
-  await expect(
-    page.locator(".move-row").first().locator("span").nth(2),
-  ).not.toHaveText("—");
-  await expect(page.locator(".game-status")).toContainText("Tu turno");
-  await page.getByRole("button", { name: "Girar tablero" }).click();
-  await expect(page.locator(".chess-square").first()).toHaveAttribute(
-    "data-square",
-    "h1",
-  );
-  await page
-    .getByRole("button", { name: "Nueva partida", exact: true })
-    .click();
-  await expect(page.getByRole("dialog")).toBeVisible();
-  await page
-    .getByRole("dialog")
-    .getByRole("button", { name: "Nueva partida" })
-    .click();
-  await expect(page.locator(".move-row")).toHaveCount(0);
-  await expect(page.locator(".game-status")).toContainText("Tu turno");
-});
-
-test("la guía orienta hacia proyectos y contacto con información del portafolio", async ({
-  page,
-}) => {
-  await page.goto("/laboratorio");
-  await page.getByRole("button", { name: "¿Qué proyectos tienes?" }).click();
-  await expect(page.locator(".chat-bubble.guide").last()).toContainText(
-    "PostulaPe",
-  );
-  await expect(
-    page.getByRole("link", { name: "Explorar los siete proyectos" }),
-  ).toHaveAttribute("href", "/proyectos");
-  await page
-    .getByLabel("Pregunta sobre el portafolio")
-    .fill("¿Estás disponible?");
-  await page.getByRole("button", { name: "Enviar pregunta a la guía" }).click();
-  await expect(page.locator(".chat-bubble.guide").last()).toContainText(
-    "jhoandryoficial@gmail.com",
-  );
-  await expect(
-    page.getByRole("link", { name: "Conversar con Jhoandry" }),
-  ).toHaveAttribute("href", "/#contact");
-});
-
 test("la portada sigue siendo accesible si WebGL no está disponible", async ({
   page,
 }) => {
@@ -337,7 +332,9 @@ test("la portada sigue siendo accesible si WebGL no está disponible", async ({
     });
   });
   await page.goto("/");
-  await expect(page.locator(".intro-screen")).toHaveCount(0);
+  await expect(page.locator(".intro-screen")).toHaveCount(0, {
+    timeout: 15000,
+  });
   await expect(page.locator("#story")).not.toHaveClass(/has-scene/);
   await expect(page.locator(".hero-portrait img")).toBeVisible();
   await page

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useMediaQuery } from "@/app/lib/hooks";
+import { finishSceneLoading } from "@/app/lib/sceneLoading";
 
 export default function DeveloperScene() {
   const host = useRef<HTMLDivElement>(null);
@@ -25,11 +26,13 @@ export default function DeveloperScene() {
           dispose = destroy;
           story.classList.add("has-scene");
         } catch (error) {
+          finishSceneLoading();
           console.warn("Scene initialization failed", error);
           story.classList.remove("has-scene");
         }
       })
       .catch((error) => {
+        finishSceneLoading();
         console.warn("Scene import failed", error);
         story.classList.remove("has-scene");
       });

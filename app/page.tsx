@@ -10,10 +10,12 @@ import Footer from "./components/Footer";
 import DeveloperScene from "./components/DeveloperScene";
 import SideRail from "./components/SideRail";
 import CustomCursor from "./components/CustomCursor";
+import Intro from "./components/Intro";
 
 export default function Home() {
   return (
     <>
+      <Intro />
       <Header />
       <SideRail />
       <CustomCursor />

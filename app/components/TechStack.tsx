@@ -1,6 +1,4 @@
 import { skills } from "@/app/lib/constants";
-import { FiArrowUpRight } from "react-icons/fi";
-import Link from "next/link";
 import Reveal from "./Reveal";
 
 const rows = [
@@ -51,14 +49,6 @@ export default function TechStack() {
           ))}
         </div>
       </Reveal>
-      <div className="creative-cta">
-        <Link href="/laboratorio" className="outline-button">
-          Una pausa creativa <FiArrowUpRight />
-        </Link>
-        <a href="#contact" className="pill-button">
-          Hablemos de tu idea <FiArrowUpRight />
-        </a>
-      </div>
     </section>
   );
 }
